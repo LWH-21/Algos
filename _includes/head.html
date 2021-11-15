@@ -8,7 +8,7 @@
 	<meta name = "DC.Format" content = "text/html">
 	<meta name = "DC.Language" content = "{{ page.lang }}">
 	<meta name = "DC.Date" content = "{{ page.date }}">
-	<meta name="DC.description" lang="{{ page.lang }}" content="{{ page.excerpt | strip_html }}" />
+	<meta name="DC.description" lang="{{ page.lang }}" content="{{ page.excerpt | strip_html | strip  }}" />
     <link rel="DC.source" href="urn:ISBN:978-1-2345-6789-X" />
 	{% seo title=false %}
 	
