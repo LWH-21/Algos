@@ -6,6 +6,9 @@ category:
  - Algorithmes de tri 
 lang : fr
 ref : bubblesort
+custom_js:
+  - sort/sort_algo.js
+  - /sort/sort_demo.js
 ---
 # post-sample
 > >Tri bulle
