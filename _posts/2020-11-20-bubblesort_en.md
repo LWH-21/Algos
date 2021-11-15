@@ -14,6 +14,17 @@ custom_js:
 # post-sample
 > >Tri bulle
 
+
+#debut tab
+<div>
+<ul class="bottom" data-role="tabs">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Profile</a></li>
+    <li><a href="#">Links</a></li>
+</ul>
+ </div>
+#fin tab
+
 This is code
 ```ruby
 print 'hello world'
@@ -25,12 +36,4 @@ print 'hello world'
 </canvas> 
 
 #fin canvas
-#debut tab
-<div>
-<ul class="bottom" data-role="tabs">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Profile</a></li>
-    <li><a href="#">Links</a></li>
-</ul>
- </div>
-#fin tab
+
