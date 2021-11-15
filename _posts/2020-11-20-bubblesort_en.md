@@ -17,7 +17,7 @@ custom_js:
 
 #debut tab
 <div>
-<ul class="bottom" data-role="tabs">
+<ul class="bottom" data-role="tabs" data-expand="true">
     <li><a href="#">Home</a></li>
     <li><a href="#">Profile</a></li>
     <li><a href="#">Links</a></li>
