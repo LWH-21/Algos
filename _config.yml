@@ -21,6 +21,9 @@ email: lwh@free.fr
 
 github_username: LWH-21
 repo: "https://github.com/LWH-21/Algos/"
+domain : "lwh-21.github.io"
+url: "https://lwh-21.github.io" # Site url, also used in jekyll-seo-tag
+baseurl: "/Algos"
 encoding: UTF-8
 author: LWH
 format: web
