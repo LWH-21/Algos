@@ -6,16 +6,16 @@ category:
  - sort algorithms 
 lang : en
 ref : bubblesort
-
 ---
-#Tri bulle
+
+# Tri bulle
 
 
 
-#debut canvas
+# debut canvas
 
 <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
 </canvas> 
 
-#fin canvas
+# fin canvas
 
