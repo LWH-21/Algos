@@ -1,32 +1,16 @@
 ---
 layout: post
-title: the bubble sort
+title: The Bubble Sort
 date: 2021-11-20
 category: 
  - sort algorithms 
 lang : en
 ref : bubblesort
-custom_css:
- - https://cdn.metroui.org.ua/v4/css/metro-all.min.css
+
 ---
-# post-sample
-> >Tri bulle
+#Tri bulle
 
 
-#debut tab
-<div>
-<ul class="bottom" data-role="tabs" data-expand="true">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Profile</a></li>
-    <li><a href="#">Links</a></li>
-</ul>
- </div>
-#fin tab
-
-This is code
-```ruby
-print 'hello world'
-```
 
 #debut canvas
 
