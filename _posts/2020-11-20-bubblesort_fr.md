@@ -6,7 +6,10 @@ category:
  - Algorithmes de tri 
 lang : fr
 ref : bubblesort
+custom_css:
+  - "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css
 custom_js:
+  - http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js
   - sort/sort_algo.js
   - sort/sort_demo.js
 ---
@@ -30,3 +33,17 @@ L'animation ci-après détaille le fonctionnement du tri bulle :
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
 </div>
+
+  <ul class="nav nav-tabs">  
+    <li class="active"><a href="#">Accueil</a></li>  
+    <li class="dropdown">  
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu 1 <span class="caret"></span></a>  
+      <ul class="dropdown-menu">  
+        <li><a href="#">Submenu 1-1</a></li>  
+        <li><a href="#">Submenu 1-2</a></li>  
+        <li><a href="#">Submenu 1-3</a></li>                          
+      </ul>  
+    </li>  
+    <li><a href="#">Menu 2</a></li>  
+    <li><a href="#">Menu 3</a></li>  
+  </ul>  
