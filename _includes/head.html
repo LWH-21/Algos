@@ -2,10 +2,15 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
-	<meta name="DC.Title" content="{{ page.title }}">
+	<head profile="http://dublincore.org/documents/2008/08/04/dc-html/">    
+    	<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+    	<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
+	<meta name="DC.Title" lang="{{ page.lang }}" content="{{ page.title }}">
 	<meta name = "DC.Format" content = "text/html">
 	<meta name = "DC.Language" content = "{{ page.lang }}">
 	<meta name = "DC.Date" content = "{{ page.date }}">
+	<meta name="DC.description" lang="{{ page.lang }}" content="{{ page.excerpt }}" />
+    <link rel="DC.source" href="urn:ISBN:978-1-2345-6789-X" />
 	{% seo title=false %}
 	
 	 <title>{{ site.title[page.lang] }}</title>
