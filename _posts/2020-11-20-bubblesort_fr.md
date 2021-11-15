@@ -17,7 +17,7 @@ Le principe du tri à bulles (bubble sort ou sinking sort) est de comparer deux 
 
 L'animation ci-après détaille le fonctionnement du tri bulle :
 
-<div>
+<div class="container">  
   <ul class="nav nav-tabs">  
     <li class="active"><a href="#">Accueil</a></li>  
     <li class="dropdown">  
