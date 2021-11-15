@@ -35,9 +35,9 @@ svg:
 # theme: minima
 highlighter-theme: borland
 date_format:
-    fr: "%D-%M-%Y"
-    en: "%Y-%M-%D"
-    es: "%D-%M-%Y"
+    fr: "%d-%m-%Y"
+    en: "%Y-%m-%d"
+    es: "%d-%m-%Y"
 
 category_dir: category/
 tag_dir: tag/
