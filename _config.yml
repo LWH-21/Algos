@@ -1,1 +1,59 @@
-theme: jekyll-theme-minimal
+
+# baseurl: "/" # the subpath of your site, e.g. /blog
+# url: "http://ejjoo.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+
+title:
+    fr: "Algorithmes"
+    en: "Algorithms"
+    es: "Algoritmos"
+description:
+    fr: "Anti-manuel d'algorithmique"
+    en: "Illustrations of common algorithms"
+    es: "Ilustraciones de algoritmos comunes"
+    
+tagline:
+    fr: "Algorithmes"
+    en: "Algorithms"
+    es: "Algoritmos"
+
+email: lwh@free.fr
+
+
+github_username: LWH-21
+repo: "https://github.com/LWH-21/Algos/"
+encoding: UTF-8
+author: LWH
+format: web
+
+highlighter: rouge
+svg:
+  optimize: true
+# Build settings
+# theme: minima
+highlighter-theme: monokai
+date_format:
+    fr: "%D-%M-%Y"
+    en: "%Y-%M-%D"
+    es: "%D-%M-%Y"
+
+category_dir: category/
+tag_dir: tag/
+
+
+# Tracker
+analytics: UA-62028023-3
+
+exclude:
+  - Config
+  - s3_website
+  - _config_*
+  - Gemfile*
+  - serve_*
+  - build_*
+  - gem_*
+  - pdf
+  - mobi
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
