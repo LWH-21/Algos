@@ -24,19 +24,13 @@ print 'hello world'
 <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
 </canvas> 
 
-<script>
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-ctx.beginPath();
-ctx.arc(95, 50, 40, 0, 2 * Math.PI);
-ctx.stroke();
-</script> 
-
 #fin canvas
-#dbut tab
+#debut tab
+<div>
 <ul class="bottom" data-role="tabs">
     <li><a href="#">Home</a></li>
     <li><a href="#">Profile</a></li>
     <li><a href="#">Links</a></li>
 </ul>
+ </div>
 #fin tab
