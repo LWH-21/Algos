@@ -11,8 +11,6 @@ custom_css:
 custom_js:
   - http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js
   - https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js
-  - sort/sort_algo.js
-  - sort/sort_demo.js
 ---
 Le principe du tri à bulles (bubble sort ou sinking sort) est de comparer deux à deux les éléments e1 et e2 consécutifs d'un tableau et d'effecteur une permutation si e1 > e2. On continue de trier jusqu'à ce qu'il n'y ait plus de permutation.
 
