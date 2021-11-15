@@ -7,7 +7,7 @@ category:
 lang : fr
 ref : bubblesort
 custom_css:
-  - "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css
+  - http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css
 custom_js:
   - http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js
   - sort/sort_algo.js
