@@ -3,21 +3,19 @@
   {%- include head.html -%}
   <style>@import url(/assets/css/syntax/{{ site.highlighter-theme }}.css);</style>
   <title>{{ site.title[page.lang] }}</title>
-  
-  <link rel="stylesheet" href={{"/assets/css/bootstrap.min.css" | relative_url}} /> 
-  <link rel="stylesheet" href={{"/assets/css/style.css" | relative_url}} /> 
 	
   {% if page.custom_css %}
     {% for stylesheet in page.custom_css %}
     <link rel="stylesheet" href="{{ stylesheet }}">
     {% endfor %}
-  {% endif %}
-	
-  {% if page.custom_js %}
-    {% for js_file in page.custom_js %}
-    <script type="text/javascript" src="{{ js_file }}"></script>
-    {% endfor %}
   {% endif %}	
+  
+  <link rel="stylesheet" href={{"/assets/css/bootstrap.min.css" | relative_url}} /> 
+  <link rel="stylesheet" href={{"/assets/css/style.css" | relative_url}} /> 
+	
+
+	
+
   
   <body>
   	<div class="container"> 
@@ -29,5 +27,11 @@
 		</div>
 	</div>
   </body>	
+	
+  {% if page.custom_js %}
+    {% for js_file in page.custom_js %}
+    <script type="text/javascript" src="{{ js_file }}"></script>
+    {% endfor %}
+  {% endif %}		
 	
 </html>
