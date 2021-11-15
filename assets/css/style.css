@@ -99,7 +99,7 @@ code {
 	flex: 0 0 220px;
 	padding: 15px;
 	z-index: 1;
-	background-color: #222;
+	background-color: #2b5797;
 	color: #fff;
 }
 
@@ -113,13 +113,13 @@ code {
 }
 
 .sidebar-brand > a {
-	font-size: 250%;
+	font-size: 200%;
 	font-family: 'Helvetica';
 	color: #fff;
 }
 
 .lead {
-	font-size: 90%;
+	font-size: 80%;
 	color: #aaa;
 }
 
