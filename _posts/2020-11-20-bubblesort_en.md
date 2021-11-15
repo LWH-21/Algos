@@ -6,8 +6,10 @@ category:
  - sort algorithms 
 lang : en
 ref : bubblesort
+customcss:
+ - https://cdn.metroui.org.ua/v4/css/metro-all.min.css
 customjs:
-- http://code.jquery.com/jquery-1.4.2.min.js
+- https://cdn.metroui.org.ua/v4/js/metro.min.js
 ---
 # post-sample
 > >Tri bulle
@@ -31,3 +33,10 @@ ctx.stroke();
 </script> 
 
 #fin canvas
+#dbut tab
+<ul class="bottom" data-role="tabs">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Profile</a></li>
+    <li><a href="#">Links</a></li>
+</ul>
+#fin tab
