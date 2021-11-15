@@ -3,8 +3,8 @@
   {%- include head.html -%}
   <style>@import url(/assets/css/syntax/{{ site.highlighter-theme }}.css);</style>
   <title>{{ site.title[page.lang] }}</title>
-  <!-- <link href="/public/css/bootstrap.min.css" rel="stylesheet"> -->
-
+  
+  <link rel="stylesheet" href={{"/assets/css/bootstrap.min.css" | relative_url}} /> 
   <link rel="stylesheet" href={{"/assets/css/style.css" | relative_url}} /> 
   
   <body>
