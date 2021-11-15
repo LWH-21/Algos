@@ -6,9 +6,9 @@ category:
  - sort algorithms 
 lang : en
 ref : bubblesort
-customcss:
+custom_css:
  - https://cdn.metroui.org.ua/v4/css/metro-all.min.css
-customjs:
+custom_js:
 - https://cdn.metroui.org.ua/v4/js/metro.min.js
 ---
 # post-sample
