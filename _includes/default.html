@@ -2,21 +2,6 @@
 <html lang="{{ page.lang | default: site.lang | default: "fr" }}">
   {%- include head.html -%}
  
-  <title>{{ site.title[page.lang] }}</title>
-	
-  {% if page.custom_css %}
-    {% for stylesheet in page.custom_css %}
-    <link rel="stylesheet" href="{{ stylesheet }}">
-    {% endfor %}
-  {% endif %}	
-  
-  <link rel="stylesheet" href={{"/assets/css/bootstrap.min.css" | relative_url}} /> 
-  <link rel="stylesheet" href={{"/assets/css/style.css" | relative_url}} /> 
-	
-
-	
-
-  
   <body>
   	<div class="container"> 
 		<div class="sidebar">
