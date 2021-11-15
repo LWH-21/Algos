@@ -33,7 +33,7 @@ svg:
   optimize: true
 # Build settings
 # theme: minima
-highlighter-theme: monokai
+highlighter-theme: borland
 date_format:
     fr: "%D-%M-%Y"
     en: "%Y-%M-%D"
