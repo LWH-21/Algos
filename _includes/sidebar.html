@@ -22,7 +22,7 @@
 	    {% if node.title != null %}
 	      {% if node.layout == "page" %}
 	        <li>
-	        	<a class="nav-item" href="{{ node.url }}">
+	        	<a class="nav-item" href="{{ node.url | relative_url  }}">
 	            	{{ node.title }}
 	            </a>
 	        </li>
