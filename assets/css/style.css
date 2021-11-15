@@ -233,7 +233,7 @@ article h3,
 article h4,
 article h5,
 article h6 {
-	font-family: "Roboto", "Nanum Gothic";
+	font-family: "Verdana", "Nanum Gothic";
 	color: #333;
   	margin-bottom: 0;
 }
@@ -291,7 +291,7 @@ footer {
 	margin-top: 80px;
 	font-size: 0.75em;
 	font-weight: lighter;
-	font-family: "Roboto";
+	font-family: "Verdana";
 	line-height: 1.5;
 }
 
