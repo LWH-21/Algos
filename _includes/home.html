@@ -3,15 +3,9 @@
   {%- include head.html -%}  
 
 <body>
-  	<div class="container"> 
-		<div class="sidebar">
-			{% include sidebar.html %}
-		</div>
-		<div class="content">
+  
 			{{ content }}
-		</div>
-	</div>
-  </body>	
+</body>	
 	
   {% if page.custom_js %}
     {% for js_file in page.custom_js %}
