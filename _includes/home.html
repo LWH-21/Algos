@@ -1,28 +1,28 @@
-<article class="post">
-  <header class="post-header home">
-    <div class="post-title">Articles</div>
-  </header>
+  <body>
+  	<div class="container"> 
+		<div class="sidebar">
+			{% include sidebar.html %}
+		</div>
+		<div class="content">
+			{{ content }}
+		</div>
+	</div>
+  </body>	
+	
+  {% if page.custom_js %}
+    {% for js_file in page.custom_js %}
+    <script type="text/javascript" src="{{ js_file }}"></script>
+    {% endfor %}
+  {% endif %}	
 
-  <div class="post-content">
-      {%- if site.posts.size > 0 -%}
-    <ul class="post-list">
-      {% assign posts=site.posts | where:"lang", page.lang %}  
-      {%- for post in posts -%}
-      <li class="post-list-item">
-        <!-- {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%} -->
-        {%- assign date_format = "%Y/%m/%d" -%}
-        <span class="post-date">{{ post.date | date: date_format }}</span>
-      	<a class="post-link" href="{{ post.url | relative_url }}">
-    	    {{ post.title | escape }}
-		</a>
-        {%- if site.show_excerpts -%}{{ post.excerpt }}{%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-  {%- endif -%}
-  </div>
-</article>
-
-
-
-</div>
+	{%- if jekyll.environment == 'production' and site.google_analytics -%}
+		{%- include google-analytics.html -%}
+	{%- endif -%}
+	
+    {% if page.custom_js %}
+        {% for js_file in page.custom_js %}
+            <script type="text/javascript" src="{{ js_file }}"></script>
+        {% endfor %}
+    {% endif %}		
+	
+</html>
