@@ -9,12 +9,20 @@ title:
 description:
     fr: "Anti-manuel d'algorithmique"
     en: "Illustrations of algorithms"
-    es: "Ilustraciones de algoritmos"
-    
+    es: "Ilustraciones de algoritmos"    
 tagline:
     fr: "Algorithmes"
     en: "Algorithms"
     es: "Algoritmos"
+cat:
+    fr: 
+        - Algorithmes de Tris
+        - Compression
+        - Cryptographie
+    en: 
+        - Sort algorithms
+    es: 
+        - Ordonacion
 
 email: lwh@free.fr
 
@@ -33,7 +41,7 @@ highlighter: rouge
 svg:
   optimize: true
 # Build settings
-# theme: minima
+
 highlighter-theme: borland
 date_format:
     fr: "%d-%m-%Y"
