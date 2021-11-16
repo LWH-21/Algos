@@ -1,4 +1,8 @@
-  <body>
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "fr" }}">
+  {%- include head.html -%}  
+
+<body>
   	<div class="container"> 
 		<div class="sidebar">
 			{% include sidebar.html %}
