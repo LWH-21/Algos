@@ -3,6 +3,7 @@ layout: home
 lang : fr
 ref : home
 custom_css: https://cdn.metroui.org.ua/v4/css/metro-all.min.css
+custom_js: https://cdn.metroui.org.ua/v4/js/metro.min.js
 ---
 
 <!-- Navbar (sit on top) -->
