@@ -1,6 +1,6 @@
 ---
 layout: home
-lang : fr
+lang : es
 ref : home
 title: Inicio
 date: 2021-11-20
