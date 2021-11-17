@@ -1,11 +1,27 @@
 <header>
   
 <div class="w3-sidebar w3-bar-block w3-border-right w3-metro-darken" style="display:none" id="lwSidebar">
-    <p>tset</p>
+    <p>{{ site.title[page.lang] }}</p>
   <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
-  <a href="#" class="w3-bar-item w3-button">Link 1</a>
-  <a href="#" class="w3-bar-item w3-button">Link 2</a>
-  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+  
+ {% assign pages=site.pages | where:"ref", "home" | sort: 'lang' %}
+{% for p in pages limit:1 %}         
+      {% if p.lang == page.lang %}
+      <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button">{{ p.title }}</a> 
+     {% endif %}
+{% endfor %}  
+    
+{% assign pages=site.pages | where:"ref", "about" | sort: 'lang' %}
+{% for p in pages limit:1 %}         
+      {% if p.lang == page.lang %}
+       <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button">{{ p.title }}</a>
+     {% endif %}
+{% endfor %} 
+     
+{% for c in site.cat[page.lang] %}
+  <a href="#" class="w3-bar-item w3-button">{{ c }}</a>
+{% endfor %}
+  
 </div>
 <div class="w3-metro-darken">
    <div class="w3-bar">
@@ -42,14 +58,14 @@
 {% endfor %} 
      
 {% assign pages=site.pages | where:"ref", "about" | sort: 'lang' %}
-{% for p in pages %}         
+{% for p in pages limit:1 %}         
       {% if p.lang == page.lang %}
       <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">{{ p.title }}</a> 
      {% endif %}
 {% endfor %} 
      
 {% assign pages=site.pages | where:"ref", "home" | sort: 'lang' %}
-{% for p in pages %}         
+{% for p in pages limit:1 %}         
       {% if p.lang == page.lang %}
       <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">{{ p.title }}</a> 
      {% endif %}
