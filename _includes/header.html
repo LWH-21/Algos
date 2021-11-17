@@ -27,7 +27,7 @@
 
 {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
 {% for p in pages %}
-     <P>PAGE {{ p.lang }} </p>
+     <P>PAGE {{ p.lang }} vs {{ page.lang }} </p>
      {% if p.lang != page.lang %}
      <P>ok {{ p.lang }} != {{ page.lang }} </p>
        {% if p.lang=="en" }
