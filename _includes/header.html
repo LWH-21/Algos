@@ -15,9 +15,9 @@
    {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
     {% for p in posts %}
      {% if p.lang != page.lang %}
-       {% if p.lang=="en" }
+       {% if p.lang == "en" }
          <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">English version</a>  
-       {% elsif p.lang=="es" %}
+       {% elsif p.lang == "es" %}
          <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en español</a> 
        {% elsif p.lang == "fr" %}
          <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en français</a>   
@@ -30,10 +30,10 @@
      
      {% if p.lang != page.lang %}
      
-       {% if p.lang=="en" }
+       {% if p.lang == "en" }
      <p>anglais</p>
          <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">English version</a>  
-       {% elsif p.lang=="es" %}
+       {% elsif p.lang == "es" %}
      <p>espagnol</p>
          <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en español</a> 
        {% elsif p.lang == "fr" %}
