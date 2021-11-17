@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "fr" }}">
-  {%- render head.html -%}  
-  {%- render header.html -%}  
+  {%- include head.html -%}  
+  {%- include header.html -%}  
 
 <body class="w3-metro-light-blue">
     {{ content }}
 </body>	
 	
-{%- render footer.html -%}  	
+{%- include footer.html -%}  	
 	
 {% if page.custom_js %}
 	{% for js_file in page.custom_js %}
