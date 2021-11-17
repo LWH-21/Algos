@@ -6,19 +6,6 @@ custom_css: https://cdn.metroui.org.ua/v4/css/metro-all.min.css
 custom_js: https://cdn.metroui.org.ua/v4/js/metro.min.js
 ---
 
-<!-- Navbar (sit on top) -->
-<div class="w3-metro-darken">
-  <div class="w3-bar w3-padding w3-card w3-round-large">
-    <a href="#home" class="w3-bar-item w3-button">Algos</a>
-    <!-- Right-sided navbar links. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button">Accueil</a>
-      <a href="#menu" class="w3-bar-item w3-button">A propos</a>
-      <a href="#contact" class="w3-bar-item w3-button">Catégories</a>
-    </div>
-  </div>
-</div>
-
 <!-- Page content -->
 <div class="w3-content w3-metro-light-blue w3-margin-bottom w3-margin-top" style="max-width:1100px">
 <div class="w3-third">
