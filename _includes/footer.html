@@ -1,9 +1,38 @@
 <footer>
   
- <div class="w3-bar w3-metro-darken w3-margin-top">
+ <div class="w3-bar w3-metro-darken w3-margin-top w3-hide-small">
   <div class="w3-bar-item">Accueil</div>
-  <div class="w3-bar-item">en</div>
-  <div class="w3-bar-item">es</div>
+ 
+   {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
+    {% for p in posts %}
+     {% if p.lang != page.lang %}
+       {% if p.lang == "en" %}
+         <a href="{{ p.url }}" class="w3-bar-item w3-button w3-right">English version</a>  
+       {% elsif p.lang == "es" %}
+         <a href="{{ p.url }}" class="w3-bar-item w3-button w3-right">Versión en español</a> 
+       {% elsif p.lang == "fr" %}
+         <a href="{{ p.url }}" class="w3-bar-item w3-button w3-right">Version en français</a>   
+       {% endif %}
+     {% endif %}
+    {% endfor %}
+
+{% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
+{% for p in pages %}
+     
+    
+      {% if p.lang != page.lang %}
+       {% if p.lang == "en" %}
+         <a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button  w3-right">English version</a>  
+       {% elsif p.lang == "es" %}
+         <a href="{{ p.url | relative_url}}" class="w3-bar-item w3-button  w3-right">Versión en español</a> 
+       {% elsif p.lang == "fr" %}
+         <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button  w3-right">Version en français</a>   
+       {% endif %}
+     {% endif %}
+     
+{% endfor %}   
+   
+   
 </div> 
   
 </footer>
