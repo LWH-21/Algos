@@ -29,7 +29,7 @@
 {% for p in pages %}
      
      {% if p.lang != page.lang %}
-     <p>{{ p.lang }} </p>
+     
        {% if p.lang == "en" }
          <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">English version</a> 
        {% endif %}
