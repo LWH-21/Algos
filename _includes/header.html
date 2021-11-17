@@ -15,7 +15,7 @@
    {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
     {% for p in posts %}
      {% if p.lang != page.lang %}
-       {% if p.lang == "en" }
+       {% if p.lang == "en" %}
          <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">English version</a>  
        {% elsif p.lang == "es" %}
          <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en español</a> 
@@ -28,18 +28,17 @@
 {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
 {% for p in pages %}
      
-     {% if p.lang != page.lang %}
-     
-       {% if p.lang == "en" }
-         <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">English version</a> 
-       {% endif %}
-       {% if p.lang == "es" %}
+    
+      {% if p.lang != page.lang %}
+       {% if p.lang == "en" %}
+         <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">English version</a>  
+       {% elsif p.lang == "es" %}
          <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en español</a> 
-       {% endif %}
-       {% if p.lang == "fr" %}
+       {% elsif p.lang == "fr" %}
          <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en français</a>   
        {% endif %}
      {% endif %}
+     
 {% endfor %} 
      
     
