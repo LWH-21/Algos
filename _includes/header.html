@@ -8,12 +8,40 @@
   <a href="#" class="w3-bar-item w3-button">Link 3</a>
 </div>
 <div class="w3-metro-darken">
-   <div class="w3-bar"> 
-    <button class="w3-button  w3-xlarge w3-bar-item w3-hover-red" onclick="w3_open()">☰</button>
+   <div class="w3-bar">
+     
+     <button class="w3-button  w3-xlarge w3-bar-item w3-hover-red" onclick="w3_open()">☰</button>
+     
+   {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
+    {% for p in posts %}
+     {% if p.lang != page.lang %}
+       {% if p.lang=="en" }
+         <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">English version</a>  
+       {% elsif p.lang=="es" %}
+         <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en español</a> 
+       {% elsif p.lang == "fr" %}
+         <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en français</a>   
+       {% endif %}
+     {% endif %}
+    {% endfor %}
+
+{% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
+{% for p in pages %}
+     {% if p.lang != page.lang %}
+       {% if p.lang=="en" }
+         <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">English version</a>  
+       {% elsif p.lang=="es" %}
+         <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en español</a> 
+       {% elsif p.lang == "fr" %}
+         <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en français</a>   
+       {% endif %}
+     {% endif %}
+{% endfor %} 
+     
+    
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right">Accueil</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right">A propos</a>  
-     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right">English version</a>  
-     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right">Version espanol</a>  
+
    </div>
    <div class="w3-container w3-metro-darken">
         <h1>{{ page.title }}</h1>
