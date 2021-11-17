@@ -20,7 +20,7 @@
        {% elsif p.lang == "es" %}
          <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en español</a> 
        {% elsif p.lang == "fr" %}
-         <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en français</a>   
+         <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Version en français</a>   
        {% endif %}
      {% endif %}
     {% endfor %}
@@ -35,10 +35,17 @@
        {% elsif p.lang == "es" %}
          <a href="{{ p.url | relative_url}}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en español</a> 
        {% elsif p.lang == "fr" %}
-         <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en français</a>   
+         <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Version en français</a>   
        {% endif %}
      {% endif %}
      
+{% endfor %} 
+     
+{% assign pages=site.pages | where:"ref", "about" | sort: 'lang' %}
+{% for p in pages %}         
+      {% if p.lang == page.lang %}
+      <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">{{ p.title }}</a> 
+     {% endif %}
 {% endfor %} 
      
 {% assign pages=site.pages | where:"ref", "home" | sort: 'lang' %}
@@ -47,12 +54,7 @@
       <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">{{ p.title }}</a> 
      {% endif %}
 {% endfor %}   
-{% assign pages=site.pages | where:"ref", "about" | sort: 'lang' %}
-{% for p in pages %}         
-      {% if p.lang == page.lang %}
-      <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">{{ p.title }}</a> 
-     {% endif %}
-{% endfor %} 
+
     
 
    </div>
