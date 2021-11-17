@@ -27,14 +27,17 @@
 
 {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
 {% for p in pages %}
-     <P>PAGE {{ p.lang }} vs {{ page.lang }} </p>
+     
      {% if p.lang != page.lang %}
-     <P>ok {{ p.lang }} != {{ page.lang }} </p>
+     
        {% if p.lang=="en" }
+     <p>anglais</p>
          <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">English version</a>  
        {% elsif p.lang=="es" %}
+     <p>espagnol</p>
          <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en español</a> 
        {% elsif p.lang == "fr" %}
+     <p>francias</p>
          <a href="{{ p.url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en français</a>   
        {% endif %}
      {% endif %}
