@@ -5,15 +5,18 @@
  
    {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
     {% for p in posts %}
-     {% if p.lang != page.lang %}
+
+         {% if p.lang != page.lang %}
        {% if p.lang == "en" %}
-         <a href="{{ p.url }}" class="w3-bar-item w3-button w3-right">English version</a>  
+         <a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button  w3-right"> <img src="{{ '/assets/img/english.png' | relative_url }}" alt="English version" width="20" height="20"> </a>  
        {% elsif p.lang == "es" %}
-         <a href="{{ p.url }}" class="w3-bar-item w3-button w3-right">Versión en español</a> 
+         <a href="{{ p.url | relative_url}}" class="w3-bar-item w3-button  w3-right">  <img src="{{ '/assets/img/espanol.png' | relative_url }}" alt="Versión en español" width="20" height="20"> </a> 
        {% elsif p.lang == "fr" %}
-         <a href="{{ p.url }}" class="w3-bar-item w3-button w3-right">Version en français</a>   
+         <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button  w3-right">  <img src="{{ '/assets/img/francais.png' | relative_url }}" alt="Version en français" width="20" height="20"> </a>   
        {% endif %}
      {% endif %}
+     
+   
     {% endfor %}
 
 {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
@@ -24,9 +27,9 @@
        {% if p.lang == "en" %}
          <a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button  w3-right"> <img src="{{ '/assets/img/english.png' | relative_url }}" alt="English version" width="20" height="20"> </a>  
        {% elsif p.lang == "es" %}
-         <a href="{{ p.url | relative_url}}" class="w3-bar-item w3-button  w3-right">Versión en español</a> 
+         <a href="{{ p.url | relative_url}}" class="w3-bar-item w3-button  w3-right">  <img src="{{ '/assets/img/espanol.png' | relative_url }}" alt="Versión en español" width="20" height="20"> </a> 
        {% elsif p.lang == "fr" %}
-         <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button  w3-right">Version en français</a>   
+         <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button  w3-right">  <img src="{{ '/assets/img/francais.png' | relative_url }}" alt="Version en français" width="20" height="20"> </a>   
        {% endif %}
      {% endif %}
      
