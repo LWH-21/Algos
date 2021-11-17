@@ -4,9 +4,10 @@
   {%- include header.html -%}  
 
 <body class="w3-metro-light-blue">
-  
-			{{ content }}
+    {{ content }}
 </body>	
+	
+{%- include footer.html -%}  	
 	
 {% if page.custom_js %}
 	{% for js_file in page.custom_js %}
