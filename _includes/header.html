@@ -2,7 +2,7 @@
   
 <div class="w3-sidebar w3-bar-block w3-border-right w3-metro-darken" style="display:none" id="lwSidebar">
     <p>{{ site.title[page.lang] }}</p>
-  <button onclick="w3_close()" class="w3-bar-item w3-large"><i class="fa fa-times-rectangle-o fa-3x"></i></button>
+  <button onclick="w3_close()" class="w3-bar-item w3-large w3-right-align"><i class="fa fa-times-rectangle-o fa-2x"></i></button>
   
  {% assign pages=site.pages | where:"ref", "home" | sort: 'lang' %}
 {% for p in pages %}         
