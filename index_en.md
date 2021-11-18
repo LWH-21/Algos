@@ -73,7 +73,7 @@ custom_js: https://cdn.metroui.org.ua/v4/js/metro.min.js
 	<a href="https://github.com/LWH-21/"><i class="fa fa-github-alt fa-3x"></i></a> 
 </div>
 <div data-role="tile" data-size="small" class="bg-blue">
-	<a href="https://www.facebook.com/"><i class="fa fa-facebook-official fa-3x"></i></a> 
+	<a href="https://www.facebook.com/profile.php?id=100009215959255"><i class="fa fa-facebook-official fa-3x"></i></a> 
 </div>
 	
     <div data-role="tile" data-size="medium">A propos</div>
