@@ -81,7 +81,7 @@ custom_js: https://cdn.metroui.org.ua/v4/js/metro.min.js
 			{% endif %}
 		{% endfor %}
 
-		<div data-role="tile" data-size="medium">A propos</div>
+		
 		<div data-role="tile" data-size="wide">Catégories tri</div>
 
 		<div data-role="tile" data-size="large">Dernier article</div>
