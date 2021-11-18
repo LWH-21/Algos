@@ -1,7 +1,23 @@
 <footer>
   
  <div class="w3-bar w3-metro-darken w3-margin-top w3-hide-small">
-  <div class="w3-bar-item">Accueil</div>
+   
+    {% assign pages=site.pages | where:"ref", "home" | sort: 'lang' %}
+    {% for p in pages %}         
+     {% if p.lang == page.lang %}
+      <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button"><i class="fa fa-home fa-2x"></i></a> 
+      {% break %}
+     {% endif %}
+{% endfor %}  
+    
+{% assign pages=site.pages | where:"ref", "about" | sort: 'lang' %}
+{% for p in pages  %}         
+      {% if p.lang == page.lang %}
+       <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button"><i class="fa fa-id-card fa-lg"></i></a>
+       {% break %}
+     {% endif %}
+{% endfor %} 
+   
  
    {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
     {% for p in posts %}
