@@ -23,10 +23,56 @@ custom_js: https://cdn.metroui.org.ua/v4/js/metro.min.js
       {% break %}
      {% endif %}
     {% endfor %}   
+	
+   {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
+    {% for p in posts %}
+
+      {% if p.lang != page.lang %}
+       {% if p.lang == "en" %}
+	<div data-role="tile" data-size="small" class="bg-red">
+         <a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button  w3-right"> <img src="{{ '/assets/img/english.png' | relative_url }}" alt="English version" width="20" height="20"> </a> 
+	</div>
+       {% elsif p.lang == "es" %}
+	<div data-role="tile" data-size="small" class="bg-yellow">
+         <a href="{{ p.url | relative_url}}" class="w3-bar-item w3-button  w3-right">  <img src="{{ '/assets/img/espanol.png' | relative_url }}" alt="Versión en español" width="20" height="20"> </a> 
+	</div>
+       {% elsif p.lang == "fr" %}
+	<div data-role="tile" data-size="small" class="bg-blue">
+         <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button  w3-right">  <img src="{{ '/assets/img/francais.png' | relative_url }}" alt="Version en français" width="20" height="20"> </a>   
+	</div>
+       {% endif %}
+     {% endif %}
+     
+   
+    {% endfor %}
+
+{% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
+{% for p in pages %}
+     
     
-    <div data-role="tile" data-size="small" class="col-2 row-1 bg-red">Home</div>
-    <div data-role="tile" data-size="small" class="col-1 row-2">Inicio</div>
-    <div data-role="tile" data-size="small" class="col-2 row-2">FR</div>
+      {% if p.lang != page.lang %}
+       {% if p.lang == "en" %}
+	<div data-role="tile" data-size="small" class="bg-red">
+         <a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button  w3-right"> <img src="{{ '/assets/img/english.png' | relative_url }}" alt="English version" width="20" height="20"> </a> 
+	</div>
+       {% elsif p.lang == "es" %}
+	<div data-role="tile" data-size="small" class="bg-yellow">
+         <a href="{{ p.url | relative_url}}" class="w3-bar-item w3-button  w3-right">  <img src="{{ '/assets/img/espanol.png' | relative_url }}" alt="Versión en español" width="20" height="20"> </a> 
+	</div>
+       {% elsif p.lang == "fr" %}
+	<div data-role="tile" data-size="small" class="bg-blue">
+         <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button  w3-right">  <img src="{{ '/assets/img/francais.png' | relative_url }}" alt="Version en français" width="20" height="20"> </a>   
+	</div>
+       {% endif %}
+     {% endif %}
+     
+{% endfor %}   
+    
+	
+<div data-role="tile" data-size="small" class="bg-white">
+	<a href="https://github.com/LWH-21/" class="w3-bar-item w3-button"><i class="fa fa-github-alt fa-2x"></i></a> 
+</div>
+	
     <div data-role="tile" data-size="medium">A propos</div>
     <div data-role="tile" data-size="wide">Catégories tri</div>
 	
