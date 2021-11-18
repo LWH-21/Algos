@@ -57,11 +57,11 @@ custom_js: https://cdn.metroui.org.ua/v4/js/metro.min.js
 	</div>
        {% elsif p.lang == "es" %}
 	<div data-role="tile" data-size="small" class="bg-yellow">
-         <a href="{{ p.url | relative_url}}" >  <img src="{{ '/assets/img/espanol.png' | relative_url }}" alt="Versión en español" width="40" height="40"> </a> 
+         <a href="{{ p.url | relative_url}}" >  <img src="{{ '/assets/img/espanol.png' | relative_url }}" alt="Versión en español" class="icon"> </a> 
 	</div>
        {% elsif p.lang == "fr" %}
 	<div data-role="tile" data-size="small" class="bg-blue">
-         <a href="{{ p.url| relative_url }}" >  <img src="{{ '/assets/img/francais.png' | relative_url }}" alt="Version en français" width="40" height="40"> </a>   
+         <a href="{{ p.url| relative_url }}" >  <img src="{{ '/assets/img/francais.png' | relative_url }}" alt="Version en français" class="icon"> </a>   
 	</div>
        {% endif %}
      {% endif %}
