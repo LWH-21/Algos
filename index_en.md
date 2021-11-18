@@ -30,15 +30,15 @@ custom_js: https://cdn.metroui.org.ua/v4/js/metro.min.js
       {% if p.lang != page.lang %}
        {% if p.lang == "en" %}
 	<div data-role="tile" data-size="small" class="bg-red">
-         <a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button  w3-right"> <img src="{{ '/assets/img/english.png' | relative_url }}" alt="English version" width="20" height="20"> </a> 
+         <a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button  w3-right"> <img src="{{ '/assets/img/english.png' | relative_url }}" alt="English version" width="40" height="40"> </a> 
 	</div>
        {% elsif p.lang == "es" %}
 	<div data-role="tile" data-size="small" class="bg-yellow">
-         <a href="{{ p.url | relative_url}}" class="w3-bar-item w3-button  w3-right">  <img src="{{ '/assets/img/espanol.png' | relative_url }}" alt="Versión en español" width="20" height="20"> </a> 
+         <a href="{{ p.url | relative_url}}" class="w3-bar-item w3-button  w3-right">  <img src="{{ '/assets/img/espanol.png' | relative_url }}" alt="Versión en español" width="20" height="40"> </a> 
 	</div>
        {% elsif p.lang == "fr" %}
 	<div data-role="tile" data-size="small" class="bg-blue">
-         <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button  w3-right">  <img src="{{ '/assets/img/francais.png' | relative_url }}" alt="Version en français" width="20" height="20"> </a>   
+         <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button  w3-right">  <img src="{{ '/assets/img/francais.png' | relative_url }}" alt="Version en français" width="40" height="40"> </a>   
 	</div>
        {% endif %}
      {% endif %}
@@ -53,15 +53,15 @@ custom_js: https://cdn.metroui.org.ua/v4/js/metro.min.js
       {% if p.lang != page.lang %}
        {% if p.lang == "en" %}
 	<div data-role="tile" data-size="small" class="bg-red">
-         <a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button  w3-right"> <img src="{{ '/assets/img/english.png' | relative_url }}" alt="English version" width="20" height="20"> </a> 
+         <a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button  w3-right"> <img src="{{ '/assets/img/english.png' | relative_url }}" alt="English version" width="40" height="40"> </a> 
 	</div>
        {% elsif p.lang == "es" %}
 	<div data-role="tile" data-size="small" class="bg-yellow">
-         <a href="{{ p.url | relative_url}}" class="w3-bar-item w3-button  w3-right">  <img src="{{ '/assets/img/espanol.png' | relative_url }}" alt="Versión en español" width="20" height="20"> </a> 
+         <a href="{{ p.url | relative_url}}" class="w3-bar-item w3-button  w3-right">  <img src="{{ '/assets/img/espanol.png' | relative_url }}" alt="Versión en español" width="40" height="40"> </a> 
 	</div>
        {% elsif p.lang == "fr" %}
 	<div data-role="tile" data-size="small" class="bg-blue">
-         <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button  w3-right">  <img src="{{ '/assets/img/francais.png' | relative_url }}" alt="Version en français" width="20" height="20"> </a>   
+         <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button  w3-right">  <img src="{{ '/assets/img/francais.png' | relative_url }}" alt="Version en français" width="40" height="40"> </a>   
 	</div>
        {% endif %}
      {% endif %}
@@ -69,7 +69,7 @@ custom_js: https://cdn.metroui.org.ua/v4/js/metro.min.js
 {% endfor %}   
     
 	
-<div data-role="tile" data-size="small" class="bg-white">
+<div data-role="tile" data-size="small" class="bg-grey">
 	<a href="https://github.com/LWH-21/" class="w3-bar-item w3-button"><i class="fa fa-github-alt fa-2x"></i></a> 
 </div>
 	
