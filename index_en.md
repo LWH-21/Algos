@@ -20,8 +20,12 @@ custom_js: https://cdn.metroui.org.ua/v4/js/metro.min.js
 			{% assign pages=site.pages | where:"ref", "home" | sort: 'lang' %}
 			{% for p in pages %}         
 				{% if p.lang == page.lang %}
-					<div data-role="tile" data-size="small" class="col-1 row-1" style="background-color: #4a00b3"><a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button"><i class="fa fa-home fa-2x"></i></a> </div>
-			{		% break %}
+					<a href="{{ p.url| relative_url }}">
+					<div data-role="tile" data-size="small" class="col-1 row-1" style="background-color: #4a00b3">
+						<i class="fa fa-home fa-2x"></i>
+					</div>
+					</a>
+					{% break %}
 				{% endif %}
 			{% endfor %}   
 
@@ -30,17 +34,23 @@ custom_js: https://cdn.metroui.org.ua/v4/js/metro.min.js
 			{% for p in pages %} 
 				{% if p.lang != page.lang %}
 					{% if p.lang == "en" %}
+						<a href="{{ p.url | relative_url }}" > 
 						<div data-role="tile" data-size="small" style="background-color: #A4C400; padding: 9px;">
-							<a href="{{ p.url | relative_url }}" > <img src="{{ '/assets/img/english.png' | relative_url }}" alt="English version" width="50" height="50" class="w3-bar-item"> </a> 
+							<img src="{{ '/assets/img/english.png' | relative_url }}" alt="English version" width="50" height="50" class="w3-bar-item">
 						</div>
+						</a> 
 					{% elsif p.lang == "es" %}
+						<a href="{{ p.url | relative_url}}" >
 						<div data-role="tile" data-size="small" style="background-color: #F0A30A; padding: 9px;">
-							<a href="{{ p.url | relative_url}}" >  <img src="{{ '/assets/img/espanol.png' | relative_url }}" alt="Versión en español" width="50" height="50" class="w3-bar-item "></a> 
+							<img src="{{ '/assets/img/espanol.png' | relative_url }}" alt="Versión en español" width="50" height="50" class="w3-bar-item ">
 						</div>
+						</a> 
 					{% elsif p.lang == "fr" %}
+						<a href="{{ p.url| relative_url }}" >
 						<div data-role="tile" data-size="small" style="background-color: ##DC4FAD; padding: 9px;">
-							<a href="{{ p.url| relative_url }}" >  <img src="{{ '/assets/img/francais.png' | relative_url }}" alt="Version en français" width="50" height="50" class="w3-bar-item "> </a>   
+							<img src="{{ '/assets/img/francais.png' | relative_url }}" alt="Version en français" width="50" height="50" class="w3-bar-item ">
 						</div>
+						</a>
 			   {% endif %}
 			 {% endif %}
 		{% endfor %}   
@@ -52,9 +62,11 @@ custom_js: https://cdn.metroui.org.ua/v4/js/metro.min.js
 		</div>
 		</a>
 		<!-- Facebook tile -->
+		<a href="https://www.facebook.com/profile.php?id=100009215959255">
 		<div data-role="tile" data-size="small" style="background-color: #008A00; text-align: center;">
-			<a href="https://www.facebook.com/profile.php?id=100009215959255"><i class="fa fa-facebook-official fa-3x"></i></a> 
+			<i class="fa fa-facebook-official fa-3x"></i>
 		</div>
+		</a>
 		
 		<div data-role="tile" data-size="medium">A propos</div>
 		<div data-role="tile" data-size="wide">Catégories tri</div>
