@@ -1,33 +1,89 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "fr" }}">
-  {%- include head.html -%}  
-  {%- include header.html -%}  
-
-<body class="w3-metro-light-blue">
-    {{ content }}
-</body>	
+---
+layout: default
+---
+{{ content }}
 	
-{%- include footer.html -%}  	
-	
-{% if page.custom_js %}
-	{% for js_file in page.custom_js %}
-		<script type="text/javascript" src="{{ js_file }}"></script>
-	{% endfor %}
-{% endif %}	
+<div class="w3-content w3-metro-light-blue w3-margin-bottom w3-margin-top" style="max-width:1100px">
+	<div class="w3-third">
+	</div> <!-- w3-third -->
 
-{%- if jekyll.environment == 'production' and site.google_analytics -%}
-	{%- include google-analytics.html -%}
-{%- endif -%}
+	<div class="w3-rest">
 
-<script>
-function w3_open() {
-  document.getElementById("lwSidebar").style.display = "block";
-}
+		<div class="tiles-grid w3-margin-top w3-margin-bottom w3-margin-left">
 
-function w3_close() {
-  document.getElementById("lwSidebar").style.display = "none";
-}
-</script>
-     
-	
-</html>
+			<!-- Home Tile -->
+			{% assign pages=site.pages | where:"ref", "home" | sort: 'lang' %}
+			{% for p in pages %}
+				{% if p.lang == page.lang %}
+					<a href="{{ p.url| relative_url }}">
+					<div data-role="tile" data-size="small" class="col-1 row-1" style="background-color: #4a00b3">
+						<i class="fa fa-home fa-2x"></i>
+					</div>
+					</a>
+					{% break %}
+				{% endif %}
+			{% endfor %}
+
+			<!-- language tiles -->
+			{% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
+			{% for p in pages %}
+				{% if p.lang != page.lang %}
+					{% if p.lang == "en" %}
+						<a href="{{ p.url | relative_url }}" >
+						<div data-role="tile" data-size="small" style="background-color: #A4C400; padding: 9px;">
+							<img src="{{ '/assets/img/english.png' | relative_url }}" alt="English version" width="50" height="50" class="w3-bar-item">
+						</div>
+						</a>
+					{% elsif p.lang == "es" %}
+						<a href="{{ p.url | relative_url}}" >
+						<div data-role="tile" data-size="small" style="background-color: #F0A30A; padding: 9px;">
+							<img src="{{ '/assets/img/espanol.png' | relative_url }}" alt="Versión en español" width="50" height="50" class="w3-bar-item ">
+						</div>
+						</a>
+					{% elsif p.lang == "fr" %}
+						<a href="{{ p.url| relative_url }}" >
+						<div data-role="tile" data-size="small" style="background-color: ##DC4FAD; padding: 9px;">
+							<img src="{{ '/assets/img/francais.png' | relative_url }}" alt="Version en français" width="50" height="50" class="w3-bar-item ">
+						</div>
+						</a>
+			   {% endif %}
+			 {% endif %}
+		{% endfor %}
+
+		<!-- GitHub tile -->
+		<a href="https://github.com/LWH-21/">
+		<div data-role="tile" data-size="small" style="background-color: #6A00FF; text-align: center;">
+			<i class="fa fa-github-alt fa-3x"></i>
+		</div>
+		</a>
+		<!-- Facebook tile -->
+		<a href="https://www.facebook.com/profile.php?id=100009215959255">
+		<div data-role="tile" data-size="small" style="background-color: #008A00; text-align: center;">
+			<i class="fa fa-facebook-official fa-3x"></i>
+		</div>
+		</a>
+		<!-- About tile -->
+		{% assign pages=site.pages | where:"ref", "about" | sort: 'lang' %}
+		{% for p in pages  %}
+			{% if p.lang == page.lang %}
+				<a href="{{ p.url| relative_url }}">
+				<div data-role="tile" data-size="small" style="background-color: #FFC194;">
+					 <span class="branding-bar">{{ p.title }}</span>					
+				</div>
+				</a>
+				{% break %}
+			{% endif %}
+		{% endfor %}
+
+		
+		<div data-role="tile" data-size="wide">Catégories tri</div>
+
+		<div data-role="tile" data-size="large">Dernier article</div>
+		<div data-role="tile" data-size="large">article n° 2</div>
+		<div data-role="tile" data-size="large">article n° 3</div>
+		<div data-role="tile" data-size="medium">article n° 4</div>
+		<div data-role="tile" data-size="medium">article n° 5</div>
+
+		</div> <!-- tiles-grid -->
+	</div> <!-- w3-rest -->
+</div> <!-- w3-content -->
