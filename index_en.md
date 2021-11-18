@@ -53,15 +53,15 @@ custom_js: https://cdn.metroui.org.ua/v4/js/metro.min.js
       {% if p.lang != page.lang %}
        {% if p.lang == "en" %}
 	<div data-role="tile" data-size="small" class="bg-red">
-         <a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button  w3-right"> <img src="{{ '/assets/img/english.png' | relative_url }}" alt="English version" width="40" height="40"> </a> 
+         <a href="{{ p.url | relative_url }}" > <img src="{{ '/assets/img/english.png' | relative_url }}" alt="English version" width="40" height="40"> </a> 
 	</div>
        {% elsif p.lang == "es" %}
 	<div data-role="tile" data-size="small" class="bg-yellow">
-         <a href="{{ p.url | relative_url}}" class="w3-bar-item w3-button  w3-right">  <img src="{{ '/assets/img/espanol.png' | relative_url }}" alt="Versión en español" width="40" height="40"> </a> 
+         <a href="{{ p.url | relative_url}}" >  <img src="{{ '/assets/img/espanol.png' | relative_url }}" alt="Versión en español" width="40" height="40"> </a> 
 	</div>
        {% elsif p.lang == "fr" %}
 	<div data-role="tile" data-size="small" class="bg-blue">
-         <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button  w3-right">  <img src="{{ '/assets/img/francais.png' | relative_url }}" alt="Version en français" width="40" height="40"> </a>   
+         <a href="{{ p.url| relative_url }}" >  <img src="{{ '/assets/img/francais.png' | relative_url }}" alt="Version en français" width="40" height="40"> </a>   
 	</div>
        {% endif %}
      {% endif %}
@@ -70,10 +70,10 @@ custom_js: https://cdn.metroui.org.ua/v4/js/metro.min.js
     
 	
 <div data-role="tile" data-size="small" class="bg-grey">
-	<a href="https://github.com/LWH-21/" class="w3-bar-item w3-button"><i class="fa fa-github-alt fa-2x"></i></a> 
+	<a href="https://github.com/LWH-21/"><i class="fa fa-github-alt fa-3x"></i></a> 
 </div>
 <div data-role="tile" data-size="small" class="bg-blue">
-	<a href="https://www.facebook.com/" class="w3-bar-item w3-button"><i class="fa fa-facebook-official fa-2x"></i></a> 
+	<a href="https://www.facebook.com/"><i class="fa fa-facebook-official fa-3x"></i></a> 
 </div>
 	
     <div data-role="tile" data-size="medium">A propos</div>
