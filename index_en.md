@@ -72,6 +72,9 @@ custom_js: https://cdn.metroui.org.ua/v4/js/metro.min.js
 <div data-role="tile" data-size="small" class="bg-grey">
 	<a href="https://github.com/LWH-21/" class="w3-bar-item w3-button"><i class="fa fa-github-alt fa-2x"></i></a> 
 </div>
+<div data-role="tile" data-size="small" class="bg-blue">
+	<a href="https://www.facebook.com/" class="w3-bar-item w3-button"><i class="fa fa-facebook-official fa-2x"></i></a> 
+</div>
 	
     <div data-role="tile" data-size="medium">A propos</div>
     <div data-role="tile" data-size="wide">Catégories tri</div>
