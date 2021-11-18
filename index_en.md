@@ -19,7 +19,7 @@ custom_js: https://cdn.metroui.org.ua/v4/js/metro.min.js
     {% endfor %}  
   
   
-    <div data-role="tile" data-size="small" class="col-1 row-1" style="background-color: #4a00b3">Accueil</div>
+    
     <div data-role="tile" data-size="small" class="col-2 row-1 bg-red">Home</div>
     <div data-role="tile" data-size="small" class="col-1 row-2">Inicio</div>
     <div data-role="tile" data-size="small" class="col-2 row-2">FR</div>
