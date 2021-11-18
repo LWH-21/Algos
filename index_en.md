@@ -24,28 +24,6 @@ custom_js: https://cdn.metroui.org.ua/v4/js/metro.min.js
      {% endif %}
     {% endfor %}   
 	
-   {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
-    {% for p in posts %}
-
-      {% if p.lang != page.lang %}
-       {% if p.lang == "en" %}
-	<div data-role="tile" data-size="small" class="bg-red">
-         <a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button  w3-right"> <img src="{{ '/assets/img/english.png' | relative_url }}" alt="English version" width="40" height="40"> </a> 
-	</div>
-       {% elsif p.lang == "es" %}
-	<div data-role="tile" data-size="small" class="bg-yellow">
-         <a href="{{ p.url | relative_url}}" class="w3-bar-item w3-button  w3-right">  <img src="{{ '/assets/img/espanol.png' | relative_url }}" alt="Versión en español" width="20" height="40"> </a> 
-	</div>
-       {% elsif p.lang == "fr" %}
-	<div data-role="tile" data-size="small" class="bg-blue">
-         <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button  w3-right">  <img src="{{ '/assets/img/francais.png' | relative_url }}" alt="Version en français" width="40" height="40"> </a>   
-	</div>
-       {% endif %}
-     {% endif %}
-     
-   
-    {% endfor %}
-
 {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
 {% for p in pages %}
      
@@ -53,15 +31,15 @@ custom_js: https://cdn.metroui.org.ua/v4/js/metro.min.js
       {% if p.lang != page.lang %}
        {% if p.lang == "en" %}
 	<div data-role="tile" data-size="small" class="bg-red">
-         <a href="{{ p.url | relative_url }}" > <img src="{{ '/assets/img/english.png' | relative_url }}" alt="English version" width="40" height="40"> </a> 
+         <a href="{{ p.url | relative_url }}" > <img src="{{ '/assets/img/english.png' | relative_url }}" alt="English version" width="50" height="50" class="w3-bar-item"> </a> 
 	</div>
        {% elsif p.lang == "es" %}
 	<div data-role="tile" data-size="small" class="bg-yellow">
-         <a href="{{ p.url | relative_url}}" >  <img src="{{ '/assets/img/espanol.png' | relative_url }}" alt="Versión en español" class="icon"> </a> 
+         <a href="{{ p.url | relative_url}}" >  <img src="{{ '/assets/img/espanol.png' | relative_url }}" alt="Versión en español" width="50" height="50" class="w3-bar-item "></a> 
 	</div>
        {% elsif p.lang == "fr" %}
 	<div data-role="tile" data-size="small" class="bg-blue">
-         <a href="{{ p.url| relative_url }}" >  <img src="{{ '/assets/img/francais.png' | relative_url }}" alt="Version en français" class="icon"> </a>   
+         <a href="{{ p.url| relative_url }}" >  <img src="{{ '/assets/img/francais.png' | relative_url }}" alt="Version en français" width="50" height="50" class="w3-bar-item "> </a>   
 	</div>
        {% endif %}
      {% endif %}
