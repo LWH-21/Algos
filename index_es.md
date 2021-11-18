@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 lang : es
 ref : home
 title: Inicio
