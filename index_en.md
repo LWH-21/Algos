@@ -30,15 +30,15 @@ custom_js: https://cdn.metroui.org.ua/v4/js/metro.min.js
     
       {% if p.lang != page.lang %}
        {% if p.lang == "en" %}
-	<div data-role="tile" data-size="small" style="background-color: #4a00b3">
+	<div data-role="tile" data-size="small" style="background-color: #4a00b3; text-align: center; vertical-align: middle;">
          <a href="{{ p.url | relative_url }}" > <img src="{{ '/assets/img/english.png' | relative_url }}" alt="English version" width="50" height="50" class="w3-bar-item"> </a> 
 	</div>
        {% elsif p.lang == "es" %}
-	<div data-role="tile" data-size="small" style="background-color: #4a00b3">
+	<div data-role="tile" data-size="small" style="background-color: #4a00b3; text-align: center; vertical-align: middle;">
          <a href="{{ p.url | relative_url}}" >  <img src="{{ '/assets/img/espanol.png' | relative_url }}" alt="Versión en español" width="50" height="50" class="w3-bar-item "></a> 
 	</div>
        {% elsif p.lang == "fr" %}
-	<div data-role="tile" data-size="small" style="background-color: #4a00b3; text-align: center;">
+	<div data-role="tile" data-size="small" style="background-color: #4a00b3; text-align: center; vertical-align: middle;">
          <a href="{{ p.url| relative_url }}" >  <img src="{{ '/assets/img/francais.png' | relative_url }}" alt="Version en français" width="50" height="50" class="w3-bar-item "> </a>   
 	</div>
        {% endif %}
@@ -47,7 +47,7 @@ custom_js: https://cdn.metroui.org.ua/v4/js/metro.min.js
 {% endfor %}   
     
 	
-<div data-role="tile" data-size="small" class="bg-grey">
+<div data-role="tile" data-size="small" style="background-color: #4a00b3; text-align: center; vertical-align: middle;">
 	<a href="https://github.com/LWH-21/"><i class="fa fa-github-alt fa-3x"></i></a> 
 </div>
 <div data-role="tile" data-size="small" class="bg-blue">
