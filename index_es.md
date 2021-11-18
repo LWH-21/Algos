@@ -72,7 +72,7 @@ custom_js: https://cdn.metroui.org.ua/v4/js/metro.min.js
 		{% for p in pages  %}
 			{% if p.lang == page.lang %}
 				<a href="{{ p.url| relative_url }}">
-				<div data-role="tile" data-size="medium" style="background-color: #FFC194;">
+				<div data-role="tile" data-size="small" style="background-color: #FFC194;">
 					 <span class="branding-bar">{{ p.title }}</span>					
 				</div>
 				</a>
