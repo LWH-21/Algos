@@ -60,12 +60,16 @@
 			<i class="fa fa-facebook-official fa-3x"></i>
 		</div>
 		</a>
+			
+		<div data-role="tile" data-size="wide">Catégories tri</div>
+			
 		<!-- About tile -->
 		{% assign pages=site.pages | where:"ref", "about" | sort: 'lang' %}
 		{% for p in pages  %}
 			{% if p.lang == page.lang %}
 				<a href="{{ p.url| relative_url }}">
-				<div data-role="tile" data-size="small" style="background-color: #FFC194;">
+				<div data-role="tile" data-size="medium" style="background-color: #FFC194;">
+					<p>{{ p.excerpt }} </p>
 					 <span class="branding-bar">{{ p.title }}</span>					
 				</div>
 				</a>
@@ -74,7 +78,7 @@
 		{% endfor %}
 
 		
-		<div data-role="tile" data-size="wide">Catégories tri</div>
+		
 
 		<div data-role="tile" data-size="large">Dernier article</div>
 		<div data-role="tile" data-size="large">article n° 2</div>
