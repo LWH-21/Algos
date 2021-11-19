@@ -76,12 +76,16 @@
 			{% endif %}
 		{% endfor %}
 
+		<!-- Posts tiles -->
+		{% assign posts=site.posts | where:"lang", page.lang | sort: 'date' | reverse %}
+		{% for p in posts  limit:10 %}
+			<a href="{{ p.url| relative_url }}">
+			<div data-role="tile" data-size="large">{{ p.title }}</div>
+			</a>
+		{% endfor %}
 		
 		
 
-		<div data-role="tile" data-size="large">Dernier article</div>
-		<div data-role="tile" data-size="large">article n° 2</div>
-		<div data-role="tile" data-size="large">article n° 3</div>
 		<div data-role="tile" data-size="medium">article n° 4</div>
 		<div data-role="tile" data-size="medium">article n° 5</div>
 
