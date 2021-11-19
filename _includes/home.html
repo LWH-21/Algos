@@ -77,7 +77,7 @@
 		{% endfor %}
 
 		<!-- Posts tiles -->
-		{% assign posts=site.posts | where:"lang", page.lang | sort: 'date' | reverse %}
+		{% assign posts=site.posts | sort: 'date' | reverse %}
 		{% for p in posts  limit:10 %}
 			<a href="{{ p.url| relative_url }}">
 			<div data-role="tile" data-size="large">{{ p.title }}</div>
