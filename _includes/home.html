@@ -75,6 +75,17 @@
 				{% break %}
 			{% endif %}
 		{% endfor %}
+			
+		<!-- Random tile -->
+		{% assign p=site.posts | sample %}
+		<div data-role="tile" data-size="large" style="background-color: #008A00;">
+			<a href="{{ p.url| relative_url }}">
+			<div>
+				<b>{{ p.title }}</b>
+				<p>{{ p.excerpt }}</p>
+			</div>
+			</a>
+		</div>
 
 		<!-- Posts tiles -->
 		{% assign posts=site.posts | sort: 'date' | reverse %}
