@@ -49,17 +49,19 @@
 		{% endfor %}
 
 		<!-- GitHub tile -->
-		<a href="https://github.com/LWH-21/">
-		<div data-role="tile" data-size="small" style="background-color: #6A00FF; text-align: center;">
+		
+		<div data-role="tile" data-size="small" style="background-color: #6A00FF; text-align: center; padding: 10px;">
+			<a href="https://github.com/LWH-21/">
 			<i class="fa fa-github-alt fa-3x"></i>
+			</a>
 		</div>
-		</a>
+		
 		<!-- Facebook tile -->
-		<a href="https://www.facebook.com/profile.php?id=100009215959255">
-		<div data-role="tile" data-size="small" style="background-color: #008A00; text-align: center;">
+		<div data-role="tile" data-size="small" style="background-color: #008A00; text-align: center; padding: 10px;">
+			<a href="https://www.facebook.com/profile.php?id=10009215959255">
 			<i class="fa fa-facebook-official fa-3x"></i>
+			</a>	
 		</div>
-		</a>
 			
 		<div data-role="tile" data-size="wide">Catégories tri</div>
 			
@@ -67,28 +69,17 @@
 		{% assign pages=site.pages | where:"ref", "about" | sort: 'lang' %}
 		{% for p in pages  %}
 			{% if p.lang == page.lang %}
-				<a href="{{ p.url| relative_url }}">
-				<div data-role="tile" data-size="small" style="background-color: #FFC194;">					
-					 <span class="branding-bar">{{ p.title }}</span>					 
+				<div data-role="tile" data-size="small" style="background-color: #FFC194;">	
+					<a href="{{ p.url| relative_url }}">
+					 <span class="branding-bar">{{ p.title }}</span>	
+					</a>
 				</div>
-				</a>
 				{% break %}
 			{% endif %}
 		{% endfor %}
 			
-		<!-- Random tile -->
-		{% assign p=site.posts | sample %}
-		<div data-role="tile" data-size="large" style="background-color: #008A00;">
-			<a href="{{ p.url| relative_url }}">
-			<div>
-				<b>{{ p.title }}</b>
-				<p>{{ p.excerpt }}</p>
-			</div>
-			</a>
-		</div>
-
 		<!-- Posts tiles -->
-		{% assign posts=site.posts | sort: 'date' | reverse %}
+		{% assign posts=site.posts | where:"lang", page.lang | sort: 'date' | reverse %}
 		{% for p in posts  limit:10 %}
 			
 			<div data-role="tile" data-size="large">
@@ -99,7 +90,6 @@
 					</div>
 				</a>
 			</div>
-			
 		{% endfor %}
 		
 		
