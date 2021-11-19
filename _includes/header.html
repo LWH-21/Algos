@@ -1,10 +1,10 @@
 <header>
   
 <div class="w3-sidebar w3-bar-block w3-border-right w3-metro-darken" style="display:none" id="lwSidebar">
-    <p>{{ site.title[page.lang] }}</p>
-  <button onclick="w3_close()" class="w3-bar-item w3-large w3-right-align"><i class="fa fa-times-rectangle-o fa-2x"></i></button>
+    
+  <button onclick="w3_close()" class="w3-bar-item w3-large w3-right-align w3-margin-top w3-margin-bottom"><i class="fa fa-times-rectangle-o fa-2x"></i></button>
   
- {% assign pages=site.pages | where:"ref", "home" | where:"lang", site.lang | sort: 'lang' %}
+ {% assign pages=site.pages | where:"ref", "home"  | sort: 'lang' %}
 {% for p in pages limit:1 %}         
      {% if p.lang == page.lang %}
       <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button">{{ p.title }}</a> 
@@ -19,6 +19,8 @@
        {% break %}
      {% endif %}
 {% endfor %} 
+ 
+  <div class="w3-margin-top"></div>
      
 {% for c in site.cat[page.lang] %}
   <a href="#" class="w3-bar-item w3-button">{{ c }}</a>
