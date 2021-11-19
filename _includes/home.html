@@ -80,7 +80,14 @@
 		{% assign posts=site.posts | sort: 'date' | reverse %}
 		{% for p in posts  limit:10 %}
 			
-			<div data-role="tile" data-size="large">{{ p.title }}</div>
+			<div data-role="tile" data-size="large">
+				<a href="{{ p.url| relative_url }}">
+					<div>
+						<h1>{{ p.title }}</h1>
+						<p>{{ p.excerpt }}</p>
+					</div>
+				</a>
+			</div>
 			
 		{% endfor %}
 		
