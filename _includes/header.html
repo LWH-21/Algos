@@ -4,8 +4,8 @@
     <p>{{ site.title[page.lang] }}</p>
   <button onclick="w3_close()" class="w3-bar-item w3-large w3-right-align"><i class="fa fa-times-rectangle-o fa-2x"></i></button>
   
- {% assign pages=site.pages | where:"ref", "home" | sort: 'lang' %}
-{% for p in pages %}         
+ {% assign pages=site.pages | where:"ref", "home" | where:"lang", site.lang | sort: 'lang' %}
+{% for p in pages limit:1 %}         
      {% if p.lang == page.lang %}
       <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button">{{ p.title }}</a> 
       {% break %}
