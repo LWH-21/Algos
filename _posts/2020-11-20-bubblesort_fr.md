@@ -14,6 +14,7 @@ custom_js:
   -  assets/js/three/three.min.js
   -  assets/js/three/OrbitControls.js
   -  assets/js/sort/SortDemo.js
+  -  assets/js/sort/BubbleSort.js
 ---
 
 
