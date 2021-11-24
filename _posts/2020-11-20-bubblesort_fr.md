@@ -1,6 +1,10 @@
 ---
 layout: post
 title: Le tri bulle
+keywords: 
+ - Tri bulle
+ - Algorithme du tri bulle
+ - Visualisation du tri bulle
 date: 2021-11-20
 category: 
  - Algorithmes de tri 
