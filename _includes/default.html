@@ -11,8 +11,8 @@
 	
 {% if page.custom_js %}
 	{% for js_file in page.custom_js %}
-	        {% assign s = js_file | slice: 0,4}
-		{if s == "http" %}
+	        {% assign s = js_file | slice: 0,4 %}
+		{%if s == "http" %}
 			<script type="text/javascript" src="{{ js_file }}"></script>
 		{% else %}
 			<script type="text/javascript" src="{{ js_file | relative_url }}"></script>
