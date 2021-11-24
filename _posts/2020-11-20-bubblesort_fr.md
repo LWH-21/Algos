@@ -17,7 +17,7 @@ custom_js:
 ---
 
 
-div class="w3-sidebar w3-bar-block w3-border-right w3-metro-darken" style="display:none" id="lwSidebar">   
+<div class="w3-sidebar w3-bar-block w3-border-right w3-metro-darken" style="display:none" id="lwSidebar">   
   <button onclick="w3_close()" class="w3-bar-item w3-large w3-right-align w3-margin-top w3-margin-bottom"><i class="fa fa-times-rectangle-o fa-2x"></i></button>
   <a href="/Algos/pages/about_fr.html" class="w3-bar-item w3-button">A propos</a>
   <div class="w3-margin-top"></div>
