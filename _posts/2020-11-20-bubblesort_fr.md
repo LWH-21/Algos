@@ -29,5 +29,17 @@ custom_js:
 		<button class="w3-bar-item w3-button" onclick="opentab('schem')">Schéma</button>	
 	</div>
 	
-
+	<figure>
+		<div id="anim" class="tab" style="position: relative;">
+		<canvas id = "sort_canvas" width = "640" height = "295" class="animation" style="position:relative;top:0;left:0;border:1px solid #000000;  margin-bottom:0;z-index: 0"> </canvas>
+		<canvas id = "sort_canvas_layer" width = "640" height = "100" class="animation" style="position:absolute;top:0;left:0; margin-top:0;z-index: 1;"></canvas>
+		</div>
+		<div id="graph" class="w3-container tab" style="display:none">
+		<canvas id = "sort_canvas_graph" width = "640" height = "295" class="animation" style="position:relative;top:0;left:0;border:1px solid #000000;  margin-bottom:0;z-index: 0;"> </canvas>
+		</div>
+		<div id="schem" class="w3-container tab" style="display:none">
+		<canvas id = "sort_canvas_schem" width = "640" height = "295" class="animation" style="position:relative;top:0;left:0;border:1px solid #000000; margin-bottom:0;z-index: 0;"> </canvas>
+		</div>		
+	</figure>
+	
 </div>
