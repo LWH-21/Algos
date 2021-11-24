@@ -10,11 +10,10 @@ category:
  - Algorithmes de tri 
 lang : fr
 ref : bubblesort
-custom_css:
- - https://www.w3schools.com/w3css/4/w3.css
- custom_js:
+custom_js:
   -  assets/js/three/three.min.js
   -  assets/js/three/OrbitControls.js
   -  assets/js/sort/SortDemo.js
 ---
 
+test
