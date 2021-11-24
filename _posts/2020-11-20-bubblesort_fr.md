@@ -43,6 +43,29 @@ custom_js:
 		</div>		
 	</figure>
 	
+	<div class="w3-bar w3-black">
+		<button class="w3-bar-item w3-button" onclick="sortdem.start(algo);return false;">Trier</button>
+		<button class="w3-bar-item w3-button" onclick="algo.stop();return false;">Stop</button>
+		<div class="w3-dropdown-hover">
+			<button class="w3-button">Vitesse</button>
+			<div class="w3-dropdown-content w3-bar-block w3-card-4">
+			  <a href="#" class="w3-bar-item w3-button" title="Vitesse normale" href="PleaseEnableJavascript.html" onclick="sortdem.setSpeed(0.5);return false;">Normale</a>
+			  <a href="#" class="w3-bar-item w3-button" title="Vitesse rapide" href="PleaseEnableJavascript.html" onclick="sortdem.setSpeed(1);return false;">Rapide</a>
+			  <a href="#" class="w3-bar-item w3-button" title="Vitesse lente" href="PleaseEnableJavascript.html" onclick="sortdem.setSpeed(0.2);return false;">Lente</a>
+			  <a href="#" class="w3-bar-item w3-button" title="Vitesse très lente" href="PleaseEnableJavascript.html" onclick="sortdem.setSpeed(0.1);return false;">Très lente</a>
+			</div>
+		</div>
+		<div class="w3-dropdown-hover">
+			<button class="w3-button">Mélanger</button>
+			<div class="w3-dropdown-content w3-bar-block w3-card-4">
+			  <a href="#" class="w3-bar-item w3-button" title="Aléatoire" href="PleaseEnableJavascript.html" onclick="sortdem.shuffle('A');return false;">Aléatoire</a>
+			  <a href="#" class="w3-bar-item w3-button" title="Le pire des cas" href="PleaseEnableJavascript.html" onclick="sortdem.shuffle('W');return false;">Le pire des cas</a>
+			  <a href="#" class="w3-bar-item w3-button" title="Vitesse lente" href="PleaseEnableJavascript.html" onclick="sortdem.shuffle('B');return false;">Le meilleur des cas</a>
+			</div>
+		</div>
+
+	</div>	
+	
 </div>
 
 <script>
