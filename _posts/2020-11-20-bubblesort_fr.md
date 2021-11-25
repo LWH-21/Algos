@@ -28,7 +28,7 @@ custom_js:
 <div id = "container" class = "w3-container w3-rest">  
 	<p>Le principe du <em>tri à bulles</em> (bubble sort ou sinking sort en anglais) est très simple : pour trier une liste, on compare son premier et son second élément et on les échange si nécessaire. Puis on fait la même chose pour le second et le troisième, puis pour le troisième et le quatrième... jusqu'à ce qu'on arrive à la fin de la liste. Ensuite, on recommence à partir du début. Jusqu'à ce que la liste soit triée.</p>
 	<p>On sait que la liste est triée si on peut la parcourir en entier sans effectuer de permutation.</p>
-	<p>On remarque, qu'après la première itération, l'élément le plus grand se trouve à la fin de la liste. Il est donc inutile de le comparer avec le précédent. A la fin de la seconde itération, les deux éléments les plus grands qui sont à la fin de la liste. A chaque itération, on peut donc s'arrêter un peu plus tôt.<p>
+	<p>On remarque, qu'après la première itération, l'élément le plus grand se trouve à la fin de la liste. Il est donc inutile de le comparer avec le précédent. A la fin de la seconde itération, les deux éléments les plus grands qui sont à la fin de la liste. A chaque itération, on peut donc s'arrêter un peu plus tôt.</p>
 	<p>L’animation ci-dessous détaille le fonctionnement du <mark>tri bulle</mark> :</p>
 	
 	<div class="w3-bar w3-black">
