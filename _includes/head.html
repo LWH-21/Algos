@@ -2,6 +2,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ site.title[page.lang] }} | {{ page.title }} </title>
+	
 	{% assign s = "algorithm" %}
 	{% for kw in site.keywords[page.lang] %}
 		{% capture s %}
@@ -13,7 +15,6 @@
 		 {{ kw }}; {{ s }}
 		{% endcapture %}
 	{% endfor %}
-	
 	<meta name="keywords" content="{{ s }}">
     	<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
     	<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
@@ -22,9 +23,14 @@
 	<meta name = "DC.Language" content = "{{ page.lang }}">
 	<meta name = "DC.Date" content = "{{ page.date }}">
 	<meta name="DC.description" lang="{{ page.lang }}" content="{{ page.excerpt | strip_html | strip  }}" />
-    
-	
-	 <title>{{ site.title[page.lang] }} | {{ page.title }} </title>
+    	<meta property="og:title" content="{{ page.title }}" /> 
+	<meta name="author" content="{{ page.author }}" /> 
+	<meta property="og:locale" content="{{ page.lang }}" /> 
+	<meta name="description" content="{{ page.excerpt | strip_html | strip  }}" /> 
+	<meta property="og:description" content="{{ page.excerpt | strip_html | strip  }}" /> 
+	<link rel="canonical" href="{{ page.url | absolute_url }}" /> 
+	<meta property="og:url" content="{{ page.url | absolute_url " /> 
+	<meta property="og:site_name" content="{{ site.title[page.lang] }}" /> 
 	
   	{% if page.custom_css %}
     		{% for stylesheet in page.custom_css %}
