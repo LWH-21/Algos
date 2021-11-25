@@ -1,11 +1,15 @@
 ---
 layout: post
 title: Le tri bulle
+description: "Démonstration visuelle de l'algorithme de tri 'tri bulle'"
+author: LWH
+image: 
 keywords: 
  - Tri bulle
  - Algorithme du tri bulle
  - Visualisation du tri bulle
 date: 2021-11-20
+last_modified_at: 2021-11-14
 category: 
  - Algorithmes de tri 
 lang : fr
