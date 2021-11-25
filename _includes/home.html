@@ -34,35 +34,6 @@
 		<a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button">{{ p.title }}</a>
 	{%- endfor -%}
 	
-	<div class="w3-margin-top"></div>
-	{%- assign posts=site.posts | where:"ref", page.ref | sort: 'lang' -%}
-	{%- for p in posts -%}
-		{%- if p.lang != page.lang -%}
-			{%- if p.lang == "en" -%}
-				<a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button">English version</a>
-			{%- elsif p.lang == "es" -%}
-				<a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button">Versión en español</a>
-			{%- elsif p.lang == "fr" -%}
-				<a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button">Version en français</a>
-			{%- endif -%}
-		{%- endif -%}
-	{%- endfor -%}
-
-	{%- assign pages=site.pages | where:"ref", page.ref | sort: 'lang' -%}
-	{%- for p in pages -%}
-		{%- if p.lang != page.lang -%}
-			{%- if p.lang == "en" -%}
-				<a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button">English version</a>
-			{%- elsif p.lang == "es" -%}
-			<a href="{{ p.url | relative_url}}" class="w3-bar-item w3-button">Versión en español</a>
-				{%- elsif p.lang == "fr" -%}
-				<a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button">Version en français</a>
-			{%- endif -%}
-		{%- endif -%}
-	{%- endfor -%}
-
-	</div>
-	
 	{%- comment -%} Haut de page {%- endcomment -%}
 	<div class="w3-metro-darken">
 		<div class="w3-bar">
