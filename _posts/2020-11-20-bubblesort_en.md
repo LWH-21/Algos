@@ -11,7 +11,7 @@ keywords:
 date: 2021-11-20
 last_modified_at: 2021-11-14
 category: 
- - sort algorithm 
+ - sort algorithms 
 lang : en
 locale : en-US
 ref : bubblesort
