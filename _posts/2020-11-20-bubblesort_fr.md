@@ -13,6 +13,7 @@ last_modified_at: 2021-11-14
 category: 
  - Algorithmes de tri 
 lang : fr
+locale : fr-FR
 ref : bubblesort
 custom_js:
   -  assets/js/three/three.min.js
