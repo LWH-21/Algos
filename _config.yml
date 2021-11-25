@@ -14,6 +14,20 @@ tagline:
     fr: "Algorithmes"
     en: "Algorithms"
     es: "Algoritmos"
+keywords:
+    fr: 
+        - algorithmes
+        - démos d'algorithmes
+        - algorithmes animés
+    en:
+        - algorithms
+        - animated algorithms
+        - algorithm demos
+        - visualization of algorithms
+    es:
+        - algoritmos animados
+        - demostraciones de algoritmos
+        - visualización de algoritmos
 cat:
     fr: 
         - Algorithmes de Tris
