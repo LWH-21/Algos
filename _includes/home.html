@@ -1,119 +1,100 @@
-<header>
+<div class="w3-content w3-metro-light-blue w3-margin-bottom w3-margin-top" style="max-width:1100px">
+	<div class="w3-third">
+	</div> <!-- w3-third -->
 
-<div class="w3-sidebar w3-bar-block w3-border-right w3-metro-darken" style="display:none" id="lwSidebar">
+	<div class="w3-rest">
+		
+		{{ content }}
 
-	{%- comment -%} Menu latéral {%- endcomment -%}
-	<button onclick="w3_close()" class="w3-bar-item w3-large w3-right-align w3-margin-top w3-margin-bottom"><i class="fa fa-times-rectangle-o fa-2x"></i></button>
+		{%- assign colors = "#A4C400, #60A917, #008A00, #00ABA9, #00AFF0, #1BA1E2, #0050EF, #6A00FF, #AA00FF, #DC4FAD, #D80073, #A20025, #CE352C, #FA6800, #F0A30A, #E3C800, #825A2C, #6D8764, #647687, #76608A, #87794E, #63362F, #640024, #81003C, #4B0096, #1B6EAE, #00356A, #004050, #003E00, #128023, #BF5A15, #9A1616, #9A165A, #57169A, #16499A, #4390DF, #00CCFF, #59CDE2, #45FFFD, #7AD61D, #78AA1C, #FFC194, #F472D0, #DA5A53" | split: ", " -%}
+		
+		<div class="tiles-grid w3-margin-top w3-margin-bottom w3-margin-left">
 
-	{%- assign pages=site.pages | where:"ref", "home"  | sort: 'lang' -%}
-	{%- for p in pages limit:1 -%}
-		{%- if p.lang == page.lang -%}
-			<a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button">{{ p.title }}</a>
-		{%- break -%}
-		{%- endif -%}
-	{%- endfor -%}
-
-	{%- assign pages=site.pages | where:"ref", "about" | sort: 'lang' -%}
-	{%- for p in pages  -%}
-		{%- if p.lang == page.lang -%}
-			<a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button">{{ p.title }}</a>
-		{%- break -%}
-		{%- endif -%}
-	{%- endfor -%}
-
-	<div class="w3-margin-top"></div>
-
-	{%- for c in site.cat[page.lang] -%}
-		<a href="#" class="w3-bar-item w3-button">{{ c }}</a>
-	{%- endfor -%}
-	
-	<div class="w3-margin-top"></div>
-	
-	{%- assign posts=site.posts | where:"lang", page.lang | sort: 'date' | reverse -%}
-	{%- for p in posts  limit:5 -%}
-		<a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button">{{ p.title }}</a>
-	{%- endfor -%}
-	
-	<div class="w3-margin-top"></div>
-	{%- assign posts=site.posts | where:"ref", page.ref | sort: 'lang' -%}
-	{%- for p in posts -%}
-		{%- if p.lang != page.lang -%}
-			{%- if p.lang == "en" -%}
-				<a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button">English version</a>
-			{%- elsif p.lang == "es" -%}
-				<a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button">Versión en español</a>
-			{%- elsif p.lang == "fr" -%}
-				<a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button">Version en français</a>
-			{%- endif -%}
-		{%- endif -%}
-	{%- endfor -%}
-
-	{%- assign pages=site.pages | where:"ref", page.ref | sort: 'lang' -%}
-	{%- for p in pages -%}
-		{%- if p.lang != page.lang -%}
-			{%- if p.lang == "en" -%}
-				<a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button">English version</a>
-			{%- elsif p.lang == "es" -%}
-			<a href="{{ p.url | relative_url}}" class="w3-bar-item w3-button">Versión en español</a>
-				{%- elsif p.lang == "fr" -%}
-				<a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button">Version en français</a>
-			{%- endif -%}
-		{%- endif -%}
-	{%- endfor -%}
-
-</div>
-	
-{%- comment -%} Haut de page {%- endcomment -%}
-<div class="w3-metro-darken">
-	<div class="w3-bar">
-
-		<button class="w3-button  w3-xlarge w3-bar-item w3-hover-red" onclick="w3_open()">☰</button>
-
-		{%- assign posts=site.posts | where:"ref", page.ref | sort: 'lang' -%}
-		{%- for p in posts -%}
-			{%- if p.lang != page.lang -%}
-				{%- if p.lang == "en" -%}
-					<a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">English version</a>
-				{%- elsif p.lang == "es" -%}
-					<a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en español</a>
-				{%- elsif p.lang == "fr" -%}
-					<a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Version en français</a>
+			<!-- Home Tile -->
+			{%- assign pages=site.pages | where:"ref", "home" | sort: 'lang' -%}
+			{%- for p in pages -%}
+				{%- if p.lang == page.lang -%}					
+					<div data-role="tile" data-size="small" class="col-1 row-1" style="background-color: #4a00b3">
+					<a href="{{ p.url| relative_url }}">
+						<i class="fa fa-home fa-4x"></i>
+					</a>
+					</div>					
+					{%- break -%}
 				{%- endif -%}
-			{%- endif -%}
+			{%- endfor -%}
+
+			<!-- language tiles -->
+			{%- assign pages=site.pages | where:"ref", page.ref | sort: 'lang' -%}
+			{%- for p in pages -%}
+				{%- if p.lang != page.lang -%}
+					{%- if p.lang == "en" -%}						
+						<div data-role="tile" data-size="small" style="background-color: #A4C400; padding: 9px;">
+							<a href="{{ p.url | relative_url }}" >
+							<img src="{{ '/assets/img/english.png' | relative_url }}" alt="English version" width="50" height="50" class="w3-bar-item">
+							</a>
+						</div>						
+					{%- elsif p.lang == "es" -%}						
+						<div data-role="tile" data-size="small" style="background-color: #F0A30A; padding: 9px;">
+							<a href="{{ p.url | relative_url}}" >
+							<img src="{{ '/assets/img/espanol.png' | relative_url }}" alt="Versión en español" width="50" height="50" class="w3-bar-item ">
+							</a>
+						</div>						
+					{%- elsif p.lang == "fr" -%}						
+						<div data-role="tile" data-size="small" style="background-color: ##DC4FAD; padding: 9px;">
+							<a href="{{ p.url | relative_url}}" >
+							<img src="{{ '/assets/img/francais.png' | relative_url }}" alt="Version en français" width="50" height="50" class="w3-bar-item ">
+							</a>
+						</div>
+						</a>
+			   {%- endif -%}
+			 {%- endif -%}
 		{%- endfor -%}
 
-		{%- assign pages=site.pages | where:"ref", page.ref | sort: 'lang' -%}
-		{%- for p in pages -%}
-			{%- if p.lang != page.lang -%}
-				{%- if p.lang == "en" -%}
-					<a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">English version</a>
-				{%- elsif p.lang == "es" -%}
-				<a href="{{ p.url | relative_url}}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en español</a>
-					{%- elsif p.lang == "fr" -%}
-					<a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Version en français</a>
-				{%- endif -%}
-			{%- endif -%}
-		{%- endfor -%}
-
+		<!-- GitHub tile -->
+		
+		<div data-role="tile" data-size="small" style="background-color: #DC4FAD; text-align: center; padding: 10px;">
+			<a href="https://github.com/LWH-21/">
+			<i class="fa fa-github fa-3x"></i>
+			</a>
+		</div>
+		
+		<!-- Facebook tile -->
+		<div data-role="tile" data-size="small" style="background-color: #F0A30A; text-align: center; padding: 10px;">
+			<a href="https://www.facebook.com/profile.php?id=10009215959255">
+			<i class="fa fa-facebook-official fa-3x"></i>
+			</a>	
+		</div>
+					
+			
+		<!-- About tile -->
 		{%- assign pages=site.pages | where:"ref", "about" | sort: 'lang' -%}
-		{%- for p in pages -%}
+		{%- for p in pages  -%}
 			{%- if p.lang == page.lang -%}
-				<a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">{{ p.title }}</a>
+				<div data-role="tile" data-size="small" style="background-color: #76608A;">	
+					<a href="{{ p.url| relative_url }}">
+					 <span class="branding-bar">{{ p.title }}</span>	
+					</a>
+				</div>
 				{%- break -%}
 			{%- endif -%}
 		{%- endfor -%}
-
-		{%- assign pages=site.pages | where:"ref", "home" | sort: 'lang' -%}
-		{%- for p in pages -%}
-			{%- if p.lang == page.lang -%}
-				<a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">{{ p.title }}</a>
-				{%- break -%}
-			{%- endif -%}
+			
+		<!-- Posts tiles -->
+		{%- assign num_color = 0 -%}
+		{%- assign posts=site.posts | where:"lang", page.lang | sort: 'date' | reverse -%}
+		{%- for p in posts  limit:10 -%}
+			{%- assign num_color = num_color | plus: 1 -%}
+			<div data-role="tile" data-size="large" style="background-color: {{ colors[num_color] }};">
+				<a href="{{ p.url| relative_url }}">
+					<div>						
+						<b>{{ p.title }}</b>
+						<p>{{ p.description }}</p>
+					</div>
+				</a>
+			</div>
 		{%- endfor -%}
-	</div>
-	<div class="w3-container w3-metro-darken">
-		<h1>{{ site.title[page.lang] }} - {{ page.title }}</h1>
-	</div>
-</div>
-
-</header>
+		
+		
+		</div> <!-- tiles-grid -->
+	</div> <!-- w3-rest -->
+</div> <!-- w3-content -->
