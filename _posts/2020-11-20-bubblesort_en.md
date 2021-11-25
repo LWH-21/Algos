@@ -28,7 +28,7 @@ custom_js:
 <div id = "container" class = "w3-container w3-rest">  
 	<p>The principle of the bubble sort is very simple: to sort a list, you compare the first and second elements and exchange them if necessary. Then you do the same thing for the second and the third, then for the third and the fourth... until you reach the end of the list. Then you start again from the beginning. Until the list is sorted.</p>
 	<p>You know that the list is sorted if you can go through the whole list without permuting.</p>
-	<p>After the first iteration, the largest element is at the end of the list. It is thus useless to compare it with the previous one. At the end of the second iteration, the two largest elements are at the end of the list. At each iteration, we can therefore stop a little earlier.<p>
+	<p>After the first iteration, the largest element is at the end of the list. It is thus useless to compare it with the previous one. At the end of the second iteration, the two largest elements are at the end of the list. At each iteration, we can therefore stop a little earlier.</p>
  <p>The animation below shows how the <mark>bubble sort</mark> works :</p>
 	
 	<div class="w3-bar w3-black">
