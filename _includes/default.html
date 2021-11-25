@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "fr" }}">
-  {%- include head.html -%}  
-  {%- include header.html -%}  
+<html lang="{{ page.locale | default: page.lang | default: site.lang | default: "fr" }}">
+	{%- include head.html -%}	 
+	{%- include header.html -%}  
+	<body class="w3-metro-light-blue">
+		{{ content }}
+	</body>	
 
-<body class="w3-metro-light-blue">
-    {{ content }}
-</body>	
-	
-{%- include footer.html -%}  	
-	
+{%- include footer.html -%}		
+
 {% if page.custom_js %}
 	{% for js_file in page.custom_js %}
-	        {% assign s = js_file | slice: 0,4 %}
+			{% assign s = js_file | slice: 0,4 %}
 		{%if s == "http" %}
 			<script type="text/javascript" src="{{ js_file }}"></script>
 		{% else %}
@@ -26,13 +25,12 @@
 
 <script>
 function w3_open() {
-  document.getElementById("lwSidebar").style.display = "block";
+	document.getElementById("lwSidebar").style.display = "block";
 }
 
 function w3_close() {
-  document.getElementById("lwSidebar").style.display = "none";
+	document.getElementById("lwSidebar").style.display = "none";
 }
 </script>
-     
-	
+
 </html>
