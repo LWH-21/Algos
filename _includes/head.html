@@ -18,16 +18,16 @@
 	<meta name="keywords" content="{{ s | strip }}">
 	<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
 	<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
-	<meta name="DC.Title" lang="{{ page.lang }}" content="{{ page.title }} - {{ site.title[page.lang] }}">
+	<meta name="DC.Title" lang="{{ page.locale }}" content="{{ page.title }} - {{ site.title[page.lang] }}">
 	<meta name = "DC.Format" content = "text/html">
 	<meta name = "DC.Language" content = "{{ page.lang }}">
 	<meta name = "DC.Date" content = "{{ page.date }}">
-	<meta name="DC.description" lang="{{ page.lang }}" content="{{ page.excerpt | strip_html | strip }}" />
+	<meta name="DC.description" lang="{{ page.locale }}" content="{{ page.description | strip }}" />
 	<meta property="og:title" content="{{ page.title }}" /> 
 	<meta name="author" content="{{ page.author }}" /> 
-	<meta property="og:locale" content="{{ page.lang }}" /> 
-	<meta name="description" content="{{ page.excerpt | strip_html | strip }}" /> 
-	<meta property="og:description" content="{{ page.excerpt | strip_html | strip }}" /> 
+	<meta property="og:locale" content="{{ page.locale }}" /> 
+	<meta name="description" content="{{ page.description | strip }}" /> 
+	<meta property="og:description" content="{{ page.description | strip }}" /> 
 	<link rel="canonical" href="{{ page.url | absolute_url }}" /> 
 	<meta property="og:url" content="{{ page.url | absolute_url }}" /> 
 	<meta property="og:site_name" content="{{ site.title[page.lang] }}" /> 
