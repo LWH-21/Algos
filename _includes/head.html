@@ -3,7 +3,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	{% assign s = "algorithm" %}
-	{% for kw in site.keywords %}
+	{% for kw in site.keywords[page.lang] %}
 		{% capture s %}
 		 {{ kw }}; {{ s }}
 		{% endcapture %}
