@@ -1,88 +1,119 @@
 <header>
-  
+
 <div class="w3-sidebar w3-bar-block w3-border-right w3-metro-darken" style="display:none" id="lwSidebar">
-    
-  <button onclick="w3_close()" class="w3-bar-item w3-large w3-right-align w3-margin-top w3-margin-bottom"><i class="fa fa-times-rectangle-o fa-2x"></i></button>
-  
- {% assign pages=site.pages | where:"ref", "home"  | sort: 'lang' %}
-{% for p in pages limit:1 %}         
-     {% if p.lang == page.lang %}
-      <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button">{{ p.title }}</a> 
-      {% break %}
-     {% endif %}
-{% endfor %}  
-    
-{% assign pages=site.pages | where:"ref", "about" | sort: 'lang' %}
-{% for p in pages  %}         
-      {% if p.lang == page.lang %}
-       <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button">{{ p.title }}</a>
-       {% break %}
-     {% endif %}
-{% endfor %} 
- 
-  <div class="w3-margin-top"></div>
-     
-{% for c in site.cat[page.lang] %}
-  <a href="#" class="w3-bar-item w3-button">{{ c }}</a>
-{% endfor %}
-  
+
+	{%- comment -%} Menu latéral {%- endcomment -%}
+	<button onclick="w3_close()" class="w3-bar-item w3-large w3-right-align w3-margin-top w3-margin-bottom"><i class="fa fa-times-rectangle-o fa-2x"></i></button>
+
+	{%- assign pages=site.pages | where:"ref", "home"  | sort: 'lang' -%}
+	{%- for p in pages limit:1 -%}
+		{%- if p.lang == page.lang -%}
+			<a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button">{{ p.title }}</a>
+		{%- break -%}
+		{%- endif -%}
+	{%- endfor -%}
+
+	{%- assign pages=site.pages | where:"ref", "about" | sort: 'lang' -%}
+	{%- for p in pages  -%}
+		{%- if p.lang == page.lang -%}
+			<a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button">{{ p.title }}</a>
+		{%- break -%}
+		{%- endif -%}
+	{%- endfor -%}
+
+	<div class="w3-margin-top"></div>
+
+	{%- for c in site.cat[page.lang] -%}
+		<a href="#" class="w3-bar-item w3-button">{{ c }}</a>
+	{%- endfor -%}
+	
+	<div class="w3-margin-top"></div>
+	
+	{%- assign posts=site.posts | where:"lang", page.lang | sort: 'date' | reverse -%}
+	{%- for p in posts  limit:5 -%}
+		<a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button">{{ p.title }}</a>
+	{%- endfor -%}
+	
+	<div class="w3-margin-top"></div>
+	{%- assign posts=site.posts | where:"ref", page.ref | sort: 'lang' -%}
+	{%- for p in posts -%}
+		{%- if p.lang != page.lang -%}
+			{%- if p.lang == "en" -%}
+				<a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button">English version</a>
+			{%- elsif p.lang == "es" -%}
+				<a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button">Versión en español</a>
+			{%- elsif p.lang == "fr" -%}
+				<a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button">Version en français</a>
+			{%- endif -%}
+		{%- endif -%}
+	{%- endfor -%}
+
+	{%- assign pages=site.pages | where:"ref", page.ref | sort: 'lang' -%}
+	{%- for p in pages -%}
+		{%- if p.lang != page.lang -%}
+			{%- if p.lang == "en" -%}
+				<a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button">English version</a>
+			{%- elsif p.lang == "es" -%}
+			<a href="{{ p.url | relative_url}}" class="w3-bar-item w3-button">Versión en español</a>
+				{%- elsif p.lang == "fr" -%}
+				<a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button">Version en français</a>
+			{%- endif -%}
+		{%- endif -%}
+	{%- endfor -%}
+
 </div>
+	
+{%- comment -%} Haut de page {%- endcomment -%}
 <div class="w3-metro-darken">
-   <div class="w3-bar">
-     
-    <button class="w3-button  w3-xlarge w3-bar-item w3-hover-red" onclick="w3_open()">☰</button>
-     
-   {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
-    {% for p in posts %}
-     {% if p.lang != page.lang %}
-       {% if p.lang == "en" %}
-         <a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">English version</a>  
-       {% elsif p.lang == "es" %}
-         <a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en español</a> 
-       {% elsif p.lang == "fr" %}
-         <a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Version en français</a>   
-       {% endif %}
-     {% endif %}
-    {% endfor %}
+	<div class="w3-bar">
 
-{% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
-{% for p in pages %}
-     
-    
-      {% if p.lang != page.lang %}
-       {% if p.lang == "en" %}
-         <a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">English version</a>  
-       {% elsif p.lang == "es" %}
-         <a href="{{ p.url | relative_url}}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en español</a> 
-       {% elsif p.lang == "fr" %}
-         <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Version en français</a>   
-       {% endif %}
-     {% endif %}
-     
-{% endfor %} 
-     
-{% assign pages=site.pages | where:"ref", "about" | sort: 'lang' %}
-{% for p in pages %}         
-      {% if p.lang == page.lang %}
-      <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">{{ p.title }}</a> 
-     {% break %}
-     {% endif %}
-{% endfor %} 
-     
-{% assign pages=site.pages | where:"ref", "home" | sort: 'lang' %}
-{% for p in pages %}         
-      {% if p.lang == page.lang %}
-      <a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">{{ p.title }}</a> 
-      {% break %}
-     {% endif %}
-{% endfor %}   
+		<button class="w3-button  w3-xlarge w3-bar-item w3-hover-red" onclick="w3_open()">☰</button>
 
-    
+		{%- assign posts=site.posts | where:"ref", page.ref | sort: 'lang' -%}
+		{%- for p in posts -%}
+			{%- if p.lang != page.lang -%}
+				{%- if p.lang == "en" -%}
+					<a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">English version</a>
+				{%- elsif p.lang == "es" -%}
+					<a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en español</a>
+				{%- elsif p.lang == "fr" -%}
+					<a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Version en français</a>
+				{%- endif -%}
+			{%- endif -%}
+		{%- endfor -%}
 
-   </div>
-   <div class="w3-container w3-metro-darken">
-        <h1>{{ site.title[page.lang] }} - {{ page.title }}</h1>
-   </div>
+		{%- assign pages=site.pages | where:"ref", page.ref | sort: 'lang' -%}
+		{%- for p in pages -%}
+			{%- if p.lang != page.lang -%}
+				{%- if p.lang == "en" -%}
+					<a href="{{ p.url | relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">English version</a>
+				{%- elsif p.lang == "es" -%}
+				<a href="{{ p.url | relative_url}}" class="w3-bar-item w3-button w3-hide-small w3-right">Versión en español</a>
+					{%- elsif p.lang == "fr" -%}
+					<a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">Version en français</a>
+				{%- endif -%}
+			{%- endif -%}
+		{%- endfor -%}
+
+		{%- assign pages=site.pages | where:"ref", "about" | sort: 'lang' -%}
+		{%- for p in pages -%}
+			{%- if p.lang == page.lang -%}
+				<a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">{{ p.title }}</a>
+				{%- break -%}
+			{%- endif -%}
+		{%- endfor -%}
+
+		{%- assign pages=site.pages | where:"ref", "home" | sort: 'lang' -%}
+		{%- for p in pages -%}
+			{%- if p.lang == page.lang -%}
+				<a href="{{ p.url| relative_url }}" class="w3-bar-item w3-button w3-hide-small w3-right">{{ p.title }}</a>
+				{%- break -%}
+			{%- endif -%}
+		{%- endfor -%}
+	</div>
+	<div class="w3-container w3-metro-darken">
+		<h1>{{ site.title[page.lang] }} - {{ page.title }}</h1>
+	</div>
 </div>
-  
+
 </header>
