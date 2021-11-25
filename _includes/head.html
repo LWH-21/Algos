@@ -22,12 +22,12 @@
 	<meta name = "DC.Format" content = "text/html">
 	<meta name = "DC.Language" content = "{{ page.lang }}">
 	<meta name = "DC.Date" content = "{{ page.date }}">
-	<meta name="DC.description" lang="{{ page.lang }}" content="{{ page.excerpt | strip_html | strip  }}" />
+	<meta name="DC.description" lang="{{ page.lang }}" content="{{ page.excerpt | strip_html | strip | remove "  " }}" />
     	<meta property="og:title" content="{{ page.title }}" /> 
 	<meta name="author" content="{{ page.author }}" /> 
 	<meta property="og:locale" content="{{ page.lang }}" /> 
 	<meta name="description" content="{{ page.excerpt | strip_html | strip  }}" /> 
-	<meta property="og:description" content="{{ page.excerpt | strip_html | strip  }}" /> 
+	<meta property="og:description" content="{{ page.excerpt | strip_html | strip | remove "  " }}" /> 
 	<link rel="canonical" href="{{ page.url | absolute_url }}" /> 
 	<meta property="og:url" content="{{ page.url | absolute_url }}" /> 
 	<meta property="og:site_name" content="{{ site.title[page.lang] }}" /> 
