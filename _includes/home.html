@@ -1,4 +1,3 @@
-	
 <div class="w3-content w3-metro-light-blue w3-margin-bottom w3-margin-top" style="max-width:1100px">
 	<div class="w3-third">
 	</div> <!-- w3-third -->
@@ -7,49 +6,49 @@
 		
 		{{ content }}
 
-		{% assign colors = "#A4C400, #60A917, #008A00, #00ABA9, #00AFF0, #1BA1E2, #0050EF, #6A00FF, #AA00FF, #DC4FAD, #D80073, #A20025, #CE352C, #FA6800, #F0A30A, #E3C800, #825A2C, #6D8764, #647687, #76608A, #87794E, #63362F, #640024, #81003C, #4B0096, #1B6EAE, #00356A, #004050, #003E00, #128023, #BF5A15, #9A1616, #9A165A, #57169A, #16499A, #4390DF, #00CCFF, #59CDE2, #45FFFD, #7AD61D, #78AA1C, #FFC194, #F472D0, #DA5A53" | split: ", " %}
+		{%- assign colors = "#A4C400, #60A917, #008A00, #00ABA9, #00AFF0, #1BA1E2, #0050EF, #6A00FF, #AA00FF, #DC4FAD, #D80073, #A20025, #CE352C, #FA6800, #F0A30A, #E3C800, #825A2C, #6D8764, #647687, #76608A, #87794E, #63362F, #640024, #81003C, #4B0096, #1B6EAE, #00356A, #004050, #003E00, #128023, #BF5A15, #9A1616, #9A165A, #57169A, #16499A, #4390DF, #00CCFF, #59CDE2, #45FFFD, #7AD61D, #78AA1C, #FFC194, #F472D0, #DA5A53" | split: ", " -%}
 		
 		<div class="tiles-grid w3-margin-top w3-margin-bottom w3-margin-left">
 
 			<!-- Home Tile -->
-			{% assign pages=site.pages | where:"ref", "home" | sort: 'lang' %}
-			{% for p in pages %}
-				{% if p.lang == page.lang %}					
+			{%- assign pages=site.pages | where:"ref", "home" | sort: 'lang' -%}
+			{%- for p in pages -%}
+				{%- if p.lang == page.lang -%}					
 					<div data-role="tile" data-size="small" class="col-1 row-1" style="background-color: #4a00b3">
 					<a href="{{ p.url| relative_url }}">
 						<i class="fa fa-home fa-4x"></i>
 					</a>
 					</div>					
-					{% break %}
-				{% endif %}
-			{% endfor %}
+					{%- break -%}
+				{%- endif -%}
+			{%- endfor -%}
 
 			<!-- language tiles -->
-			{% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
-			{% for p in pages %}
-				{% if p.lang != page.lang %}
-					{% if p.lang == "en" %}						
+			{%- assign pages=site.pages | where:"ref", page.ref | sort: 'lang' -%}
+			{%- for p in pages -%}
+				{%- if p.lang != page.lang -%}
+					{%- if p.lang == "en" -%}						
 						<div data-role="tile" data-size="small" style="background-color: #A4C400; padding: 9px;">
 							<a href="{{ p.url | relative_url }}" >
 							<img src="{{ '/assets/img/english.png' | relative_url }}" alt="English version" width="50" height="50" class="w3-bar-item">
 							</a>
 						</div>						
-					{% elsif p.lang == "es" %}						
+					{%- elsif p.lang == "es" -%}						
 						<div data-role="tile" data-size="small" style="background-color: #F0A30A; padding: 9px;">
 							<a href="{{ p.url | relative_url}}" >
 							<img src="{{ '/assets/img/espanol.png' | relative_url }}" alt="Versión en español" width="50" height="50" class="w3-bar-item ">
 							</a>
 						</div>						
-					{% elsif p.lang == "fr" %}						
+					{%- elsif p.lang == "fr" -%}						
 						<div data-role="tile" data-size="small" style="background-color: ##DC4FAD; padding: 9px;">
 							<a href="{{ p.url | relative_url}}" >
 							<img src="{{ '/assets/img/francais.png' | relative_url }}" alt="Version en français" width="50" height="50" class="w3-bar-item ">
 							</a>
 						</div>
 						</a>
-			   {% endif %}
-			 {% endif %}
-		{% endfor %}
+			   {%- endif -%}
+			 {%- endif -%}
+		{%- endfor -%}
 
 		<!-- GitHub tile -->
 		
@@ -68,23 +67,23 @@
 					
 			
 		<!-- About tile -->
-		{% assign pages=site.pages | where:"ref", "about" | sort: 'lang' %}
-		{% for p in pages  %}
-			{% if p.lang == page.lang %}
+		{%- assign pages=site.pages | where:"ref", "about" | sort: 'lang' -%}
+		{%- for p in pages  -%}
+			{%- if p.lang == page.lang -%}
 				<div data-role="tile" data-size="small" style="background-color: #76608A;">	
 					<a href="{{ p.url| relative_url }}">
 					 <span class="branding-bar">{{ p.title }}</span>	
 					</a>
 				</div>
-				{% break %}
-			{% endif %}
-		{% endfor %}
+				{%- break -%}
+			{%- endif -%}
+		{%- endfor -%}
 			
 		<!-- Posts tiles -->
-		{% assign num_color = 0 %}
-		{% assign posts=site.posts | where:"lang", page.lang | sort: 'date' | reverse %}
-		{% for p in posts  limit:10 %}
-			{% assign num_color = num_color | plus: 1 %}
+		{%- assign num_color = 0 -%}
+		{%- assign posts=site.posts | where:"lang", page.lang | sort: 'date' | reverse -%}
+		{%- for p in posts  limit:10 -%}
+			{%- assign num_color = num_color | plus: 1 -%}
 			<div data-role="tile" data-size="large" style="background-color: {{ colors[num_color] }};">
 				<a href="{{ p.url| relative_url }}">
 					<div>						
@@ -93,13 +92,9 @@
 					</div>
 				</a>
 			</div>
-		{% endfor %}
+		{%- endfor -%}
 		
 		
-
-		<div data-role="tile" data-size="medium">article n° 4</div>
-		<div data-role="tile" data-size="medium">article n° 5</div>
-
 		</div> <!-- tiles-grid -->
 	</div> <!-- w3-rest -->
 </div> <!-- w3-content -->
