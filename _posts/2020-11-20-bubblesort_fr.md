@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Le tri bulle
-description: "Démonstration visuelle de l'algorithme de tri 'tri bulle'"
+description: "Animation de l'algorithme de tri 'tri bulle'"
 author: LWH
 image: assets/img/sort/bubblesort.png
 keywords: 
