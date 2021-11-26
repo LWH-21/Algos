@@ -1,15 +1,7 @@
 <article class="post">
-	<header class="post-header">
-		<div class="post-title"> 
-			{{ page.title | escape }}
-		</div>
-		<time class="post-date dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-			{%- assign date_format = site.date_format[page.lang] | default: "%Y/%m/%d" -%}
-			{{ page.date | date: date_format }}
-		</time>		
-	</header>
-
-	<div class="post-content">
+	<div class="w3-container w3-third">
+	</div>	
+	<div id = "container" class = "w3-container w3-rest post-content">  	
 		{{ content }}
 	</div>
 </article>
