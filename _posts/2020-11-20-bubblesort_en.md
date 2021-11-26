@@ -3,7 +3,7 @@ layout: post
 title: The Bubble Sort
 description: "Visual of the 'bubble sorting' algorithm"
 author: LWH
-image: 
+image: assets/img/sorg/bubblesort.png
 keywords: 
  - Bubble Sort
  - Algorithm sinking sorg
@@ -24,7 +24,7 @@ custom_js:
 
 
 
-The principle of the bubble sort is very simple: to sort a list, you compare the first and second elements and exchange them if necessary. Then you do the same thing for the second and the third, then for the third and the fourth... until you reach the end of the list. Then you start again from the beginning. Until the list is sorted.
+The principle of the bubble sort (aka sinking sort) is very simple: to sort a list, you compare the first and second elements and exchange them if necessary. Then you do the same thing for the second and the third, then for the third and the fourth... until you reach the end of the list. Then you start again from the beginning. Until the list is sorted.
 
 You know that the list is sorted if you can go through the whole list without permuting.
 
@@ -71,7 +71,92 @@ The animation below shows how the <mark>bubble sort</mark> works :
 		  <a href="#" class="w3-bar-item w3-button" title="Best case"  onclick="sortdem.shuffle('B');return false;">Best case</a>
 		</div>
 	</div>
-
 </div>	
+
+To give you an idea of the performance of this algorithm, suppose that you have to sort the names of the inhabitants of several large cities. And that the machine you have at your disposal can carry out let's say one million instructions per second (we don't take into account the problems of memory, disks etc...). Here is the time it would take to sort with this method:
+
+<div class="w3-metro-darken w3-bar">
+<label class="w3-bar-item" >Operations per second :</label>
+<input class="w3-input w3-bar-item" type="text" id="computerspeed" value="gg">
+<button class="w3-bar-item w3-button" onclick="calc_sort_speed();return false;">Calculate!</button>
+</div>
+<table id = "exectimes"  class="w3-table-all">
+	<thead><!-- en-tête -->
+		<tr><!-- première ligne -->
+			<th>City</th>
+			<th>Population</th>
+			<th >Average sorting time</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td> Chicoutimi</td>
+			<td class="w3-right-align">69 004</td>
+			<td class="w3-right-align"></td>
+		</tr>
+		<tr>
+			<td>Bruxelles</td>
+			<td class="w3-right-align">174 383</td>
+			<td class="w3-right-align"></td>
+		</tr>	
+		<tr>
+			<td> Paris</td>
+			<td class="w3-right-align">2 220 445</td>
+			<td class="w3-right-align"></td>
+		</tr>
+		<tr>
+			<td> Madrid</td>
+			<td class="w3-right-align">3 207 247</td>
+			<td class="w3-right-align"></td>
+		</tr>
+		<tr>
+			<td> Berlin</td>
+			<td class="w3-right-align">3 520 031</td>
+			<td class="w3-right-align"></td>
+		</tr>
+		<tr>
+			<td>Toronto</td>
+			<td class="w3-right-align">6 555 205</td>
+			<td class="w3-right-align"></td>
+		</tr>		
+		<tr>
+			<td> Londres</td>
+			<td class="w3-right-align" >8 416 535</td>
+			<td class="w3-right-align"></td>
+		</tr>
+		<tr>
+			<td> Mexico</td>
+			<td class="w3-right-align">20 879 830</td>
+			<td class="w3-right-align"></td>
+		</tr>
+		<tr>
+			<td> Le Caire</td>
+			<td class="w3-right-align">24 439 785</td>
+			<td class="w3-right-align"></td>
+		</tr>
+		<tr>
+			<td>Delhi</td>
+			<td class="w3-right-align">26 454 086</td>
+			<td class="w3-right-align"></td>
+		</tr>
+		<tr>
+			<td> Jakarta</td>
+			<td class="w3-right-align">35 143 473</td>
+			<td class="w3-right-align"></td>
+		</tr>
+		<tr>
+			<td>Sao Paulo</td>
+			<td class="w3-right-align">36 315 271</td>
+			<td class="w3-right-align"></td>
+		</tr>		
+		<tr>
+			<td> Tokyo</td>
+			<td class="w3-right-align">42 796 714</td>
+			<td class="w3-right-align"></td>
+		</tr>
+	</tbody>
+</table>
+
+You can change the number of operations per second to test.
 	
 
