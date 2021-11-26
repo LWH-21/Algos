@@ -31,6 +31,12 @@
 	<link rel="canonical" href="{{ page.url | absolute_url }}" /> 
 	<meta property="og:url" content="{{ page.url | absolute_url }}" /> 
 	<meta property="og:site_name" content="{{ site.title[page.lang] }}" /> 
+	<script type="application/ld+json"> {"@context": "https://schema.org/",	"@type": "WebSite", "name": "{{ site.title[page.lang] }}", 
+	"author": { "@type": "Person", "name": "LWH"},
+      	"datePublished": "{{ page.date }}",
+	 "url":"{{ page.url | absolute_url }}",
+      	"description": "{{ page.description | strip }}" }
+    	</script>	
 	
 	{%- if page.custom_css -%}
 			{%- for stylesheet in page.custom_css -%}
