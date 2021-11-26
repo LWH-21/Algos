@@ -22,9 +22,9 @@ custom_js:
   -  assets/js/sort/BubbleSort.js
 ---
 
-**Bubble sort** (aka sinking sort) is a sorting algorithm that works by repeatedly stepping through lists that need to be sorted, comparing each adjacent pair of items and swapping them if necessary.
+**Bubble sort** (aka sinking sort) is a sorting algorithm that works by repeatedly stepping through the list that need to be sorted, comparing each adjacent pair of items and swapping them if necessary.
 
-This passing procedure is repeated until no swaps are done.
+This procedure is repeated until no swaps are done.
 
 Since at least one item is moved into its final place for each pass, we can decrement the last position checked on each pass. 
 
