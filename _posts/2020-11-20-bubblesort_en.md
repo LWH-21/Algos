@@ -3,7 +3,7 @@ layout: post
 title: The Bubble Sort
 description: "Visual of the 'bubble sorting' algorithm"
 author: LWH
-image: assets/img/sorg/bubblesort.png
+image: assets/img/sort/bubblesort.png
 keywords: 
  - Bubble Sort
  - Algorithm sinking sorg
