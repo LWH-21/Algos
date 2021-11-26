@@ -84,7 +84,7 @@
 		{%- assign posts=site.posts | where:"lang", page.lang | sort: 'date' | reverse -%}
 		{%- for p in posts  limit:10 -%}
 			{%- assign num_color = num_color | plus: 1 -%}
-			<div data-role="tile" data-size="large" style="background-color: {{ colors[num_color] }};">
+			<div data-role="tile" data-size="large" data-cover="{{ p.image | relative_url }}" style="background-color: {{ colors[num_color] }};">
 				<a href="{{ p.url| relative_url }}">
 					<div>						
 						<b>{{ p.title }}</b>
