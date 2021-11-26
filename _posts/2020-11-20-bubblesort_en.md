@@ -22,15 +22,13 @@ custom_js:
   -  assets/js/sort/BubbleSort.js
 ---
 
+**Bubble sort** (aka sinking sort) is a sorting algorithm that works by repeatedly stepping through lists that need to be sorted, comparing each adjacent pair of items and swapping them if necessary.
 
+This passing procedure is repeated until no swaps are done.
 
-The principle of the bubble sort (aka sinking sort) is very simple: to sort a list, you compare the first and second elements and exchange them if necessary. Then you do the same thing for the second and the third, then for the third and the fourth... until you reach the end of the list. Then you start again from the beginning. Until the list is sorted.
+Since at least one item is moved into its final place for each pass, we can decrement the last position checked on each pass. 
 
-You know that the list is sorted if you can go through the whole list without permuting.
-
-After the first iteration, the largest element is at the end of the list. It is thus useless to compare it with the previous one. At the end of the second iteration, the two largest elements are at the end of the list. At each iteration, we can therefore stop a little earlier.
-
-The animation below shows how the <mark>bubble sort</mark> works :
+The animation below shows how the bubble sort works :
 	
 <div class="w3-bar w3-black">
 	<button class="w3-bar-item w3-button" onclick="opentab('anim')">Animation</button>
