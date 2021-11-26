@@ -80,7 +80,7 @@ Pour vous faire une petite idée des performances de cet algorithme, supposez qu
 <input class="w3-input w3-bar-item" type="text" id="computerspeed" value="gg">
 <button class="w3-bar-item w3-button" onclick="calc_sort_speed();return false;">Calculer</button>
 </div>
-<table id = "exectimes"  class="w3-table-all"">
+<table id = "exectimes"  class="w3-table-all">
 	<thead><!-- en-tête -->
 		<tr><!-- première ligne -->
 			<th> Ville</th>
