@@ -41,7 +41,7 @@ function timetosort(nb, v, locale) {
 		return res;
 }
 		
-function calc_sort_speed() {
+function calc_sort_speed(locale) {
 		var speed=document.getElementById("computerspeed").value;
 		speed = speed.replace(/ /g, "");
 		if (speed <= 0) { speed = 0 ;}
@@ -60,7 +60,7 @@ function calc_sort_speed() {
 			let Col = array[i].cells;//on récupère les cellules de la ligne
 			let nb = Col[1].innerHTML;
 			nb = nb.replace(/ /g, ""); 
-			Col[2].innerHTML=timetosort(nb, speed,'fr');
+			Col[2].innerHTML=timetosort(nb, speed,locale);
 		}
 }
 
@@ -69,4 +69,4 @@ const algo = new SortAlgo(sortdem);
 sortdem.init(algo);  
 sortdem.renderer.render(sortdem.scene,sortdem.camera);
 
-calc_sort_speed();
+
