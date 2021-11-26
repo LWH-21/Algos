@@ -78,7 +78,7 @@ To give you an idea of the performance of this algorithm, suppose that you have 
 <div class="w3-metro-darken w3-bar">
 <label class="w3-bar-item" >Operations per second :</label>
 <input class="w3-input w3-bar-item" type="text" id="computerspeed" value="1 000 000">
-<button class="w3-bar-item w3-button" onclick="calc_sort_speed();return false;">Calculate!</button>
+<button class="w3-bar-item w3-button" onclick="calc_sort_speed('en');return false;">Calculate!</button>
 </div>
 <table id = "exectimes"  class="w3-table-all">
 	<thead><!-- en-tête -->
