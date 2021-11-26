@@ -26,7 +26,7 @@ function timetosort(nb, v, locale) {
 		sy='years';sm='months',sd='days',sh='hours',ss='sec',sm='minutes';
 		if (locale=='fr') {
 			sy='ans';sm='mois',sd='jours',sh='heures',sm='minutes',ss='secondes';
-		} else if (locale='es') {
+		} else if (locale=='es') {
 			sy='años';sm='meses',sd='días',sh='horas',sm='minutos',ss='segundos';
 		}
 		res="";
