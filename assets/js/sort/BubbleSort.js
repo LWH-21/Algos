@@ -44,6 +44,8 @@ function timetosort(nb, v, locale) {
 function calc_sort_speed(locale) {
 		var speed=document.getElementById("computerspeed").value;
 		speed = speed.replace(/ /g, "");
+		speed=speed.split(" ").join("");
+	console.log(speed);
 		if (speed <= 0) { speed = 0 ;}
 		if (isNaN(speed)) { speed = 0;}
 		if ((speed <= 0 ) || (speed> 1E15)) {
