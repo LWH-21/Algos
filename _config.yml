@@ -58,7 +58,7 @@ tag_dir: tag/
 
 
 # Tracker
-analytics: UA-62028023-3
+analytics: G-TPRBC74SGD
 
 exclude:
   - Config
