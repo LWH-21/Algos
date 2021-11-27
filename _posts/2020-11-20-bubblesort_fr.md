@@ -77,6 +77,7 @@ Cet algorithme n'est pas très performant. Il est souvent décrié, voire consid
 	
 Pour vous faire une petite idée des performances de cet algorithme, supposez que vous deviez trier les noms des habitants de plusieurs grandes villes. Et que la machine dont vous disposez peut effecter disons un million d'instructions par seconde (on ne tient pas compte des problèmes de mémoire,de disques etc...). Voici le temps que mettrait le tri avec cette méthode :
 
+<div class="w3-responsive">
 <div class="w3-metro-darken w3-bar">
 <label class="w3-bar-item" >Nombre d'opérations par secondes :</label>
 <input class="w3-input w3-bar-item" type="text" id="computerspeed" value="10 000 000">
@@ -158,6 +159,7 @@ Pour vous faire une petite idée des performances de cet algorithme, supposez qu
 		</tr>
 	</tbody>
 </table>
+</div>
 
 Vous pouvez changer la vitesse de la machine, pour tester.
 
