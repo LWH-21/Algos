@@ -73,12 +73,13 @@ The animation below shows how the bubble sort works :
 
 To give you an idea of the performance of this algorithm, suppose that you have to sort the names of the inhabitants of several large cities. And that the machine you have at your disposal can carry out let's say one million instructions per second (we don't take into account the problems of memory, disks etc...). Here is the time it would take to sort with this method:
 
+<div class="w3-responsive">
 <div class="w3-metro-darken w3-bar">
 <label class="w3-bar-item" >Operations per second :</label>
 <input class="w3-input w3-bar-item" type="text" id="computerspeed" value="1 000 000">
 <button class="w3-bar-item w3-button" onclick="calc_sort_speed('en');return false;">Calculate!</button>
 </div>
-<table id = "exectimes"  class="w3-table-all w3-responsive">
+<table id = "exectimes"  class="w3-table-all">
 	<thead><!-- en-tête -->
 		<tr><!-- première ligne -->
 			<th>City</th>
@@ -154,6 +155,7 @@ To give you an idea of the performance of this algorithm, suppose that you have 
 		</tr>
 	</tbody>
 </table>
+</div>
 
 You can change the number of operations per second to test.
 	
