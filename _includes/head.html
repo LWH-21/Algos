@@ -36,7 +36,15 @@
       	"datePublished": "{{ page.date }}",
 	 "url":"{{ page.url | absolute_url }}",
       	"description": "{{ page.description | strip }}" }
-    	</script>	
+    	</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-F8LZDS69VY"></script>
+	<script>
+  		window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());
+  		gtag('config', 'G-F8LZDS69VY');
+	</script>
 	
 	{%- if page.custom_css -%}
 			{%- for stylesheet in page.custom_css -%}
