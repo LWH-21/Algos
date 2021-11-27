@@ -45,7 +45,8 @@ function calc_sort_speed(locale) {
 		var speed=document.getElementById("computerspeed").value;
 		speed = speed.replace(/ /g, "");
 		speed=speed.split(" ").join("");
-	console.log(speed);
+		speed=speed.split(" ").join("");
+		speed=speed.replace(/[^\d.eE-]/g, ''); 
 		if (speed <= 0) { speed = 0 ;}
 		if (isNaN(speed)) { speed = 0;}
 		if ((speed <= 0 ) || (speed> 1E15)) {
