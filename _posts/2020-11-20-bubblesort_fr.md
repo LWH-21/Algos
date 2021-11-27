@@ -72,6 +72,8 @@ L’animation ci-dessous détaille le fonctionnement du <mark>tri bulle</mark> :
 	</div>
 
 </div>	
+
+Cet algorithme n'est pas très performant. Il est souvent décrié, voire considéré comme "naïf" et réservé à des fins pédagogiques. Toutefois, il a le mérite d'être suffisament performant sur de petites listes ou des listes déjà partiellement triéés. 
 	
 Pour vous faire une petite idée des performances de cet algorithme, supposez que vous deviez trier les noms des habitants de plusieurs grandes villes. Et que la machine dont vous disposez peut effecter disons un million d'instructions par seconde (on ne tient pas compte des problèmes de mémoire,de disques etc...). Voici le temps que mettrait le tri avec cette méthode :
 
@@ -80,7 +82,7 @@ Pour vous faire une petite idée des performances de cet algorithme, supposez qu
 <input class="w3-input w3-bar-item" type="text" id="computerspeed" value="10 000 000">
 <button class="w3-bar-item w3-button" onclick="calc_sort_speed('fr');return false;">Calculer</button>
 </div>
-<table id = "exectimes"  class="w3-table-all">
+<table id = "exectimes"  class="w3-table-all w3-responsive"">
 	<thead><!-- en-tête -->
 		<tr><!-- première ligne -->
 			<th> Ville</th>
