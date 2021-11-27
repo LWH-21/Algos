@@ -36,7 +36,7 @@ function timetosort(nb, v, locale) {
 		if (m>0) { res=res+m+" "+sm+" ";}
 		if (s>0) { res=res+s+" "+ss+" ";}
 		if ((s==0) && (m==0) && (h==0) && (d==0) && (y==0)) {
-			res=oti+" "+ss;
+			res=(new Intl.NumberFormat(locale,{maximumSignificantDigits: 3}).format(oti))+" "+ss;
 		}
 		return res;
 }
@@ -47,11 +47,10 @@ function calc_sort_speed(locale) {
 		if (speed <= 0) { speed = 0 ;}
 		if (isNaN(speed)) { speed = 0;}
 		if ((speed <= 0 ) || (speed> 1E15)) {
-			document.getElementById("computerspeed").value='1 000 000';
 			speed=1000000;
 		}
-
-		console.log('corr',speed);
+                document.getElementById("computerspeed").value=(new Intl.NumberFormat(locale).format(speed));
+		
 		var array = document.getElementById("exectimes").rows; //on récupère les lignes du tableau
 		var linescount = array.length;//on peut donc appliquer la propriété length
  
