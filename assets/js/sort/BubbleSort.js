@@ -47,10 +47,10 @@ function calc_sort_speed(locale) {
 		speed=speed.split(" ").join("");
 		speed=speed.split(" ").join("");
 		speed=speed.replace(/[^\d.eE-]/g, ''); 
-		if (speed <= 0) { speed = 0 ;}
-		if (isNaN(speed)) { speed = 0;}
-		if ((speed <= 0 ) || (speed> 1E15)) {
-			speed=1000000;
+		if (isNaN(speed)) { speed = 100;}
+		if (speed < 100) { speed = 100;}
+		if (speed> 1E15) {
+			speed=1E15;
 		}
                 document.getElementById("computerspeed").value=(new Intl.NumberFormat(locale).format(speed));
 		
