@@ -16,13 +16,13 @@ lang : fr
 locale : fr-FR
 ref : bubblesort
 custom_css:
- - //cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css
+ - assets/js/hightlight/default.min.css
 custom_js:
   -  assets/js/three/three.min.js
   -  assets/js/three/OrbitControls.js
   -  assets/js/sort/SortDemo.js
   -  assets/js/sort/BubbleSort.js
-  -  //cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js
+  -  assets/js/hightlight/highlight.min.js
 ---
 
 
