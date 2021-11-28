@@ -64,6 +64,7 @@ L’animation ci-dessous détaille le fonctionnement du <mark>tri bulle</mark> :
 	</div>	
 <div id="C" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">
 <pre class="C">	
+<code class="c-html">
 void bubble_sort(int* list, int size)
 {
 	int pass = 0;
@@ -83,11 +84,13 @@ void bubble_sort(int* list, int size)
 	    }
 	}
 }
+</code>
 </pre>
 </div>
 
 <div id="python" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">
 <pre class="python">
+<code class="python-html">
 def bubble_sort(lst):
 swapped = True
 pass = 0
@@ -101,6 +104,7 @@ while swapped == True:
 	    lst[current], lst[current + 1] = lst[current + 1],lst[current]
 return tableau  
 </pre>	
+</code>
 </div>		
 	
 <div id="pascal" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">
