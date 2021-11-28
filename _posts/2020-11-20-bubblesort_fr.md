@@ -39,7 +39,7 @@ L’animation ci-dessous détaille le fonctionnement du <mark>tri bulle</mark> :
 		<button class="w3-button">Code</button>
 		<div class="w3-dropdown-content w3-bar-block w3-card-4">
 		  <a href="#" class="w3-bar-item w3-button" title="Pascal" onclick="opentab('pascal');return false;">Pascal</a>
-		   <a href="#" class="w3-bar-item w3-button" title="Python" onclick="opentab('python');return false;">Python</a>
+		  <a href="#" class="w3-bar-item w3-button" title="Python" onclick="opentab('python');return false;">Python</a>
 		  <a href="#" class="w3-bar-item w3-button" title="C" onclick="opentab('C');return false;">C</a>
 		  <a href="#" class="w3-bar-item w3-button" title="Caml" onclick="opentab('caml');return false;">Caml</a>				  
 		  <a href="#" class="w3-bar-item w3-button" title="nsd" onclick="opentab('nsd');return false;">Structogramme</a>
@@ -60,7 +60,7 @@ L’animation ci-dessous détaille le fonctionnement du <mark>tri bulle</mark> :
 	<canvas id = "sort_canvas_schem" width = "640" height = "295" class="animation" style="position:relative;top:0;left:0;border:1px solid #000000; margin-bottom:0;z-index: 0;"> </canvas>
 	</div>	
 <div id="C" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">
-```c	
+<pre class="C">	
 void bubble_sort(int* list, int size)
 {
 	int pass = 0;
@@ -80,11 +80,11 @@ void bubble_sort(int* list, int size)
 	    }
 	}
 }
-```
+</pre>
 </div>
 
 <div id="python" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">
-```python
+<pre class="python">
 def bubble_sort(lst):
 swapped = True
 pass = 0
@@ -97,11 +97,11 @@ while swapped == True:
 	    # On echange les deux elements
 	    lst[current], lst[current + 1] = lst[current + 1],lst[current]
 return tableau  
-```	
+</pre>	
 </div>		
 	
 <div id="pascal" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">
-```pascal	
+<pre class="pascal">
 type tab = array[1..20] of integer;
 procedure bubble_sort(var tableau : tab);
     
@@ -128,11 +128,11 @@ begin
     pass := pass + 1;
     UNTIL (not swapped);
 end;
-```
+</pre>
 </div>
 	
 <div id="caml" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">	
-```caml	
+<pre class="caml">	
 let bublle_sort lst =
         let pass= ref 1 and swapped = ref true in
         while (!swapped = true) do
@@ -152,7 +152,7 @@ let bublle_sort lst =
             done;
         done;
     lst;;
-```
+ </pre>
 </div>
 	
 <div id="flowchart" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">		
