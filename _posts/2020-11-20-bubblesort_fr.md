@@ -70,12 +70,12 @@ L’animation ci-dessous détaille le fonctionnement du <mark>tri bulle</mark> :
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; swapped <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; pass <span class="sy0">++;</span> &nbsp; &nbsp; &nbsp;</div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">for</span> <span class="br0">&#40;</span>current<span class="sy0">=</span><span class="nu0">0</span><span class="sy0">;</span>current<span class="sy0">&lt;</span>size<span class="sy0">-</span>pass<span class="sy0">;</span>current<span class="sy0">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li>
-	<li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>lst<span class="br0">&#91;</span>current<span class="br0">&#93;</span><span class="sy0">&gt;</span>lst<span class="br0">&#91;</span>current<span class="sy0">ez_plus</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#123;</span></div></li>
+	<li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>lst<span class="br0">&#91;</span>current<span class="br0">&#93;</span><span class="sy0">&gt;</span>lst<span class="br0">&#91;</span>current<span class="sy0">&plus;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#123;</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swapped <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// On permute les deux éléments</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw4">int</span> temp <span class="sy0">=</span> lst<span class="br0">&#91;</span>current<span class="br0">&#93;</span><span class="sy0">;</span></div></li>
-	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; lst<span class="br0">&#91;</span>current<span class="br0">&#93;</span> <span class="sy0">=</span> lst<span class="br0">&#91;</span>current<span class="sy0">ez_plus</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">;</span></div></li>
-	<li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; lst<span class="br0">&#91;</span>current<span class="sy0">ez_plus</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">=</span> temp<span class="sy0">;</span></div></li>
+	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; lst<span class="br0">&#91;</span>current<span class="br0">&#93;</span> <span class="sy0">=</span> lst<span class="br0">&#91;</span>current<span class="sy0">&plus;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">;</span></div></li>
+	<li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; lst<span class="br0">&#91;</span>current<span class="sy0">&plus;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">=</span> temp<span class="sy0">;</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="br0">&#125;</span></div></li>
@@ -114,16 +114,16 @@ L’animation ci-dessous détaille le fonctionnement du <mark>tri bulle</mark> :
 	<li class="li1"><div class="de1">&nbsp; &nbsp; swapped <span class="sy0">:=</span> <span class="kw2">false</span>;</div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="kw1">for</span> current <span class="sy0">:=</span> <span class="nu0">1</span> <span class="kw1">to</span> <span class="nu0">20</span> <span class="sy0">-</span> pass <span class="kw1">do</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="kw1">begin</span></div></li>
-	<li class="li2"><div class="de2">&nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>lst<span class="br0">&#91;</span>current<span class="br0">&#93;</span> &gt; lst<span class="br0">&#91;</span>current <span class="sy0">ez_plus</span> <span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">then</span></div></li>
+	<li class="li2"><div class="de2">&nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>lst<span class="br0">&#91;</span>current<span class="br0">&#93;</span> &gt; lst<span class="br0">&#91;</span>current <span class="sy0">&plus;</span> <span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">then</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="kw1">begin</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="coMULTI">{ on échange les deux éléments }</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; temp <span class="sy0">:=</span> lst<span class="br0">&#91;</span>current<span class="br0">&#93;</span>;</div></li>
-	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; lst<span class="br0">&#91;</span>current<span class="br0">&#93;</span><span class="sy0">:=</span>lst<span class="br0">&#91;</span>current <span class="sy0">ez_plus</span> <span class="nu0">1</span><span class="br0">&#93;</span>;</div></li>
-	<li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; &nbsp; lst<span class="br0">&#91;</span>current <span class="sy0">ez_plus</span> <span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span>temp;</div></li>
+	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; lst<span class="br0">&#91;</span>current<span class="br0">&#93;</span><span class="sy0">:=</span>lst<span class="br0">&#91;</span>current <span class="sy0">&plus;</span> <span class="nu0">1</span><span class="br0">&#93;</span>;</div></li>
+	<li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; &nbsp; lst<span class="br0">&#91;</span>current <span class="sy0">&plus;</span> <span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span>temp;</div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; swapped <span class="sy0">:=</span> <span class="kw2">true</span>;</div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="kw1">end</span>;</div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="kw1">end</span>;</div></li>
-	<li class="li1"><div class="de1">&nbsp; &nbsp; pass <span class="sy0">:=</span> pass <span class="sy0">ez_plus</span> <span class="nu0">1</span>;</div></li>
+	<li class="li1"><div class="de1">&nbsp; &nbsp; pass <span class="sy0">:=</span> pass <span class="sy0">&plus;</span> <span class="nu0">1</span>;</div></li>
 	<li class="li2"><div class="de2">&nbsp; &nbsp; <span class="kw1">UNTIL</span> <span class="br0">&#40;</span><span class="kw1">not</span> swapped<span class="br0">&#41;</span>;</div></li>
 	<li class="li1"><div class="de1"><span class="kw1">end</span>;</div></li>
 	</ol></div>
@@ -134,17 +134,17 @@ L’animation ci-dessous détaille le fonctionnement du <mark>tri bulle</mark> :
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">let</span> pass<span class="sy0">=</span> <span class="kw1">ref</span> <span class="nu0">1</span> <span class="kw1">and</span> swapped <span class="sy0">=</span> <span class="kw1">ref</span> <span class="kw1">true</span> <span class="kw1">in</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">while</span> <span class="br0">&#40;</span><span class="sy0">!</span>swapped <span class="sy0">=</span> <span class="kw1">true</span><span class="br0">&#41;</span> <span class="kw1">do</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swapped <span class="sy0">:=</span> <span class="kw1">false</span><span class="sy0">;</span></div></li>
-	<li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pass <span class="sy0">:=</span> <span class="sy0">!</span>pass <span class="sy0">ez_plus</span> <span class="nu0">1</span><span class="sy0">;</span></div></li>
+	<li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pass <span class="sy0">:=</span> <span class="sy0">!</span>pass <span class="sy0">&plus;</span> <span class="nu0">1</span><span class="sy0">;</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">for</span> current <span class="sy0">=</span> <span class="nu0">0</span> <span class="kw1">to</span> <span class="br0">&#40;</span><span class="kw2">Array</span><span class="sy0">.</span>length lst<span class="br0">&#41;</span> <span class="sy0">-</span> <span class="sy0">!</span>pass <span class="kw1">do</span></div></li>
-	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> lst<span class="sy0">.</span><span class="br0">&#40;</span>current<span class="br0">&#41;</span> <span class="sy0">&gt;</span> lst<span class="sy0">.</span><span class="br0">&#40;</span>current <span class="sy0">ez_plus</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="kw1">then</span></div></li>
+	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> lst<span class="sy0">.</span><span class="br0">&#40;</span>current<span class="br0">&#41;</span> <span class="sy0">&gt;</span> lst<span class="sy0">.</span><span class="br0">&#40;</span>current <span class="sy0">&plus;</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="kw1">then</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">begin</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">(* On echange les deux elements *)</span></div></li>
 	<li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swapped <span class="sy0">:=</span> <span class="kw1">true</span><span class="sy0">;</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">let</span> temp <span class="sy0">=</span> lst<span class="sy0">.</span><span class="br0">&#40;</span>current<span class="br0">&#41;</span> <span class="kw1">in</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">begin</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw3">print_int</span> temp<span class="sy0">;</span></div></li>
-	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;lst<span class="sy0">.</span><span class="br0">&#40;</span>current<span class="br0">&#41;</span> <span class="sy0">&lt;-</span> lst<span class="sy0">.</span><span class="br0">&#40;</span>current <span class="sy0">ez_plus</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li>
-	<li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;lst<span class="sy0">.</span><span class="br0">&#40;</span>current <span class="sy0">ez_plus</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy0">&lt;-</span> temp<span class="sy0">;</span></div></li>
+	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;lst<span class="sy0">.</span><span class="br0">&#40;</span>current<span class="br0">&#41;</span> <span class="sy0">&lt;-</span> lst<span class="sy0">.</span><span class="br0">&#40;</span>current <span class="sy0">&plus;</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li>
+	<li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;lst<span class="sy0">.</span><span class="br0">&#40;</span>current <span class="sy0">&plus;</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy0">&lt;-</span> temp<span class="sy0">;</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">end</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">end</span></div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">done</span><span class="sy0">;</span></div></li>
@@ -186,9 +186,10 @@ L’animation ci-dessous détaille le fonctionnement du <mark>tri bulle</mark> :
 
 </div>	
 
-## Version de 
+## Version de Knuth
 
-La version originale de Knuth est un peu plus simple, mais l'idée est la même :
+La version originale de Donald Knuth est un peu plus simple, mais l'idée est la même : on compare les éléments adjacents et on échange si nécessaire. 
+
 ```C
 void BubbleSort(Vector a, int n)
 {
@@ -198,6 +199,9 @@ void BubbleSort(Vector a, int n)
                 Swap(a,k,k+1);
 }
 ```
+
+Toutefois, la version avec l'indicateur de permutation est la plus courante aujourd'hui. On peut même encore l'améliorer un peu si on tient compte que, si dans une itération le dernier échange s'est fait à la position n, alors tout les éléments situés après cette
+position n sont dans le bon ordre. Donc, pour les itérations suivantes, il est inutile de les explorer à nouveau.
 	
 ## Complexité	
 	
@@ -290,4 +294,3 @@ Pour vous faire une petite idée des performances de cet algorithme, supposez qu
 </div>
 
 Vous pouvez changer le nombre d'instructions par seconde, pour tester.
-
