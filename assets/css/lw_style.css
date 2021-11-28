@@ -11,9 +11,11 @@
  .animation {
             width:80%;
 }
+
 @media only screen and (max-width:1600px) {
    .animation {
    width:100%;
+   }
 }
 @media only screen and (max-width:480px) {
    .animation {
@@ -21,7 +23,7 @@
    }
 }
 
-   .code .de1,
+.code .de1,
 .code .de2 {
     font: normal normal 1em/1.2em monospace;
     margin: 0;
