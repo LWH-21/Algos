@@ -71,4 +71,4 @@ const algo = new SortAlgo(sortdem);
 sortdem.init(algo);  
 sortdem.renderer.render(sortdem.scene,sortdem.camera);
 
-
+calc_sort_speed(document.getElementsByTagName("html")[0].getAttribute("lang"));

@@ -252,7 +252,6 @@ SortDemo.prototype.render_layer = function() {
 		/*y=25+i*30;
 		ctx.fillRect(y,20, 30, 30);
 		ctx.strokeRect(y,20, 30, 30);
-
 		ctx.fillStyle = "black";
 		ctx.fillText(this.elts[i].value, y+10, 40);*/
 	}
@@ -439,11 +438,9 @@ SortDemo.prototype.init = function(a) {
 
     // renderer
 	this.renderer = new THREE.WebGLRenderer({canvas:mcanvas, antialias:true, preserveDrawingBuffer: false, alpha: false,  });
-	//this.renderer.setSize( this.WIDTH, this.HEIGHT );
+	
     this.renderer.setClearColor( 0xFFFFFF,0.5 );
     this.renderer.shadowMap.enabled=false;
-    //this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-    //this.renderer.setSize(WIDTH,HEIGHT);
     this.renderer.setPixelRatio(window.DevicePixelRatio);
 	// Scene
     this.scene = new THREE.Scene();
@@ -498,9 +495,6 @@ SortDemo.prototype.init = function(a) {
 	this.controls.update();
 	
 	this.algo.setup();
-
-	//const axesHelper = new THREE.AxesHelper( 5 );
-	//this.scene.add( axesHelper );
 
 	this.renderer.render(this.scene,this.camera);
 
