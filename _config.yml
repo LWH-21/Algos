@@ -42,7 +42,9 @@ encoding: UTF-8
 author: LWH
 format: web
 
+markdown: kramdown
 highlighter: rouge
+
 svg:
   optimize: true
 # Build settings
