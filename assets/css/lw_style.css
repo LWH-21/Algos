@@ -20,3 +20,110 @@
       width:110%;
    }
 }
+
+   .code .de1,
+.code .de2 {
+    font: normal normal 1em/1.2em monospace;
+    margin: 0;
+    padding: 0;
+    background: none;
+    vertical-align: top;
+    text-align: left;
+    white-space: nowrap;
+    color: #000020;
+}
+   
+/* See: https://quickhighlighter.com/ */   
+   
+.code {
+    font-family: monospace;
+    color: #006;
+    border: 1px solid #d0d0d0;
+    background-color: #ffffff;
+}
+.code a:link {
+    color: #000060;
+}
+.code a:hover {
+    background-color: #f0f000;
+}
+.code .imp {
+    font-weight: bold;
+    color: red;
+}
+.code li,
+.code .li1 {
+    font-weight: normal;
+    vertical-align: top;
+    font: normal normal 130% 'Courier New', Courier, monospace;
+    color: #003030;
+}
+.code .ln {
+    width: 1px;
+    text-align: right;
+    margin: 0;
+    padding: 0 2px;
+    vertical-align: top;
+}
+.code .kw1 {
+    color: #06c;
+    font-weight: bold;
+}
+.code .kw2 {
+    color: #06c;
+    font-weight: bold;
+}
+.code .kw3 {
+    color: #06c;
+    font-weight: bold;
+}
+.code .kw4 {
+    color: #06c;
+    font-weight: bold;
+}
+.code .kw5 {
+    color: #06c;
+    font-weight: bold;
+}
+.code .coMULTI {
+    color: #5d478b;
+    font-style: italic;
+}
+.code .co1 {
+    color: #5d478b;
+    font-style: italic;
+}
+.code .br0 {
+    color: #a52a2a;
+}
+.code .sy0 {
+    color: #a52a2a;
+}
+.code .st0 {
+    color: #3cb371;
+}
+.code .nu0 {
+    color: #c6c;
+}
+.code .me1 {
+    color: #060;
+}
+.code .re1 {
+    font-weight: bold;
+    color: #339933;
+}
+.code .re2 {
+    font-weight: bold;
+    color: #993399;
+}
+.code span.xtra {
+    display: block;
+}
+.code li:nth-child(odd) {
+    background: #E9ECF5;
+    color: #004261;
+    background-color: #E9ECF5;
+}
+.code li:nth-child(even) {
+    background: none;
+}
