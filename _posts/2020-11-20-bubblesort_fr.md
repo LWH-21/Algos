@@ -103,8 +103,9 @@ while swapped == True:
 	    # On echange les deux elements
 	    lst[current], lst[current + 1] = lst[current + 1],lst[current]
 return tableau  
-</pre>	
 </code>
+</pre>	
+
 </div>		
 	
 <div id="pascal" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">
