@@ -188,19 +188,46 @@ L’animation ci-dessous détaille le fonctionnement du <mark>tri bulle</mark> :
 
 ## Version de Knuth
 
-La version originale de Donald Knuth est un peu plus simple, mais l'idée est la même : on compare les éléments adjacents et on échange si nécessaire. 
+La version originale de Donald Knuth est un peu plus simple, mais l'idée est la même : on compare les éléments adjacents et on échange si nécessaire. Elle se présentait ainsi :
 
-```C
-void BubbleSort(Vector a, int n)
+```c
+void swap(int *a, int *b)
 {
-    for(int j=n-1; j > 0; j--)
-        for(int k=0; k < j; k++)
-            if (a[k+1] < a[k])
-                Swap(a,k,k+1);
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+void bubble_sort(int* lst, int size) {
+    for(int i=size-1; i > 0; i--)
+        for(int j=0; j < i;j++)
+            if (lst[j+1] < lst[j]){
+                swap(&lst[j],&lst[j+1]);
+            }
 }
 ```
 
-Toutefois, la version avec l'indicateur de permutation est la plus courante aujourd'hui. On peut même encore l'améliorer un peu si on tient compte que, si dans une itération le dernier échange s'est fait à la position n, alors tout les éléments situés après cette
+Toutefois, cette version a l'inconvénient de toujours faire le même nombre d'opérations, quel que soit le tableau en entrée.  La version suivant, avec l'indicateur de permutation est la plus courante aujourd'hui. 
+
+```c
+void bubble_sort(int* lst, int size)
+{
+    int pass = 0;
+    int swapped = 1;
+    int j;
+    while (swapped) {
+        swapped = 0;
+        pass ++;      
+        for (j=0;j<size-pass;j++) {
+        if (lst[j]>lst[j+1]){
+            swapped = 1;
+            swap(&lst[j],&lst[j+1]);
+        }
+        }
+    }
+}
+```
+On peut même encore l'améliorer un peu si on tient compte que, si dans une itération le dernier échange s'est fait à la position n, alors tout les éléments situés après cette
 position n sont dans le bon ordre. Donc, pour les itérations suivantes, il est inutile de les explorer à nouveau.
 	
 ## Complexité	
