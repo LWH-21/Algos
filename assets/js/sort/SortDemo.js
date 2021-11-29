@@ -381,36 +381,10 @@ SortDemo.prototype.shuffle = function(k) {
 			};
 			break;
 		case 'B':
-			var swap=true;
-			j = 19;
-			do {
-				swap=false;
-				for (let i=0;i<j;i++){
-					if (this.elts[i].value>this.elts[i+1].value) {
-						temp = this.elts[i];
-						this.elts[i] = this.elts[i+1];
-						this.elts[i+1] = temp;
-						swap=true;
-					}
-				}
-				j--;
-			} while (swap);
+			this.elts.sort(function (a, b) { return a.value - b.value;});
 			break;
 		case 'W':
-			var swap=true;
-			j = 19;
-			do {
-				swap=false;
-				for (let i=0;i<j;i++){
-					if (this.elts[i].value<this.elts[i+1].value) {
-						temp = this.elts[i];
-						this.elts[i] = this.elts[i+1];
-						this.elts[i+1] = temp;
-						swap=true;
-					}
-				}
-				j--;
-			} while (swap);
+			this.elts.sort(function (a, b) { return b.value - a.value;});
 			break;
 	}
 	for (let i=0;i<20;i++) {
