@@ -207,7 +207,7 @@ void bubble_sort(int* lst, int size) {
 }
 ```
 
-Toutefois, cette version a l'inconvénient de toujours faire le même nombre d'opérations, quel que soit le tableau en entrée.  La version suivant, avec l'indicateur de permutation est la plus courante aujourd'hui. 
+Toutefois, cette version a l'inconvénient de toujours faire le même nombre d'opérations, quel que soit le tableau en entrée.  La version suivante, avec l'indicateur de permutation est la plus courante aujourd'hui. 
 
 ```c
 void bubble_sort(int* lst, int size)
@@ -227,8 +227,7 @@ void bubble_sort(int* lst, int size)
     }
 }
 ```
-On peut même encore l'améliorer un peu si on tient compte que, si dans une itération le dernier échange s'est fait à la position n, alors tout les éléments situés après cette
-position n sont dans le bon ordre. Donc, pour les itérations suivantes, il est inutile de les explorer à nouveau.
+On peut encore l'améliorer un peu si on tient compte que, si dans une itération le dernier échange s'est fait à la position n, alors tout les éléments situés après cette position n sont dans le bon ordre. Donc, pour les itérations suivantes, il est inutile de les explorer à nouveau.
 	
 ## Complexité	
 	
