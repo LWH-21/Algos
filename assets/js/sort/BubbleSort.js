@@ -42,6 +42,10 @@ function timetosort(nb, v, locale) {
 }
 		
 function calc_sort_speed(locale) {
+		
+		locale = locale.trim();
+		locale = locale.toLowerCase();
+		locale = locale.substring(0,2);
 		var speed=document.getElementById("computerspeed").value;
 		speed = speed.replace(/ /g, "");
 		speed=speed.split(" ").join("");
@@ -72,5 +76,3 @@ sortdem.init(algo);
 sortdem.renderer.render(sortdem.scene,sortdem.camera);
 
 calc_sort_speed(document.getElementsByTagName("html")[0].getAttribute("lang"));
-
-hljs.highlightAll();
