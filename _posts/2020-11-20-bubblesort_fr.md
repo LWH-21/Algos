@@ -219,15 +219,33 @@ void bubble_sort(int* lst, int size)
         swapped = 0;
         pass ++;      
         for (j=0;j<size-pass;j++) {
-        if (lst[j]>lst[j+1]){
-            swapped = 1;
-            swap(&lst[j],&lst[j+1]);
-        }
+		if (lst[j]>lst[j+1]){
+		    swapped = 1;
+		    swap(&lst[j],&lst[j+1]);
+		}
         }
     }
 }
 ```
-On peut encore l'améliorer un peu si on tient compte que, si dans une itération le dernier échange s'est fait à la position n, alors tout les éléments situés après cette position n sont dans le bon ordre. Donc, pour les itérations suivantes, il est inutile de les explorer à nouveau.
+On peut encore l'améliorer un peu si on tient compte que, si dans une itération le dernier échange s'est fait à la position n, alors tout les éléments situés après cette position n sont dans le bon ordre. Donc, pour les itérations suivantes, il est inutile de les explorer à nouveau. Or aurait alors quelque chose comme ça :
+```c
+void bubble_sort1(int* lst, int size)
+{
+    int swapped = 1;
+    int lastswap = size ;
+    int j;
+    while (swapped) {
+        swapped = 0;
+        for (j=0;j<lastswap - 1;j++) {
+            if (lst[j]>lst[j+1]){
+                swapped = j+1;
+                swap(&lst[j],&lst[j+1]);
+            }
+        }
+        lastswap = swapped;
+    }
+}
+```
 	
 ## Complexité	
 	
