@@ -282,12 +282,12 @@ L'animation ci-dessous permet de vérifier, de manière empirique, cette évolut
 Pour vous faire une idée plus concrète des performances de cet algorithme, supposez que vous deviez trier par ordre alphabétique les noms des habitants de plusieurs grandes villes. Et que la machine dont vous disposez peut effectuer disons dix millions d’instructions par seconde (on ne tient pas compte des problèmes de mémoire, de disques etc…). Voici le temps que mettrait le tri avec cette méthode :
 
 <div class="w3-responsive">
-</br>
 <div class="w3-metro-darken w3-bar">
 <label class="w3-bar-item" >Nombre d'opérations par secondes :</label>
 <input class="w3-input w3-bar-item" type="text" id="computerspeed" value="10 000 000">
 <button class="w3-bar-item w3-button" onclick="calc_sort_speed('fr');return false;">Calculer</button>
 </div>
+<br>
 <table id = "exectimes"  class="w3-table-all w3-responsive">
 	<thead><!-- en-tête -->
 		<tr><!-- première ligne -->
