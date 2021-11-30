@@ -130,26 +130,18 @@ L’animation ci-dessous détaille le fonctionnement du <mark>tri bulle</mark> :
 </div>
 	
 <div id="caml" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">	
-	<div id="ocaml" class="code"><ol><li class="li1"><div class="de1"><span class="kw1">let</span> bubble_sort lst <span class="sy0">=</span></div></li>
-	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">let</span> pass<span class="sy0">=</span> <span class="kw1">ref</span> <span class="nu0">1</span> <span class="kw1">and</span> swapped <span class="sy0">=</span> <span class="kw1">ref</span> <span class="kw1">true</span> <span class="kw1">in</span></div></li>
-	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">while</span> <span class="br0">&#40;</span><span class="sy0">!</span>swapped <span class="sy0">=</span> <span class="kw1">true</span><span class="br0">&#41;</span> <span class="kw1">do</span></div></li>
-	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swapped <span class="sy0">:=</span> <span class="kw1">false</span><span class="sy0">;</span></div></li>
-	<li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pass <span class="sy0">:=</span> <span class="sy0">!</span>pass <span class="sy0">&plus;</span> <span class="nu0">1</span><span class="sy0">;</span></div></li>
-	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">for</span> current <span class="sy0">=</span> <span class="nu0">0</span> <span class="kw1">to</span> <span class="br0">&#40;</span><span class="kw2">Array</span><span class="sy0">.</span>length lst<span class="br0">&#41;</span> <span class="sy0">-</span> <span class="sy0">!</span>pass <span class="kw1">do</span></div></li>
-	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> lst<span class="sy0">.</span><span class="br0">&#40;</span>current<span class="br0">&#41;</span> <span class="sy0">&gt;</span> lst<span class="sy0">.</span><span class="br0">&#40;</span>current <span class="sy0">&plus;</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="kw1">then</span></div></li>
-	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">begin</span></div></li>
-	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">(* On echange les deux elements *)</span></div></li>
-	<li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swapped <span class="sy0">:=</span> <span class="kw1">true</span><span class="sy0">;</span></div></li>
-	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">let</span> temp <span class="sy0">=</span> lst<span class="sy0">.</span><span class="br0">&#40;</span>current<span class="br0">&#41;</span> <span class="kw1">in</span></div></li>
-	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">begin</span></div></li>
-	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw3">print_int</span> temp<span class="sy0">;</span></div></li>
-	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;lst<span class="sy0">.</span><span class="br0">&#40;</span>current<span class="br0">&#41;</span> <span class="sy0">&lt;-</span> lst<span class="sy0">.</span><span class="br0">&#40;</span>current <span class="sy0">&plus;</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li>
-	<li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;lst<span class="sy0">.</span><span class="br0">&#40;</span>current <span class="sy0">&plus;</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy0">&lt;-</span> temp<span class="sy0">;</span></div></li>
-	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">end</span></div></li>
-	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">end</span></div></li>
+	<div id="caml" class="code"><ol><li class="li1"><div class="de1"><span class="kw1">let</span> swap a b t <span class="sy0">=</span></div></li>
+	<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="kw1">let</span> temp <span class="sy0">=</span> t <span class="sy0">.</span><span class="br0">&#40;</span> b <span class="br0">&#41;</span> <span class="kw1">in</span> t <span class="sy0">.</span><span class="br0">&#40;</span> b <span class="br0">&#41;</span> <span class="sy0">&lt;-</span> t <span class="sy0">.</span><span class="br0">&#40;</span> a <span class="br0">&#41;</span> <span class="sy0">;</span> t <span class="sy0">.</span><span class="br0">&#40;</span> a <span class="br0">&#41;</span> <span class="sy0">&lt;-</span> temp <span class="sy0">;;</span></div></li>
+	<li class="li1"><div class="de1">&nbsp;</div></li>
+	<li class="li1"><div class="de1"><span class="kw1">let</span> bubble_sort vect <span class="sy0">=</span></div></li>
+	<li class="li2"><div class="de2">&nbsp; &nbsp; <span class="kw1">let</span> length <span class="sy0">=</span> <span class="kw2">Array</span><span class="sy0">.</span>length vect <span class="kw1">in</span></div></li>
+	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">for</span> max_pos <span class="sy0">=</span> length <span class="sy0">-</span> <span class="nu0">1</span> <span class="kw1">downto</span> <span class="nu0">0</span> <span class="kw1">do</span></div></li>
+	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">for</span> current <span class="sy0">=</span> <span class="nu0">0</span> <span class="kw1">to</span> max_pos <span class="sy0">-</span> <span class="nu0">1</span> <span class="kw1">do</span></div></li>
+	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> vect<span class="sy0">.</span><span class="br0">&#40;</span> current <span class="br0">&#41;</span> <span class="sy0">&gt;</span> vect<span class="sy0">.</span><span class="br0">&#40;</span> current <span class="sy0">&plus</span> <span class="nu0">1</span> <span class="br0">&#41;</span> <span class="kw1">then</span> swap current <span class="br0">&#40;</span> current <span class="sy0">&plus</span> <span class="nu0">1</span> <span class="br0">&#41;</span> vect</div></li>
 	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">done</span><span class="sy0">;</span></div></li>
-	<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">done</span><span class="sy0">;</span></div></li>
-	<li class="li2"><div class="de2">&nbsp; &nbsp; lst<span class="sy0">;;</span></div></li>
+	<li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">done</span><span class="sy0">;</span></div></li>
+	<li class="li1"><div class="de1">&nbsp; &nbsp; vect<span class="sy0">;</span></div></li>
+	<li class="li1"><div class="de1"><span class="sy0">;;</span></div></li>
 	</ol></div>
 </div>
 	
@@ -186,7 +178,7 @@ L’animation ci-dessous détaille le fonctionnement du <mark>tri bulle</mark> :
 
 </div>	
 
-## Version de Knuth
+## Versions
 
 La version originale de Donald Knuth est un peu plus simple, mais l'idée est la même : on compare les éléments adjacents et on échange si nécessaire. Elle se présentait ainsi :
 
@@ -227,7 +219,7 @@ void bubble_sort(int* lst, int size)
     }
 }
 ```
-On peut encore l'améliorer un peu si on tient compte que, si dans une itération le dernier échange s'est fait à la position n, alors tout les éléments situés après cette position n sont dans le bon ordre. Donc, pour les itérations suivantes, il est inutile de les explorer à nouveau. Or aurait alors quelque chose comme ça :
+On peut encore l'améliorer un peu car, si dans une itération le dernier échange s'est fait à la position N, alors tous les éléments situés après cette position N sont dans le bon ordre. Donc, pour les itérations suivantes, il est inutile de les explorer à nouveau. Or aurait alors quelque chose comme ça :
 ```c
 void bubble_sort1(int* lst, int size)
 {
@@ -249,9 +241,45 @@ void bubble_sort1(int* lst, int size)
 	
 ## Complexité	
 	
-Cet algorithme n'est pas très performant. Il est souvent décrié, voire considéré comme "naïf" et réservé à des fins pédagogiques. Toutefois, il a le mérite d'être suffisament performant sur de petites listes ou des listes déjà partiellement triéés. 	
+D'un point de vue pédagogique, cet algorithme est très intéressant. Il est facile à comprendre et donc tout aussi facile à expliquer. Il est facile à coder et permet de manipuler des vecteurs ou des listes. Il permet quelques optimisations et de nombreuses variations qui peuvent donner matière à de nombreux exercices. Et en plus, il a un nom sympa.
+
+Mais, dans le monde réel, il faut bien dire que cet algorithme n’est pas très performant. Il est souvent décrié, voire considéré comme “naïf” et à "à proscrire absolument". Toutefois, il a le mérite d’être suffisamment performant sur de petites listes ou des listes déjà partiellement triées.
+Dans le pire des cas, avec des données triées à l'envers, les parcours successifs du tableau imposent d'effectuer (n2-n)/2 comparaisons et échanges. On a donc une complexité dans le pire des cas du tri bulle en Θ(n2).
+
+Si tous les éléments de la série à trier sont distincts et que toutes leurs permutations sont équiprobables, la complexité en moyenne de l'algorithme est de l'ordre de (n2-n)/4 comparaisons et échanges. La complexité en moyenne du tri bulle est donc également en Θ(n2)
+
+Dans le meilleur des cas, avec des données déjà triées, l'algorithme effectuera seulement n - 1 comparaisons. Sa complexité dans le meilleur des cas est donc en Θ(n).
+
+L'animation ci-dessous permet de vérifier, de manière empirique, cette évolution du nombre d'opérations en fonction de la taille des données à trier.
+
+
+<div class="w3-metro-darken w3-bar">
+<button class="w3-bar-item w3-button" onclick="sortcplx.calc('A');return false;">Complexité moyenne</button>
+<button class="w3-bar-item w3-button" onclick="sortcplx.calc('W');return false;">Complexité pire des cas</button>
+<button class="w3-bar-item w3-button" onclick="sortcplx.calc('B');return false;">Complexité meilleur des cas</button>
+</div>
+
+<div id="complex" class="w3-container " style="width:100%;  height:420px; background-color:transparent;  overflow:auto;">	
+	<figure>
+	<div class="w3-half">
+	<center>
+	<canvas id="sortcplx" height="350" width="566" style="position:relative;border:1px solid #000000;width: 95%;"></canvas>
+	</center>
+	</div>
+	</figure>
+	<div class="w3-half">
+		<table id='Tcomplex' class="w3-table-all w3-hoverable">
+			<tr class="w3-red">
+				<th>Taille données</th>
+				<th>Comparaisons</th>
+				<th>Echanges</th>
+				<th>Total</th>
+			</tr>		
+		</table> 	
+	</div>
+</div>
 	
-Pour vous faire une petite idée des performances de cet algorithme, supposez que vous deviez trier les noms des habitants de plusieurs grandes villes. Et que la machine dont vous disposez peut effecter disons un million d'instructions par seconde (on ne tient pas compte des problèmes de mémoire,de disques etc...). Voici le temps que mettrait le tri avec cette méthode :
+Pour vous faire une idée plus concrète des performances de cet algorithme, supposez que vous deviez trier par ordre alphabétique les noms des habitants de plusieurs grandes villes. Et que la machine dont vous disposez peut effectuer disons dix millions d’instructions par seconde (on ne tient pas compte des problèmes de mémoire, de disques etc…). Voici le temps que mettrait le tri avec cette méthode :
 
 <div class="w3-responsive">
 <div class="w3-metro-darken w3-bar">
