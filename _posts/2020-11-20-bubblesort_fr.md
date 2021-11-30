@@ -288,9 +288,9 @@ Pour vous faire une idée plus concrète des performances de cet algorithme, sup
 <button class="w3-bar-item w3-button" onclick="calc_sort_speed('fr');return false;">Calculer</button>
 </div>
 <br>
-<table id = "exectimes"  class="w3-table-all w3-responsive">
+<table id = "exectimes"  class="w3-table-all w3-hoverable ">
 	<thead><!-- en-tête -->
-		<tr><!-- première ligne -->
+		<tr class="w3-red"><!-- première ligne -->
 			<th> Ville</th>
 			<th> Nombre d'habitants</th>
 			<th > Durée du tri</th>
