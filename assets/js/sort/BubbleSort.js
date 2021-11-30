@@ -1,3 +1,88 @@
+
+function BubbleSort(r) {
+	this.count = 0;
+	this.step = 0;
+	this.renderer = r;
+	this.swap=false;
+	this.data=[];
+	//SortAlgo.call(this,r);
+}
+
+BubbleSort.prototype.init = function(m) {
+	this.count=0;
+	this.step=0;
+	this.swap=false;
+	this.max = m;
+	//SortAlgo.call(this,m);
+}
+
+BubbleSort.prototype.render = function() {
+}
+
+BubbleSort.prototype.setup = function(n,style) {
+	this.data=[];
+	
+	switch (style) {
+		case 'A' : for (let i=0;i<n;i++){this.data.push(Math.random()*100);}
+		           break;
+		case 'B' : for (let i=0;i<n;i++){this.data.push(i);}
+				   break;
+		case 'W' : for (let i=n;i>0;i--) {this.data.push(i);}
+				   break;
+		
+	}
+}
+
+BubbleSort.prototype.sort = function() {
+	var nb_comp=0;
+	var nb_ex=0;
+	var swapped = true;
+	var phase=0;
+	var l = this.data.length - 1;
+	while (swapped) 
+	{
+		swapped=false;
+		for (let i = 0; i<l - phase;i++){
+			nb_comp++;
+			if (this.data[i]>this.data[i+1]) {
+				swapped=true;
+				nb_ex++;
+				let tmp = this.data[i];
+				this.data[i]=this.data[i+1];
+				this.data[i+1]=tmp;
+			}
+		}
+	}
+	return[nb_comp,nb_ex];
+}
+
+BubbleSort.prototype.stop = function() {
+	this.count=21;
+	this.swap=false;
+}
+
+BubbleSort.prototype.next = function() {
+	if (this.renderer) {
+		if (this.count<this.max - 1 - this.step) {
+			let j=this.count;
+			let a=this.renderer.compare(j,j+1);
+			if (a>=0) {
+				this.renderer.pose(j,j+1);
+			} else {
+				this.renderer.echange(j,j+1);
+				this.swap=true;
+			}
+			this.count++;
+		} else {
+			if (this.swap) {
+				this.swap=false;
+				this.count=0;
+				this.step++;
+			}
+		}
+	}
+}
+
 function opentab(tname) {
   var i;
   var x = document.getElementsByClassName("tab");
@@ -71,8 +156,18 @@ function calc_sort_speed(locale) {
 }
 
 const sortdem = new SortDemo(this,'sort_canvas');
-const algo = new SortAlgo(sortdem);
-sortdem.init(algo);  
+const algo = new BubbleSort(sortdem);
+sortdem.init(algo);
 sortdem.renderer.render(sortdem.scene,sortdem.camera);
+
+
+const sortgame = new SortGame('sortgame',5);
+const gamealgo = new BubbleSort(sortgame);
+sortgame.init(gamealgo);
+
+
+const sortcplx = new SortCplx('sortcplx','Tcomplex');
+const compalgo = new BubbleSort();
+sortcplx.init(compalgo);
 
 calc_sort_speed(document.getElementsByTagName("html")[0].getAttribute("lang"));
