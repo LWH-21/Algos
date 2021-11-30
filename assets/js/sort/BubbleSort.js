@@ -141,7 +141,7 @@ function calc_sort_speed(locale) {
 		if (speed> 1E15) {
 			speed=1E15;
 		}
-                document.getElementById("computerspeed").value=(new Intl.NumberFormat(locale).format(speed));
+		document.getElementById("computerspeed").value=(new Intl.NumberFormat(locale).format(speed));
 		
 		var array = document.getElementById("exectimes").rows; //on récupère les lignes du tableau
 		var linescount = array.length;//on peut donc appliquer la propriété length
@@ -161,13 +161,19 @@ sortdem.init(algo);
 sortdem.renderer.render(sortdem.scene,sortdem.camera);
 
 
-const sortgame = new SortGame('sortgame',5);
-const gamealgo = new BubbleSort(sortgame);
-sortgame.init(gamealgo);
+
+if(document.body.contains(document.getElementById('sortgame'))){
+	const sortgame = new SortGame('sortgame',5);
+	const gamealgo = new BubbleSort(sortgame);
+	sortgame.init(gamealgo);
+}
 
 
 const sortcplx = new SortCplx('sortcplx','Tcomplex');
 const compalgo = new BubbleSort();
 sortcplx.init(compalgo);
 
-calc_sort_speed(document.getElementsByTagName("html")[0].getAttribute("lang"));
+
+if(document.body.contains(document.getElementById('computerspeed'))){
+	calc_sort_speed(document.getElementsByTagName("html")[0].getAttribute("lang"));
+}
