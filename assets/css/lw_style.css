@@ -9,19 +9,32 @@
 }
 
  .animation {
-            width:80%;
+            width:50%;			
 }
 
 @media only screen and (max-width:1600px) {
    .animation {
-   width:100%;
+   width:70%;
+   }
+}
+
+@media only screen and (max-width:1024px) {
+   .animation {
+   width:80%;
+   }
+}
+
+@media only screen and (max-width:768px) {
+   .animation {
+      width:90%;
    }
 }
 @media only screen and (max-width:480px) {
    .animation {
-      width:110%;
+      width:100%;
    }
 }
+
 
 .code .de1,
 .code .de2 {
