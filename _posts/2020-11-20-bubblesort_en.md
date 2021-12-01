@@ -187,9 +187,9 @@ The mini-game below allows you to try to sort, in order of increasing weight,  5
 </div>
 
 <figure>
-<div class="animation" style="width:80%;align:center;">
+<div style="width:80%;align:center;">
 <center>
-<canvas id="sortgame" height="300" width="486" style="position:relative;border:1px solid #000000;"></canvas>
+<canvas id="sortgame" class="animation" height="300" width="486" style="position:relative;border:1px solid #000000;"></canvas>
 </center>
 </div>
 </figure>
