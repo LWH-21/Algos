@@ -147,7 +147,7 @@ La siguiente animación muestra cómo funciona la ordenación por burbujas:
 </div>
 
 <div id="nsd" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">		
-<img src="{{ 'assets/img/sort/BubbleSort_nsd.svg' | relative_url }}" alt="Graph NSD (Nassi-Shneidermann) de clasificación de burbujas " /> 
+<img src="{{ 'assets/img/sort/BubbleSort_nsd.svg' | relative_url }}" alt="Graph NSD (Nassi-Shneidermann) de la Ordenamiento de burbuja " /> 
 </div>
 	
 </figure>
@@ -268,7 +268,7 @@ En el mejor de los casos, cuando la lista ya está ordenada, se necesitarán <b>
 La animación siguiente permite comprobar, de forma empírica, esta evolución del número de operaciones en función del número de elementos a ordenar.
 
 <div class="w3-metro-darken w3-bar">
-<button class="w3-bar-item w3-button" onclick="sortcplx.calc('A');return false;">Complejidad media</button>
+<button class="w3-bar-item w3-button" onclick="sortcplx.calc('A');return false;">Caso promedio</button>
 <button class="w3-bar-item w3-button" onclick="sortcplx.calc('W');return false;">Peor caso</button>
 <button class="w3-bar-item w3-button" onclick="sortcplx.calc('B');return false;">Mejor caso</button>
 </div>
@@ -285,15 +285,15 @@ La animación siguiente permite comprobar, de forma empírica, esta evolución d
 		<table id='Tcomplex' class="w3-table-all w3-hoverable">
 			<tr class="w3-red">
 				<th>Data size</th>
-				<th>Comparisons</th>
-				<th>Exchanges</th>
+				<th>Comparaciones/th>
+				<th>Intercambios</th>
 				<th>Total</th>
 			</tr>		
 		</table> 	
 	</div>
 </div>
 	
-Para tener una idea más concreta del rendimiento de este algoritmo, suponga que tiene que ordenar alfabéticamente el directorio de los habitantes de varias grandes ciudades. Y que la máquina que tiene a su disposición puede realizar, digamos, diez millones de instrucciones por segundo . Este es el tiempo que se necesitaría con este método:
+Para tener una idea más concreta del rendimiento de este algoritmo, suponga que tiene que ordenar alfabéticamente el directorio de los habitantes de varias grandes ciudades. Y que la máquina que tiene a su disposición puede realizar, digamos, diez millones de instrucciones por segundo . Se puede estimar el tiempo necesario para esta clasificación.
 
 <div class="w3-responsive">
 <div class="w3-metro-darken w3-bar">
@@ -307,7 +307,7 @@ Para tener una idea más concreta del rendimiento de este algoritmo, suponga que
 		<tr class="w3-red">
 			<th>Ciudad</th>
 			<th>Población</th>
-			<th >Tiempo de clasificación estamado</th>
+			<th >Duración estimada</th>
 		</tr>
 	</thead>
 	<tbody>
