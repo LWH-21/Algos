@@ -22,7 +22,7 @@ custom_js:
   -  assets/js/sort/BubbleSort.js
 ---
 
-La **ordenación por burbujas** es un sencillo algoritmo de ordenación que funciona recorriendo repetidamente la lista que hay que ordenar, comparando cada par de elementos adyacentes e intercambiándolos si están en el orden equivocado.
+La **ordenación por burbujas** también se conoce como **Sinking Sort**. Es un algoritmo de ordenación simple que recorre repetidamente la lista que hay que ordenar, comparando cada par de elementos adyacentes y los intercambia si están en el orden equivocado.
 
 Este procedimiento se repite hasta que no se realicen intercambios.
 
@@ -186,9 +186,9 @@ El minijuego que se presenta a continuación permite intentar clasificar, en ord
 </div>
 
 <figure>
-<div class="animation" style="width:80%;align:center;">
+<div style="width:80%;align:center;">
 <center>
-<canvas id="sortgame" height="300" width="486" style="position:relative;border:1px solid #000000;"></canvas>
+<canvas id="sortgame" class="animation" height="300" width="486" style="position:relative;border:1px solid #000000;"></canvas>
 </center>
 </div>
 </figure>
@@ -284,7 +284,7 @@ La animación siguiente permite comprobar, de forma empírica, esta evolución d
 	<div class="w3-half">
 		<table id='Tcomplex' class="w3-table-all w3-hoverable">
 			<tr class="w3-red">
-				<th>Data size</th>
+				<th>Tamaño de datos</th>
 				<th>Comparaciones</th>
 				<th>Intercambios</th>
 				<th>Total</th>
