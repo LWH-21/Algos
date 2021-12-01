@@ -194,7 +194,7 @@ The mini-game below allows you to try to sort, in order of increasing weight,  5
 </div>
 </figure>
 
-## Variantes
+## Variations
 
 Donald Knuth's original version is a bit simpler, but the idea is the same: we compare adjacent elements and exchange if necessary. 
 
@@ -254,7 +254,7 @@ void bubble_sort1(int* lst, int size)
 }
 ```
 	
-## Complexité	
+## Complexity	
 
 From an educational point of view, this algorithm is very interesting. It is easy to understand and therefore also easy to explain. It is easy to code in most computer languages and gives the opportunity to manipulate vectors or lists. It can be used as a basis for many optimization exercises. And it has a catchy name.
 
@@ -287,9 +287,9 @@ The animation below allows to verify, in an empirical way, this evolution of the
 	<div class="w3-half">
 		<table id='Tcomplex' class="w3-table-all w3-hoverable">
 			<tr class="w3-red">
-				<th>Taille données</th>
-				<th>Comparaisons</th>
-				<th>Echanges</th>
+				<th>Data size</th>
+				<th>Comparisons</th>
+				<th>Exchanges</th>
 				<th>Total</th>
 			</tr>		
 		</table> 	
@@ -300,9 +300,9 @@ To get a more concrete idea of the performance of this algorithm, suppose that y
 
 <div class="w3-responsive">
 <div class="w3-metro-darken w3-bar">
-<label class="w3-bar-item" >Nombre d'opérations par secondes :</label>
+<label class="w3-bar-item" >Operations per second  :</label>
 <input class="w3-input w3-bar-item" type="text" id="computerspeed" value="10 000 000">
-<button class="w3-bar-item w3-button" onclick="calc_sort_speed('fr');return false;">Calculer</button>
+<button class="w3-bar-item w3-button" onclick="calc_sort_speed('fr');return false;">Calculate!</button>
 </div>
 <br>
 <table id = "exectimes"  class="w3-table-all w3-hoverable ">
