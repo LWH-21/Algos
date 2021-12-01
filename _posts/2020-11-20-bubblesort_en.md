@@ -9,7 +9,7 @@ keywords:
  - Algorithm sinking sorg
  - Visual of bubble sorting
 date: 2021-11-20
-last_modified_at: 2021-11-14
+last_modified_at: 2021-12-01
 category: 
  - sort algorithms 
 lang : en
@@ -42,8 +42,8 @@ The animation below shows how the bubble sort works :
 		  <a href="#" class="w3-bar-item w3-button" title="Python" onclick="opentab('python');return false;">Python</a>
 		  <a href="#" class="w3-bar-item w3-button" title="C" onclick="opentab('C');return false;">C</a>
 		  <a href="#" class="w3-bar-item w3-button" title="Caml" onclick="opentab('caml');return false;">Caml</a>				  
-		  <a href="#" class="w3-bar-item w3-button" title="nsd" onclick="opentab('nsd');return false;">Structogramme</a>
-		  <a href="#" class="w3-bar-item w3-button" title="Flowchart" onclick="opentab('flowchart');return false;">Organigramme</a>
+		  <a href="#" class="w3-bar-item w3-button" title="nsd" onclick="opentab('nsd');return false;">Nassi–Shneiderman diagram</a>
+		  <a href="#" class="w3-bar-item w3-button" title="Flowchart" onclick="opentab('flowchart');return false;">Flowchart</a>
 		</div>
 	</div>
 </div>
