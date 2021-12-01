@@ -144,11 +144,11 @@ The animation below shows how the bubble sort works :
 </div>
 	
 <div id="flowchart" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">		
-<img src="{{ 'assets/img/sort/BubbleSort_flowchart.svg' | relative_url }}" alt="Ordinogramme du tri bulle " /> 
+<img src="{{ 'assets/img/sort/BubbleSort_flowchart.svg' | relative_url }}" alt="Bubble sort flowchart " /> 
 </div>
 
 <div id="nsd" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">		
-<img src="{{ 'assets/img/sort/BubbleSort_nsd.svg' | relative_url }}" alt="Graphe NSD (Nassi-Shneidermann) du tri bulle " /> 
+<img src="{{ 'assets/img/sort/BubbleSort_nsd.svg' | relative_url }}" alt="NSD Graph for Bubble sort " /> 
 </div>
 	
 </figure>
