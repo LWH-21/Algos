@@ -9,7 +9,7 @@ keywords:
  - Algorithme du tri bulle
  - Visualisation du tri bulle
 date: 2021-11-20
-last_modified_at: 2021-11-14
+last_modified_at: 2021-12-01
 category: 
  - Algorithmes de tri 
 lang : fr
@@ -22,12 +22,12 @@ custom_js:
   -  assets/js/sort/BubbleSort.js
 ---
 
+Le principe du tri à bulles (bubble sort ou sinking sort en anglais) est très simple : pour trier une liste, on compare son premier et son second élément et on les échange si nécessaire. Puis on fait la même chose pour le second et le troisième, puis pour le troisième et le quatrième… jusqu’à ce qu’on arrive à la fin de la liste. Après cela, on recommence à partir du début. Au bout d’un certain nombre d’itérations, on ne fait plus de permutations. Alors la liste est triée.
 
-Le principe du <em>tri à bulles</em> (bubble sort ou sinking sort en anglais) est très simple : pour trier une liste, on compare son premier et son second élément et on les échange si nécessaire. Puis on fait la même chose pour le second et le troisième, puis pour le troisième et le quatrième... jusqu'à ce qu'on arrive à la fin de la liste. Ensuite, on recommence à partir du début. Jusqu'à ce que la liste soit triée.
+On remarque, qu’après le premier passage, l’élément le plus grand se retrouve à sa place définitive. Au deuxième passage, il sera donc inutile de le comparer avec le précédent. A chaque itération, on aura un élément de plus qui sera correctement placé à la fin de la liste. On pourra donc, à chaque fois, s’arrêter un peu plus tôt.
 
-On sait que la liste est triée si on peut la parcourir en entier sans effectuer de permutation.
+L’animation ci-dessous illustre le fonctionnement de ce tri. 
 
-On remarque, qu'après la première itération, l'élément le plus grand se trouve à la fin de la liste. Il est donc inutile de le comparer avec le précédent. A la fin de la seconde itération, les deux éléments les plus grands qui sont à la fin de la liste. A chaque itération, on peut donc s'arrêter un peu plus tôt.
 
 L’animation ci-dessous détaille le fonctionnement du <mark>tri bulle</mark> :
 	
@@ -176,9 +176,27 @@ L’animation ci-dessous détaille le fonctionnement du <mark>tri bulle</mark> :
 		</div>
 	</div>
 
-</div>	
+</div>
 
-## Versions
+## Travaux pratiques
+
+Le mini-jeu ci-dessous vous permet d'essayer de trier, par ordre de poids croissant, une suite de 5 tonneaux, avec juste une balance pour les comparer. Vous pouvez essayer de le résoudre avec la méthode du tri bulle.
+
+<div class="w3-metro-darken w3-bar">
+<button class="w3-bar-item w3-button" onclick="sortgame.shuffle(sortgame);return false;">Mélanger</button>
+<button class="w3-bar-item w3-button" onclick="sortgame.shownumbers();return false;">Voir</button>
+<button class="w3-bar-item w3-button" onclick="sortgame.solve();return false;">Résoudre</button>
+</div>
+
+<figure>
+<div class="animation" style="width:80%;align:center;">
+<center>
+<canvas id="sortgame" height="300" width="486" style="position:relative;border:1px solid #000000;"></canvas>
+</center>
+</div>
+</figure>
+
+## Variantes
 
 La version originale de Donald Knuth est un peu plus simple, mais l'idée est la même : on compare les éléments adjacents et on échange si nécessaire. Elle se présentait ainsi :
 
@@ -189,7 +207,6 @@ void swap(int *a, int *b)
     *a = *b;
     *b = tmp;
 }
-
 void bubble_sort(int* lst, int size) {
     for(int i=size-1; i > 0; i--)
         for(int j=0; j < i;j++)
@@ -199,7 +216,7 @@ void bubble_sort(int* lst, int size) {
 }
 ```
 
-Toutefois, cette version a l'inconvénient de toujours faire le même nombre d'opérations, quel que soit le tableau en entrée.  La version suivante, avec l'indicateur de permutation est la plus courante aujourd'hui. 
+Toutefois, cette version a l’inconvénient de toujours faire le même nombre d’opérations, quel que soit le tableau en entrée. L'implémentation suivante s’arrête dès qu’elle a fait un parcours sans aucune permutation. C’est la plus courante aujourd’hui.
 
 ```c
 void bubble_sort(int* lst, int size)
@@ -240,17 +257,21 @@ void bubble_sort1(int* lst, int size)
 ```
 	
 ## Complexité	
-	
-D'un point de vue pédagogique, cet algorithme est très intéressant. Il est facile à comprendre et donc tout aussi facile à expliquer. Il est facile à coder et permet de manipuler des vecteurs ou des listes. Il permet quelques optimisations et de nombreuses variations qui peuvent donner matière à de nombreux exercices. Et en plus, il a un nom sympa.
 
-Mais, dans le monde réel, il faut bien dire que cet algorithme n’est pas très performant. Il est souvent décrié, voire considéré comme “naïf” et à "à proscrire absolument". Toutefois, il a le mérite d’être suffisamment performant sur de petites listes ou des listes déjà partiellement triées.
-Dans le pire des cas, avec des données triées à l'envers, les parcours successifs du tableau imposent d'effectuer (n2-n)/2 comparaisons et échanges. On a donc une complexité dans le pire des cas du tri bulle en Θ(n2).
+D’un point de vue pédagogique, cet algorithme est très intéressant. Il est facile à comprendre et donc tout aussi facile à expliquer. Il est facile à coder dans la plupart des langages informatiques et donne l’occasion de manipuler des vecteurs ou des listes. Il peut servir de base à de nombreux exercices d’optimisation . Et en plus, il a un nom sympa.
 
-Si tous les éléments de la série à trier sont distincts et que toutes leurs permutations sont équiprobables, la complexité en moyenne de l'algorithme est de l'ordre de (n2-n)/4 comparaisons et échanges. La complexité en moyenne du tri bulle est donc également en Θ(n2)
+Mais, dans le monde réel, il faut bien dire qu’il n’est pas très performant. Il est souvent décrié, voire considéré comme “naïf” et à “à proscrire absolument”. Toutefois, il a quand même le mérite d’être suffisamment performant sur de petites listes ou des listes déjà partiellement triées. 
 
-Dans le meilleur des cas, avec des données déjà triées, l'algorithme effectuera seulement n - 1 comparaisons. Sa complexité dans le meilleur des cas est donc en Θ(n).
+Dans le pire des cas, avec des données triées à l’envers, les parcours successifs du tableau imposent d’effectuer <b>(<em>n</em><sup>2</sup> - <em>n</em>)</b> comparaisons et <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 2</b> échanges. Par exemple, pour une liste de <b><em>n</em></b> éléments, il faudra, dans le pire des cas, faire 90 comparaisons [ 10<sup>2</sup> - 10 ] et 45 échanges [ (10<sup>2</sup> - 10) / 2 ]. La complexité en temps est donc quadratique, de l’ordre de <b>&theta;(<em>n</em><sup>2</sup></b>).
 
-L'animation ci-dessous permet de vérifier, de manière empirique, cette évolution du nombre d'opérations en fonction de la taille des données à trier.
+En moyenne, lorsque l'ordre initial des éléments à trier est aléatoire, on considère qu’il faudra faire <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 4</b> échanges. La complexité sera donc aussi de <b>&theta;(<em>n</em><sup>2</sup></b>).
+
+Dans le meilleur des cas, quand la liste est déjà triée, il faudra <b>(<em>n</em> - 1)</b> comparaisons et aucune permutation. La complexité en temps est linéaire, en <b>&theta;(<em>n</em><sup>2</sup></b>).
+
+En espace utilisé (coût en mémoire de l’algorithme), la complexité du tri bulle est linéaire. Elle croit à la même vitesse que le nombre de données en entrée. Elle est donc de <b>&theta;(<em>n</em></b>).
+
+L’animation ci-dessous permet de vérifier, de manière empirique, cette évolution du nombre d’opérations en fonction du nombre d’éléments à trier.
+
 
 
 <div class="w3-metro-darken w3-bar">
@@ -279,7 +300,7 @@ L'animation ci-dessous permet de vérifier, de manière empirique, cette évolut
 	</div>
 </div>
 	
-Pour vous faire une idée plus concrète des performances de cet algorithme, supposez que vous deviez trier par ordre alphabétique les noms des habitants de plusieurs grandes villes. Et que la machine dont vous disposez peut effectuer disons dix millions d’instructions par seconde (on ne tient pas compte des problèmes de mémoire, de disques etc…). Voici le temps que mettrait le tri avec cette méthode :
+Pour vous faire une idée plus concrète des performances de cet algorithme, supposez que vous deviez trier par ordre alphabétique le répertoire des habitants de plusieurs grandes villes. Et que la machine dont vous disposez peut effectuer disons dix millions d’instructions par seconde (ce qui n’est pas si mal si on tient compte des problèmes d’accès à la mémoire, aux disques etc…). Voici le temps qui serait nécessaire avec cette méthode :
 
 <div class="w3-responsive">
 <div class="w3-metro-darken w3-bar">
