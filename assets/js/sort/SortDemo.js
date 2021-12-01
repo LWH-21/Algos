@@ -29,7 +29,7 @@ SortAlgo.prototype.stop = function() {
 	this.swap=false;
 }
 
-SortAlgo.prototype.next = function() {		
+SortAlgo.prototype.next = function() {
 		if (this.count<this.max -1 -this.step) {
 			let j=this.count;
 			let a=this.renderer.compare(j,j+1);
@@ -105,13 +105,13 @@ SortDemo.prototype.render_schema = function() {
 	const h = 14;
 	ctx.clearRect(0, 0, 640, 295);
 	var nb = this.swap.length;
-	
+
 	let tab=[];
 	for (let i=0;i<20;i++) {
 		tab[i] = this.elts[i];
-	}		
+	}
 	for (let i=nb;i>0;i--) {
-		[a,b]=this.swap[i - 1];		
+		[a,b]=this.swap[i - 1];
 		let temp = tab[a];
 		tab[a] = tab[b];
 		tab[b] = temp;
@@ -119,7 +119,7 @@ SortDemo.prototype.render_schema = function() {
 	nb = this.comp.length;
 	var size = 600 / (nb + 1);
 	if (size>10) {size=10 };
-	
+
 	x=15;
 	for (let i=0;i<20;i++) {
 
@@ -128,17 +128,17 @@ SortDemo.prototype.render_schema = function() {
 			ctx.fillStyle = "#"+tab[i].color.toString(16);
 			ctx.fillRect(2,7+i*h, 15, 15);
 			ctx.strokeRect(2,7+i*h, 15, 15);
-			
+
 
 			ctx.fillStyle = "#"+this.elts[i].color.toString(16);
 			ctx.fillRect(623,7+i*h, 15, 15);
 			ctx.strokeRect(623,7+i*h, 15, 15);
-			
+
 			ctx.fillStyle = "black";
 			ctx.fillText(tab[i].value, 5, 18+i*h);
 			ctx.fillText(this.elts[i].value, 630, 18+i*h);
 	}
-	
+
 	for (let i=0;i<20;i++) {
 			ctx.beginPath();
 			ctx.strokeStyle="blue";
@@ -170,17 +170,17 @@ SortDemo.prototype.render_graph = function() {
 	var nb = this.swap.length;
 	var size = 600 / (nb + 1);
 	if (size>20) {size=20 };
-	
+
 	let tab=[];
 	for (let i=0;i<20;i++) {
 		tab[i] = this.elts[i];
-	}		
+	}
 	for (let i=nb;i>0;i--) {
-		[a,b]=this.swap[i - 1];		
+		[a,b]=this.swap[i - 1];
 		let temp = tab[a];
 		tab[a] = tab[b];
 		tab[b] = temp;
-	}		
+	}
 	x=15;
 	for (let i=0;i<20;i++) {
 			ctx.beginPath();
@@ -199,18 +199,18 @@ SortDemo.prototype.render_graph = function() {
 			ctx.fillStyle = "#"+tab[i].color.toString(16);
 			ctx.fillRect(2,7+i*h, 15, 15);
 			ctx.strokeRect(2,7+i*h, 15, 15);
-			
+
 
 			ctx.fillStyle = "#"+this.elts[i].color.toString(16);
 			ctx.fillRect(623,7+i*h, 15, 15);
 			ctx.strokeRect(623,7+i*h, 15, 15);
-			
+
 			ctx.fillStyle = "black";
 			ctx.fillText(tab[i].value, 5, 18+i*h);
 			ctx.fillText(this.elts[i].value, 630, 18+i*h);
 	}
 	x=15+size;
-	for (let j=0;j<nb;j++) {		
+	for (let j=0;j<nb;j++) {
 		[a,b] = this.swap[j];
 		for (let i=0;i<20;i++) {
 			ctx.beginPath();
@@ -225,13 +225,13 @@ SortDemo.prototype.render_graph = function() {
 			if (i==b) {
 				ctx.moveTo(x,15+i*h);
 				ctx.lineTo(x+size,15+a*h);
-				if (j==(nb - 1)) {ctx.lineTo(621,15+a*h);}				
+				if (j==(nb - 1)) {ctx.lineTo(621,15+a*h);}
 			} else {
 				ctx.moveTo(x,15+i*h);
 				ctx.lineTo(x+size,15+i*h);
 				if (j==(nb - 1))  {ctx.lineTo(621,15+i*h);}
-				
-			}	
+
+			}
 			ctx.stroke();
 		}
 		let temp=tab[a];
@@ -250,7 +250,7 @@ SortDemo.prototype.render_layer = function() {
 		ctx.strokeStyle = "black";
 		ctx.fillStyle = "#"+this.elts[i].color.toString(16);
 		[x,y] = this.elts[i].getCanvasPos();
-		
+
 		ctx.fillRect(x,y, 30, 30);
 		ctx.strokeRect(x,y, 30, 30);
 
@@ -307,7 +307,7 @@ SortDemo.prototype.render = function() {
 	if ((this.ready) && (this.running)) {
 		this.algo.next();
 	}
-	
+
 	if (this.algo) {
 		this.algo.render();
 	}
@@ -317,14 +317,13 @@ SortDemo.prototype.render = function() {
 	this.renderer.render(this.scene,this.camera);
 	this.controls.update();
 	this.render_layer();
-	
+
 	this.render_graph();
 	this.render_schema();
 }
 
 SortDemo.prototype.setSpeed = function(s) {
 	this.speed=s;
-	console.log(this.speed);
 }
 
 SortDemo.prototype.start = function() {
@@ -338,9 +337,10 @@ SortDemo.prototype.start = function() {
 }
 
 SortDemo.prototype.stop = function() {
-	if (this.algo) {
+	/*if (this.algo) {
 		this.algo.stop();
-	}
+	}*/
+	this.running=false;
 }
 
 SortDemo.prototype.compare = function(a,b) {
@@ -426,7 +426,7 @@ SortDemo.prototype.init = function(a) {
 
     // renderer
 	this.renderer = new THREE.WebGLRenderer({canvas:mcanvas, antialias:true, preserveDrawingBuffer: false, alpha: false,  });
-	
+
     this.renderer.setClearColor( 0xFFFFFF,0.5 );
     this.renderer.shadowMap.enabled=false;
     this.renderer.setPixelRatio(window.DevicePixelRatio);
@@ -481,7 +481,7 @@ SortDemo.prototype.init = function(a) {
 
 	this.controls = new THREE.OrbitControls( this.camera, this.renderer.domElement );
 	this.controls.update();
-	
+
 	this.algo.setup();
 
 	this.renderer.render(this.scene,this.camera);
@@ -498,19 +498,20 @@ function Barril(p,aparent) {
 	this.parent = aparent;
 	this.valeur=0;
 	this.index=p;
-	this.position=[[p,0]];
+	this.position=p;
+	this.oldpos=p;
 	[this.x,this.y]=this.getPos();
 	this.sel = false;
 	this.visible=true;
 	this.drag = false;
 	this.color='#FFFFFF';
-}	
+}
 
 Barril.prototype.getPos = function() {
 	if (! this.visible) { return [0,0];}
 	if (! this.drag) {
-		var p,w;
-		[p,w] = this.position[0];
+		var p;
+		p = this.position;
 		var balsens = '=';
 		let x=0;
 		let y=0;
@@ -535,7 +536,7 @@ Barril.prototype.getPos = function() {
 					y=35;
 					switch(balsens) {
 						case '>' : y=25;break;
-						case '<' : y=45;break;			
+						case '<' : y=45;break;
 					}
 					break;
 			case 13:
@@ -544,9 +545,9 @@ Barril.prototype.getPos = function() {
 					y=35;
 					switch(balsens) {
 						case '<' : y=25;break;
-						case '>' : y=45;break;			
+						case '>' : y=45;break;
 					}
-					break;					
+					break;
 			case 14:
 			case 15:
 			case 16:
@@ -563,39 +564,47 @@ Barril.prototype.getPos = function() {
 				break;
 		}
 		return [x,y];
-	} else {	
+	} else {
 		return [this.x,this.y];
 	}
 }
 
 Barril.prototype.move = function() {
-	if ((! this.drag) && (this.visible)) {		
+	if ((! this.drag) && (this.visible)) {
 		var x,y,p,phase;
-		var d=5;
-		[x,y]=this.getPos();
+		var dx=Math.floor(Math.random(10))+5;
+		var dy=Math.floor(Math.random(10))+5;		
+		[x,y]=this.getPos();		
+		if (y+20 < this.y) {
+			dy=15;
+			dx=2;
+		}
+		if (x +20< this.x) {
+			dx=15;
+			dy=2;
+		}
+		
+		
 		if ((x==this.x) && (y==this.y)) {
-			if (this.position.length>1) {
-				[p,phase] = this.position.shift();							
-			}
 			return;
 		}
 		if (this.x<x) {
-			this.x+=d;
+			this.x+=dx;
 			if (this.x>x) { this.x=x;};
 		}
 		if (this.x>x) {
-			this.x-=d;
+			this.x-=dx;
 			if (this.x<x) { this.x=x;};
 		}
 		if (this.y>y) {
-			this.y-=d;
+			this.y-=dy;
 			if (this.y<y) { this.y=y;};
-		}		
+		}
 		if (this.y<y) {
-			this.y+=d;
+			this.y+=dy;
 			if (this.y>y) { this.y=y;};
-		}		
-	}	
+		}
+	}
 }
 
 Barril.prototype.draw = function(ctx) {
@@ -605,7 +614,7 @@ Barril.prototype.draw = function(ctx) {
 	var x,y;
 	x=this.x;
 	y=this.y;
-	
+
 	ctx.lineWidth=1;
 	ctx.lineJoin="round";
 	ctx.lineCap="round";
@@ -623,23 +632,23 @@ Barril.prototype.draw = function(ctx) {
 	ctx.beginPath();ctx.moveTo(x+1,y+10);ctx.lineTo(x+39,y+10);ctx.lineTo(x+40,y+15);ctx.lineTo(x,y+15);ctx.closePath();ctx.fill();ctx.stroke();
 	ctx.beginPath();ctx.moveTo(x,y+27);ctx.lineTo(x+40,y+27);ctx.lineTo(x+40,y+32);ctx.lineTo(x,y+32);ctx.closePath();ctx.fill();ctx.stroke();
 	ctx.beginPath();ctx.moveTo(x,y+45);ctx.lineTo(x+40,y+45);ctx.lineTo(x+39,y+50);ctx.lineTo(x+1,y+50);ctx.closePath();ctx.fill();ctx.stroke();
-	if (true) {
+	if (this.parent.shownumber) {
 			ctx.fillStyle = "#000000";
 			ctx.fillRect(x+10,y+20,20,20);
 			ctx.fillStyle = "#ffffff";
 			ctx.fillText(this.valeur,x+20,y+35);
 	}
-	
+
 }
 
-Barril.prototype.endDrag = function(p) {	
+Barril.prototype.endDrag = function(p) {
 	var newpos=this.parent.getNearest(p.x,p.y);
 	this.drag=false;
-	if ((newpos>0) && (newpos<22)) { this.position[0]=[newpos,0];}
+	if ((newpos>0) && (newpos<22)) { this.position=newpos;}
 }
 
 Barril.prototype.GetRect = function() {
-	var rect = {};	
+	var rect = {};
 	rect.x1=this.x;rect.y1=this.y;rect.x2=this.x+40;rect.y2=this.y+65;
 	if (!this.visible) {
 		rect.x1=0;rect.y1=0;rect.x2=0;rect.y2=0;
@@ -652,9 +661,7 @@ Barril.prototype.ready = function() {
 	var x,y;
 	[x,y]=this.getPos();
 	if ((x==this.x) && (y==this.y)) {
-		if (this.position.length==1) {
-			result=true;
-		}
+		result=true;
 	}
 	return result;
 }
@@ -672,45 +679,68 @@ function SortGame (cnv,n) {
 	document.getElementById(cnv).addEventListener("mousemove", (e) => { this.mousemove(e,this);});
 	document.getElementById(cnv).addEventListener("mousedown", (e) => { this.mousedown(e,this);});
 	document.getElementById(cnv).addEventListener("mouseup", (e) => { this.mouseup(e,this);});
-	document.getElementById(cnv).addEventListener("mouseleave",(e) => { this.mouseleave(e,this);});		
+	document.getElementById(cnv).addEventListener("mouseleave",(e) => { this.mouseleave(e,this);});
 	this.data=[];
-	this.phase=0;
+	this.etapes=[];
 	if ((n<1) || (n>10)) { n=10;}
 	this.nb=n;
 	this.shuffle(self);
 	this.currentphase = 0;
 	this.draw();
-	this.timer= window.requestAnimationFrame(function(){ self.draw(); }, 25);
+	this.shownumber=false;
+	//this.timer= requestAnimationFrame(function(){ self.draw(); }, 25);
+	//console.log('request animation frame');
+	//this.timer=requestAnimationFrame((e) => { this.draw(this);},25);
+	this.timer=setInterval(function(){ self.draw(); }, 25);
+	//this.timer= requestAnimationFrame(function() {self.draw(); });
+//	console.log('timer ',this.timer);
+//	console.log('fin request');
 }
 
 SortGame.prototype.compare = function(a,b) {
-	var res = 0;
+	var res = 0;	
+	this.data[a].oldpos = this.data[a].position;
+	this.data[b].oldpos = this.data[b].position;
 	if (this.data[a].valeur>this.data[b].valeur) {
 		res = -1;
 	} else if (this.data[a].valeur<this.data[b].valeur) {
 		res=1;
 	}
-	this.phase++;
-	this.data[a].position.push([11,this.phase]);
-	this.data[b].position.push([13,this.phase]);
+	this.etapes.push([[this.data[a].index,11],[this.data[b].index,13]]);	
 	return res;
 }
 
+
+
 SortGame.prototype.pose = function(a,b) {
-	this.phase++;
-	this.data[a].position.push([a + 1,this.phase]);
-	this.data[b].position.push([b + 1,this.phase]);
+	this.etapes.push([[this.data[a].index,this.data[a].oldpos],[this.data[b].index,this.data[b].oldpos]]);
+	var s='';
+	for (let i=0;i<5;i++) {
+		s=s+this.data[i].position+', ';
+	}
 }
 
-SortGame.prototype.echange = function(a,b) {
-	this.phase++;
-	this.data[a].position.push([b + 1,this.phase]);
-	this.data[b].position.push([a + 1,this.phase]);
+SortGame.prototype.echange = function(a,b) {	
+	this.etapes.push([[this.data[a].index,this.data[b].oldpos],[this.data[b].index,this.data[a].oldpos]]);	
+	let tmp = this.data[b];
+	this.data[b]=this.data[a];
+	this.data[a]=tmp;
 }
 
 SortGame.prototype.init = function(al) {
 	this.algo = al;
 	this.algo.init(this.nb);
+}
+
+SortGame.prototype.stop = function() {
+	this.auto=false;
+	this.shownumber=true;
+}
+
+SortGame.prototype.shownumbers = function() {
+	var self = this;
+	this.shownumber=true;
+	setTimeout((a) => {a.shownumber=false;}, 3000,self);
 }
 
 SortGame.prototype.shuffle = function(self) {
@@ -728,7 +758,8 @@ SortGame.prototype.shuffle = function(self) {
 	this.auto=false;
 	this.busy=false;
 	this.balsens='=';
-	this.phase=1;
+	this.etapes=[];
+	this.shownumber=false;
 	for (let i=0; i<10; i++) {
 		if (! this.data[i]) {
 			this.data[i]=new Barril(i+1,self);
@@ -736,33 +767,39 @@ SortGame.prototype.shuffle = function(self) {
 			let a=Math.floor((Math.random() * this.nb));
 			this.data[i].x=this.data[a].x;
 			this.data[i].y=this.data[i].y-50-Math.floor((Math.random() * 100));
-		}		
+		}
 		this.data[i].valeur = Math.floor((Math.random() * 90) + 1);
 		this.data[i].color = colors[i];
-		this.data[i].position.push([i+1,this.phase]);
+		this.data[i].position=i+1;
 		if (i>=this.nb) {this.data[i].visible = false;}
 	}
+	
 	if (this.algo) { this.algo.init(this.nb); }
 }
 
 SortGame.prototype.solve = function(a) {
 	this.auto = true;
-}	
+	this.etapes=[];
+}
 
 SortGame.prototype.getBalsens = function() {
 	var res='=';
 	var left,right;
-	var p,w;
+	var p;
 	for (let i=0;i<10;i++) {
-		[p,w] = this.data[i].position[0];
+		p = this.data[i].position;
 		if (p==11) {
-			left=this.data[i];
+			if ((this.data[i].x>300) && (this.data[i].x<350) && (this.data[i].y<50) && (this.data[i].y>24)) {
+				left=this.data[i];
+			}
 		} else
 		if (p==13) {
-			right=this.data[i];
-		} 				
-	}	
-	if (left) {			
+			if ((this.data[i].x>400) && (this.data[i].x<425) && (this.data[i].y<50) && (this.data[i].y>24)) {
+				right=this.data[i];
+			}
+		}
+	}
+	if (left) {
 		res='<';
 		if (right) {
 			if (left.valeur==right.valeur) {
@@ -783,8 +820,15 @@ SortGame.prototype.getBalsens = function() {
 				res='<';
 			}
 		}
-	}	
+	}
 	return res;
+}
+
+SortGame.prototype.getElt = function(ind) {
+	for(let i=0;i<10;i++) {
+		if (this.data[i].index==ind) { return this.data[i]; }
+	}
+	return undefined;
 }
 
 SortGame.prototype.draw_plateau = function(x,y,ctx) {
@@ -832,7 +876,6 @@ SortGame.prototype.draw_balance = function(ctx) {
 		this.draw_plateau(310,i,ctx);
 		this.draw_plateau(400,j,ctx);
 		ctx.fillStyle="#825A2C";
-		
 }
 
 
@@ -843,16 +886,9 @@ SortGame.prototype.draw = function() {
 	}
 	if (this.busy) return;
 	this.busy=true;
-	var ready=true;	
+	var ready=true;
 	var i = 0, j=0, ctx=this.canvas.getContext("2d");
-	
-	var p, phase;
-	//[p,mini] = this.data[0].position[0];
-	for (i=1;i<this.nb;i++) {
-		[p,phase]=this.data[0].position[0];
-	}
-	
-	
+
 	var w = this.canvas.width, h = this.canvas.height,x=0,y=0;
 	ctx.clearRect ( 0 , 0 , w,h );
 	ctx.font="bold 16px Courier";
@@ -862,8 +898,8 @@ SortGame.prototype.draw = function() {
 	my_gradient.addColorStop(0.3,"#eff4ff");
 	my_gradient.addColorStop(0,"#eff4ff");
 	ctx.fillStyle=my_gradient;
-	ctx.fillRect(0,0,w,h);	
-	/* Balance */	
+	ctx.fillRect(0,0,w,h);
+	/* Balance */
 	this.draw_balance(ctx);
 	/* Etagere */;
 	ctx.lineWidth=5;
@@ -877,18 +913,31 @@ SortGame.prototype.draw = function() {
 	// Barrils
 	for (i=0;i<this.nb;i++) {
 		this.data[i].move();
-		this.data[i].draw(ctx); 
-		if (ready) { 
-			ready = this.data[i].ready();
-		}
+		this.data[i].draw(ctx);
+		if (ready) { ready = this.data[i].ready(); }
 	}
-	if ((this.auto) && (this.algo) && (ready)) this.algo.next();
+	if ((this.auto) && (this.algo) && (this.etapes.length == 0) && (ready)) {		
+		this.algo.next();		
+	} 
+
+	if ((this.auto) && (ready)) {
+		let ph = this.etapes.shift();
+		this.wait=10;
+		if (ph) {
+			for ( i=0;i<ph.length; i++) {
+				let [num_obj,num_pos]=ph[i];
+				let o = this.getElt(num_obj);
+				o.position=num_pos;
+			}
+		}
+	}	
 	this.busy=false;
 }
 
 SortGame.prototype.getNearest = function(x,y) {
 	var posi=[];
-	var res = -1;	
+	var res = -1;
+	var n = 0;
 	for (let i=0;i<30;i++) {
 		//  1 -> 10 : base
 		// 11  balance G
@@ -899,13 +948,13 @@ SortGame.prototype.getNearest = function(x,y) {
 	}
 	for (let i=0;i<10;i++) {
 		if ((! this.data[i].drag) && (this.data[i].visible)) {
-			let [j,w] = this.data[i].position[0];
+			let j = this.data[i].position;
 			posi[j]=this.data[i];
-		}		
+		}
 	}
 	if ((x<230) && (y<145)){ // Etagere
 		if (y<55) {  // Etagère Haut
-			n = Math.floor((x - 5) / 43)+18; 
+			n = Math.floor((x - 5) / 43)+18;
 			if ((n<18) || (n>21)) {n = 19}
 			if (posi[n]==='') return n;
 			if ((n>18) && (posi[n - 1]==='')) return n -1;
@@ -915,7 +964,7 @@ SortGame.prototype.getNearest = function(x,y) {
 			for (let i=18;i<21;i++) { if (posi[i]==='') return i;}
 		}
 		// Etagère bas
-		n = Math.floor((x - 5) / 43)+14; 
+		n = Math.floor((x - 5) / 43)+14;
 		if ((n<14) || (n>17)) {n = 16}
 		if (posi[n]==='') return n;
 		if ((n>14) && (posi[n - 1]==='')) return n -1;
@@ -923,24 +972,24 @@ SortGame.prototype.getNearest = function(x,y) {
 		if ((n>15) && (posi[n - 2]==='')) return n - 2;
 		if ((n<16) && (posi[n + 2]==='')) return n + 2;
 		for (let i=14;i<17;i++) { if (posi[i]==='') return i;}
-		n = Math.round((x -20) / 45)+1;	
+		n = Math.round((x -20) / 45)+1;
 		if (n<1) { n=1;}
-		if (n>10) {n=10;} 
+		if (n>10) {n=10;}
 		if (posi[n]==='') return n;
-		for (let i=1;i<11;i++) { if (posi[i]==='') return i;}		
-	}	
-	if ((x>=290) && (x<=350) && (y<60)) {
+		for (let i=1;i<11;i++) { if (posi[i]==='') return i;}
+	}
+	if ((x>=290) && (x<=350) && (y<90)) {
 			if (posi[11]==='') return 11;
 	}
-	if ((x>=385) && (y<60)) {
+	if ((x>=385) && (y<90)) {
 			if (posi[13]==='') return 13;
 	}
-	
-	n = Math.round((x -20) / 45)+1;	
+
+	n = Math.round((x -20) / 45)+1;
 	if (n<1) { n=1;}
-	if (n>10) {n=10;} 
+	if (n>10) {n=10;}
 	if (posi[n]==='') return n;
-	for (let i=1;i<11;i++) { if (posi[i]==='') return i;}		
+	for (let i=1;i<11;i++) { if (posi[i]==='') return i;}
 	return -1;
 }
 
@@ -1025,7 +1074,7 @@ SortCplx.prototype.init = function(al) {
 
 
 SortCplx.prototype.next = function(w) {
-	
+
 	var l = w.data.length + 1;
 	var nb_comp,nb_ex;
 	nb_comp=0;
@@ -1037,35 +1086,35 @@ SortCplx.prototype.next = function(w) {
 		let [a,b] = w.algo.sort();
 		nb_comp = nb_comp+a;
 		nb_ex = nb_ex+b;
-	}	
+	}
 	nb_comp = Math.floor(nb_comp / m);
 	nb_ex = Math.floor(nb_ex / m);
 	w.data.push([nb_comp,nb_ex]);
-	
+
 	var row = w.table.insertRow(l);
 	var cell1 = row.insertCell(0);
 	var cell2 = row.insertCell(1);
 	var cell3 = row.insertCell(2);
 	var cell4 = row.insertCell(3);
 
-	
+
 	cell1.innerHTML =new Intl.NumberFormat().format(l * 10);
 	cell2.innerHTML = new Intl.NumberFormat().format(nb_comp);
 	cell3.innerHTML = new Intl.NumberFormat().format(nb_ex);
 	cell4.innerHTML = new Intl.NumberFormat().format(nb_comp+nb_ex);
 	if (l>=w.maxi) {
-		clearInterval(w.timer); 
-	} 
+		clearInterval(w.timer);
+	}
 	w.draw();
 }
 
 SortCplx.prototype.calc = function(style) {
 	var ex, cp;
-	var nb_comp,nb_ex;	
+	var nb_comp,nb_ex;
 	this.data=[];
 	var self = this;
 	this.style = style;
-       
+
 	var rowCount = this.table.rows.length;
 	for (let j = 1; j < rowCount; j++) {
 		this.table.deleteRow(1);
@@ -1073,7 +1122,7 @@ SortCplx.prototype.calc = function(style) {
 	//setTimeout(this.next(self),100);
 	this.timer=setInterval(function () { self.next(self);},25);
 	this.draw();
-		
+
 }
 
 SortCplx.prototype.draw = function() {
@@ -1097,10 +1146,10 @@ SortCplx.prototype.draw = function() {
 	ctx.lineTo(5,h-5);
 	ctx.lineTo(w-5,h-5);
 	ctx.stroke();
-	
-	
-	var p = (w-5) / this.maxi;	
-	
+
+
+	var p = (w-5) / this.maxi;
+
 	for (let i=20;i<this.maxi;i+=20) {
 		let pos = 10+(i * p);
 		ctx.beginPath();
@@ -1108,10 +1157,10 @@ SortCplx.prototype.draw = function() {
 		ctx.lineTo(pos,h-6);
 		ctx.stroke();
 	}
-	
+
 	var nb_comp, nb_ex;
 	var maxi = 100;
-	
+
 	for (let i=0;i<lg;i++) {
 		[nb_comp,nb_ex]=this.data[i];
 		nb_comp = nb_comp+nb_ex;
@@ -1119,7 +1168,7 @@ SortCplx.prototype.draw = function() {
 	}
 	var ech = (h-10) / maxi;
 	var pas = Math.floor(maxi / 20);
-	
+
 	for (let i=pas;i<maxi;i+=pas) {
 		let pos = h - 6 -(i*ech)
 		ctx.beginPath();
@@ -1127,7 +1176,7 @@ SortCplx.prototype.draw = function() {
 		ctx.lineTo(5,pos);
 		ctx.stroke();
 	}
-	
+
 	ctx.lineWidth = 1;
 	for (let i=0;i<lg;i++) {
 		ctx.beginPath();

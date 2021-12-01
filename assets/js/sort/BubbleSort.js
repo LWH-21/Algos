@@ -59,6 +59,7 @@ BubbleSort.prototype.sort = function() {
 BubbleSort.prototype.stop = function() {
 	this.count=21;
 	this.swap=false;
+	if (this.renderer) { this.renderer.stop();}
 }
 
 BubbleSort.prototype.next = function() {
@@ -78,6 +79,8 @@ BubbleSort.prototype.next = function() {
 				this.swap=false;
 				this.count=0;
 				this.step++;
+			} else  {
+				this.renderer.stop();
 			}
 		}
 	}
@@ -162,11 +165,10 @@ sortdem.renderer.render(sortdem.scene,sortdem.camera);
 
 
 
-if(document.body.contains(document.getElementById('sortgame'))){
-	const sortgame = new SortGame('sortgame',5);
-	const gamealgo = new BubbleSort(sortgame);
-	sortgame.init(gamealgo);
-}
+const sortgame = new SortGame('sortgame',5);
+const gamealgo = new BubbleSort(sortgame);
+sortgame.init(gamealgo);
+
 
 
 const sortcplx = new SortCplx('sortcplx','Tcomplex');
