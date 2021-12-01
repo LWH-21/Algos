@@ -285,7 +285,7 @@ La animación siguiente permite comprobar, de forma empírica, esta evolución d
 		<table id='Tcomplex' class="w3-table-all w3-hoverable">
 			<tr class="w3-red">
 				<th>Data size</th>
-				<th>Comparaciones/th>
+				<th>Comparaciones</th>
 				<th>Intercambios</th>
 				<th>Total</th>
 			</tr>		
