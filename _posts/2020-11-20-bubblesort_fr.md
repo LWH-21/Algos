@@ -188,7 +188,7 @@ Le mini-jeu ci-dessous vous permet d'essayer de trier, par ordre de poids croiss
 <figure>
 <div style="width:80%;align:center;">
 <center>
-<canvas id="sortgame" class="animation" height="300" width="486" style="position:relative;border:1px solid #000000;"></canvas>
+<canvas id="sortgame" class="animation" height="300" width="486" style="position:relative;border:1px solid #000000;touch-action:none;"></canvas>
 </center>
 </div>
 </figure>
