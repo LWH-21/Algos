@@ -332,7 +332,7 @@ Para tener una idea más concreta del rendimiento de este algoritmo, suponga que
 			<td class="w3-right-align"></td>
 		</tr>
 		<tr>
-			<td>Berlina</td>
+			<td>Berlín</td>
 			<td class="w3-right-align">3 520 031</td>
 			<td class="w3-right-align"></td>
 		</tr>
