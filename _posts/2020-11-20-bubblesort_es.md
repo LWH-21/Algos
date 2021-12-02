@@ -143,11 +143,11 @@ La siguiente animación muestra cómo funciona la ordenación por burbujas:
 </div>
 	
 <div id="flowchart" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">		
-<img src="{{ 'assets/img/sort/BubbleSort_flowchart.svg' | relative_url }}" alt="Diagrama de flujo de clasificación de burbujas" /> 
+<img src="{{ 'assets/img/sort/BubbleSort_flowchart.svg' | relative_url }}" alt="Diagrama de flujo de clasificación de burbujas" style="max-width: 100%;height: auto;"  /> 
 </div>
 
 <div id="nsd" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">		
-<img src="{{ 'assets/img/sort/BubbleSort_nsd.svg' | relative_url }}" alt="Graph NSD (Nassi-Shneidermann) de la Ordenamiento de burbuja " /> 
+<img src="{{ 'assets/img/sort/BubbleSort_nsd.svg' | relative_url }}" alt="Graph NSD (Nassi-Shneidermann) de la Ordenamiento de burbuja " style="max-width: 100%;height: auto;" /> 
 </div>
 	
 </figure>
@@ -259,11 +259,11 @@ Desde el punto de vista educativo, este algoritmo es muy interesante. Es fácil 
 
 Pero, en el mundo real, hay que decir que no es muy eficiente. A menudo se critica, incluso se considera "ingenua" y "debe evitarse absolutamente". Sin embargo, tiene el mérito de ser suficientemente eficiente en listas pequeñas o en listas que ya están parcialmente ordenadas. 
 
-En el peor de los casos, con los datos ordenados en sentido inverso, las ejecuciones sucesivas de la tabla requieren <b>(<em>n</em><sup>2</sup> - <em>n</em>)</b> comparaciones y <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 2</b> intercambios. Por ejemplo, para una lista de <b><em>n</em></b> items, elementos, se necesitarán, en el peor de los casos, 90 comparaciones [ 10<sup>2</sup> - 10 ] y 45 intercambios [ (10<sup>2</sup> - 10) / 2 ]. La complejidad  es por tanto cuadrática, del orden <b>&theta;(<em>n</em><sup>2</sup></b>).
+En el peor de los casos, con los datos ordenados en sentido inverso, las ejecuciones sucesivas de la tabla requieren <b>(<em>n</em><sup>2</sup> - <em>n</em>)</b> comparaciones y <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 2</b> intercambios. Por ejemplo, para una lista de <b><em>n</em></b> items, elementos, se necesitarán, en el peor de los casos, 90 comparaciones [ 10<sup>2</sup> - 10 ] y 45 intercambios [ (10<sup>2</sup> - 10) / 2 ]. La complejidad  es por tanto cuadrática, del orden <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
 
-Cuando el orden inicial de los elementos a clasificar es aleatorio, se considera que serán necesarios <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 4</b> intercambios. Por lo tanto, la complejidad será también <b>&theta;(<em>n</em><sup>2</sup></b>).
+Cuando el orden inicial de los elementos a clasificar es aleatorio, se considera que serán necesarios <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 4</b> intercambios. Por lo tanto, la complejidad será también <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
 
-En el mejor de los casos, cuando la lista ya está ordenada, se necesitarán <b>(<em>n</em> - 1)</b> comparisons and no permutations. comparaciones y ninguna permutación. La complejidad es lineal, en <b>&theta;(<em>n</em></b>).
+En el mejor de los casos, cuando la lista ya está ordenada, se necesitarán <b>(<em>n</em> - 1)</b> comparisons and no permutations. comparaciones y ninguna permutación. La complejidad es lineal, en <b><span class='bigo'>O</span>(<em>n</em></b>).
 
 La animación siguiente permite comprobar, de forma empírica, esta evolución del número de operaciones en función del número de elementos a ordenar.
 
