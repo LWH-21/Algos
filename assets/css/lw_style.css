@@ -12,6 +12,16 @@
             width:50%;			
 }
 
+.bigo {
+	font-family: arial,Helvetica,serif ;
+	font-style: oblique 10deg;
+	font-size: 1.5em;
+	font-weight: 300;
+	text-transform: uppercase;
+	text-shadow: 1px 2px 0px black;
+	font-variant-ligatures: no-common-ligatures;
+}
+
 @media only screen and (max-width:1600px) {
    .animation {
    width:70%;
