@@ -676,10 +676,10 @@ Barril.prototype.setPos = function(x,y) {
 function SortGame (cnv,n) {
 	var self = this;
 	this.canvas = document.getElementById(cnv);
-	document.getElementById(cnv).addEventListener("mousemove", (e) => { this.mousemove(e,this);});
-	document.getElementById(cnv).addEventListener("mousedown", (e) => { this.mousedown(e,this);});
-	document.getElementById(cnv).addEventListener("mouseup", (e) => { this.mouseup(e,this);});
-	document.getElementById(cnv).addEventListener("mouseleave",(e) => { this.mouseleave(e,this);});
+	document.getElementById(cnv).addEventListener("pointermove", (e) => { this.pointermove(e,this);});
+	document.getElementById(cnv).addEventListener("pointerdown", (e) => { this.pointerdown(e,this);});
+	document.getElementById(cnv).addEventListener("pointerup", (e) => { this.pointerup(e,this);});
+	document.getElementById(cnv).addEventListener("pointerleave",(e) => { this.pointerleave(e,this);});
 	this.data=[];
 	this.etapes=[];
 	if ((n<1) || (n>10)) { n=10;}
@@ -993,21 +993,17 @@ SortGame.prototype.getNearest = function(x,y) {
 	return -1;
 }
 
-SortGame.prototype.mousemove = function(e,o) {
+SortGame.prototype.pointermove = function(e,o) {
 	if (o.auto) return;
 	var pos = o.getmousepos(this.canvas,e);
-	e = e || window.event;
-	var button = e.which || e.button;
-	if (1==button) {
-		for (let i=0;i<10;i++) {
-			if (o.data[i].drag) {
-				o.data[i].setPos(pos.x - (10),pos.y - (32));
-			}
-		}
-	}
+    for (let i=0;i<10;i++) {
+		if (o.data[i].drag) {
+			o.data[i].setPos(pos.x - (10),pos.y - (32));
+        }
+    }
 	o.draw();
 };
-SortGame.prototype.mousedown =function(e,o) {
+SortGame.prototype.pointerdown =function(e,o) {
 	if (o.auto) return;
 	var pos = o.getmousepos(this.canvas,e);
 	var i = 0;
@@ -1019,11 +1015,11 @@ SortGame.prototype.mousedown =function(e,o) {
 		if (o.pointinrectangle(pos,rect)) {
 			o.data[i].sel=true;
 			o.data[i].drag=true;
-		}
-	}
+        }
+    }
 	o.draw();
 };
-SortGame.prototype.mouseup = function(e,o) {
+SortGame.prototype.pointerup = function(e,o) {
 	if (o.auto) return;
 	var i = 0;
 	for (i=0;i<10;i++) {
@@ -1035,18 +1031,23 @@ SortGame.prototype.mouseup = function(e,o) {
 	}
 	o.draw();
 };
-SortGame.prototype.mouseleave = function(e,o) {
+SortGame.prototype.pointerleave = function(e,o) {
 	if (o.auto) return;
 	var pos = o.getmousepos(this.canvas,e);
 	pos.x = -1;pos.y = -1;
 	if (this.drag>=0) {this.enddrag(pos);}
 };
+
+
 SortGame.prototype.getmousepos = function(c,e) {
 	var rect = c.getBoundingClientRect();
-	return {
-		x: Math.round(e.clientX - rect.left),
-		y: Math.round(e.clientY - rect.top)
-	};
+	var scaleX = c.width / rect.width;    // relationship bitmap vs. element for X
+        var scaleY = c.height / rect.height;  // relationship bitmap vs. element for Y
+
+	 return {
+	    x: Math.round((e.clientX - rect.left) * scaleX),   // scale mouse coordinates after they have
+	    y: Math.round((e.clientY - rect.top) * scaleY)     // been adjusted to be relative to element
+	  }
 };
 SortGame.prototype.pointinrectangle = function(p, r) {
 	return p.x > r.x1 && p.x < r.x2 && p.y > r.y1 && p.y < r.y2;
