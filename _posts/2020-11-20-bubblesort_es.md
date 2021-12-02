@@ -263,7 +263,7 @@ En el peor de los casos, con los datos ordenados en sentido inverso, las ejecuci
 
 Cuando el orden inicial de los elementos a clasificar es aleatorio, se considera que serán necesarios <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 4</b> intercambios. Por lo tanto, la complejidad será también <b>&theta;(<em>n</em><sup>2</sup></b>).
 
-En el mejor de los casos, cuando la lista ya está ordenada, se necesitarán <b>(<em>n</em> - 1)</b> comparisons and no permutations. comparaciones y ninguna permutación. La complejidad es lineal, en <b>&theta;(<em>n</em><sup>2</sup></b>).
+En el mejor de los casos, cuando la lista ya está ordenada, se necesitarán <b>(<em>n</em> - 1)</b> comparisons and no permutations. comparaciones y ninguna permutación. La complejidad es lineal, en <b>&theta;(<em>n</em></b>).
 
 La animación siguiente permite comprobar, de forma empírica, esta evolución del número de operaciones en función del número de elementos a ordenar.
 
