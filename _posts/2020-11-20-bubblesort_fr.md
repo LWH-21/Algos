@@ -143,11 +143,11 @@ L’animation ci-dessous illustre le fonctionnement de ce tri.
 </div>
 	
 <div id="flowchart" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">		
-<img src="{{ 'assets/img/sort/BubbleSort_flowchart.svg' | relative_url }}" alt="Ordinogramme du tri bulle " /> 
+<img src="{{ 'assets/img/sort/BubbleSort_flowchart.svg' | relative_url }}" alt="Ordinogramme du tri bulle " style="max-width: 100%;height: auto;"/> 
 </div>
 
 <div id="nsd" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">		
-<img src="{{ 'assets/img/sort/BubbleSort_nsd.svg' | relative_url }}" alt="Graphe NSD (Nassi-Shneidermann) du tri bulle " /> 
+<img src="{{ 'assets/img/sort/BubbleSort_nsd.svg' | relative_url }}" alt="Graphe NSD (Nassi-Shneidermann) du tri bulle " style="max-width: 100%;height: auto;" /> 
 </div>
 	
 </figure>
@@ -259,13 +259,13 @@ D’un point de vue pédagogique, cet algorithme est très intéressant. Il est 
 
 Mais, dans le monde réel, il faut bien dire qu’il n’est pas très performant. Il est souvent décrié, voire considéré comme “naïf” et à “à proscrire absolument”. Toutefois, il a quand même le mérite d’être suffisamment performant sur de petites listes ou des listes déjà partiellement triées. 
 
-Dans le pire des cas, avec des données triées à l’envers, les parcours successifs du tableau imposent d’effectuer <b>(<em>n</em><sup>2</sup> - <em>n</em>)</b> comparaisons et <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 2</b> échanges. Par exemple, pour une liste de <b><em>n</em></b> éléments, il faudra, dans le pire des cas, faire 90 comparaisons [ 10<sup>2</sup> - 10 ] et 45 échanges [ (10<sup>2</sup> - 10) / 2 ]. La complexité en temps est donc quadratique, de l’ordre de <b>&theta;(<em>n</em><sup>2</sup></b>).
+Dans le pire des cas, avec des données triées à l’envers, les parcours successifs du tableau imposent d’effectuer <b>(<em>n</em><sup>2</sup> - <em>n</em>)</b> comparaisons et <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 2</b> échanges. Par exemple, pour une liste de <b><em>n</em></b> éléments, il faudra, dans le pire des cas, faire 90 comparaisons [ 10<sup>2</sup> - 10 ] et 45 échanges [ (10<sup>2</sup> - 10) / 2 ]. La complexité en temps est donc quadratique, de l’ordre de <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
 
-En moyenne, lorsque l'ordre initial des éléments à trier est aléatoire, on considère qu’il faudra faire <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 4</b> échanges. La complexité sera donc aussi de <b>&theta;(<em>n</em><sup>2</sup></b>).
+En moyenne, lorsque l'ordre initial des éléments à trier est aléatoire, on considère qu’il faudra faire <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 4</b> échanges. La complexité sera donc aussi de <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
 
-Dans le meilleur des cas, quand la liste est déjà triée, il faudra <b>(<em>n</em> - 1)</b> comparaisons et aucune permutation. La complexité en temps est linéaire, en <b>&theta;(<em>n</em><sup>2</sup></b>).
+Dans le meilleur des cas, quand la liste est déjà triée, il faudra <b>(<em>n</em> - 1)</b> comparaisons et aucune permutation. La complexité en temps est linéaire, en <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
 
-En espace utilisé (coût en mémoire de l’algorithme), la complexité du tri bulle est linéaire. Elle croit à la même vitesse que le nombre de données en entrée. Elle est donc de <b>&theta;(<em>n</em></b>).
+En espace utilisé (coût en mémoire de l’algorithme), la complexité du tri bulle est linéaire. Elle croit à la même vitesse que le nombre de données en entrée. Elle est donc de <b><span class='bigo'>O</span>(<em>n</em></b>).
 
 L’animation ci-dessous permet de vérifier, de manière empirique, cette évolution du nombre d’opérations en fonction du nombre d’éléments à trier.
 
