@@ -299,7 +299,7 @@ Para tener una idea más concreta del rendimiento de este algoritmo, suponga que
 <div class="w3-metro-darken w3-bar">
 <label class="w3-bar-item" >Operaciones por segundo :</label>
 <input class="w3-input w3-bar-item" type="text" id="computerspeed" value="10 000 000">
-<button class="w3-bar-item w3-button" onclick="calc_sort_speed('fr');return false;">¡Calcula!</button>
+<button class="w3-bar-item w3-button" onclick="calc_sort_speed('es');return false;">¡Calcula!</button>
 </div>
 <br>
 <table id = "exectimes"  class="w3-table-all w3-hoverable ">
