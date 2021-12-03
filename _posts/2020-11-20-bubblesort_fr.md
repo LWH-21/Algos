@@ -385,3 +385,5 @@ Pour vous faire une idée plus concrète des performances de cet algorithme, sup
 </div>
 
 Vous pouvez changer le nombre d'instructions par seconde, pour tester.
+
+<img src="{{ 'assets/img/sort/Bubble_fr.jpg' | relative_url }}" alt="Comics Strip " style="max-width: 80%;height: auto;"/> 
