@@ -386,4 +386,4 @@ Pour vous faire une idée plus concrète des performances de cet algorithme, sup
 
 Vous pouvez changer le nombre d'instructions par seconde, pour tester.
 
-<img src="{{ 'assets/img/sort/Bubble_fr.jpg' | relative_url }}" alt="Comics Strip " style="max-width: 80%;height: auto;"/> 
+<img src="{{ 'assets/img/sort/bubble_fr.jpg' | relative_url }}" alt="Comics Strip " style="max-width: 80%;height: auto;"/> 
