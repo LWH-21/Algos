@@ -383,3 +383,5 @@ To get a more concrete idea of the performance of this algorithm, suppose that y
 </table>
 </div>
 	
+<br>
+<img src="{{ 'assets/img/sort/bubble_en.webp' | relative_url }}" alt="Comics Strip " style="max-width: 100%;height: auto;"/> 
