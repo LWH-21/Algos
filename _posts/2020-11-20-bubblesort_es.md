@@ -380,3 +380,6 @@ Para tener una idea más concreta del rendimiento de este algoritmo, suponga que
 </table>
 </div>
 	
+<br>
+<img src="{{ 'assets/img/sort/bubble_es.webp' | relative_url }}" alt="Comics Strip " style="max-width: 100%;height: auto;"/> 
+
