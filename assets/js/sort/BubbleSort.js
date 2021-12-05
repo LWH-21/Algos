@@ -138,7 +138,7 @@ function calc_sort_speed(locale) {
 		speed = speed.replace(/ /g, "");
 		speed=speed.split(" ").join("");
 		speed=speed.split(" ").join("");
-		speed=speed.replace(/[^\d.eE-]/g, ''); 
+		speed=speed.replace(/[^\deE-]/g, ''); 
 		if (isNaN(speed)) { speed = 100;}
 		if (speed < 100) { speed = 100;}
 		if (speed> 1E15) {
