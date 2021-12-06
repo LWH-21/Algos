@@ -20,6 +20,7 @@ custom_js:
   -  assets/js/three/OrbitControls.js
   -  assets/js/sort/SortDemo.js
   -  assets/js/sort/BubbleSort.js
+  -  https://www.jdoodle.com/assets/jdoodle-pym.min.js
 ---
 
 Le principe du tri à bulles (bubble sort ou sinking sort en anglais) est très simple : pour trier une liste, on compare son premier et son second élément et on les échange si nécessaire. Puis on fait la même chose pour le second et le troisième, puis pour le troisième et le quatrième… jusqu’à ce qu’on arrive à la fin de la liste. Après cela, on recommence à partir du début. Au bout d’un certain nombre d’itérations, on ne fait plus de permutations. Alors la liste est triée.
@@ -215,24 +216,8 @@ void bubble_sort(int* lst, int size) {
 
 Toutefois, cette version a l’inconvénient de toujours faire le même nombre d’opérations, quel que soit le tableau en entrée. L'implémentation suivante s’arrête dès qu’elle a fait un parcours sans aucune permutation. C’est la plus courante aujourd’hui.
 
-```c
-void bubble_sort(int* lst, int size)
-{
-    int pass = 0;
-    int swapped = 1;
-    int j;
-    while (swapped) {
-        swapped = 0;
-        pass ++;      
-        for (j=0;j<size-pass;j++) {
-		if (lst[j]>lst[j+1]){
-		    swapped = 1;
-		    swap(&lst[j],&lst[j+1]);
-		}
-        }
-    }
-}
-```
+<div data-pym-src="https://www.jdoodle.com/embed/v0/4b7J?stdin=0&arg=0&rw=1"  ></div>
+
 On peut encore l'améliorer un peu car, si dans une itération le dernier échange s'est fait à la position N, alors tous les éléments situés après cette position N sont dans le bon ordre. Donc, pour les itérations suivantes, il est inutile de les explorer à nouveau. Or aurait alors quelque chose comme ça :
 ```c
 void bubble_sort1(int* lst, int size)
