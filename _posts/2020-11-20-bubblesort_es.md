@@ -20,6 +20,7 @@ custom_js:
   -  assets/js/three/OrbitControls.js
   -  assets/js/sort/SortDemo.js
   -  assets/js/sort/BubbleSort.js
+  -  https://www.jdoodle.com/assets/jdoodle-pym.min.js
 ---
 
 La **ordenación por burbujas** también se conoce como **Sinking Sort**. Es un algoritmo de ordenación simple que recorre repetidamente la lista que hay que ordenar, comparando cada par de elementos adyacentes y los intercambia si están en el orden equivocado.
@@ -215,23 +216,8 @@ void bubble_sort(int* lst, int size) {
 
 Sin embargo, este código tiene la desventaja de que siempre realiza el mismo número de operaciones, independientemente de la matriz de entrada. La siguiente implementación se detiene en cuanto ha realizado una ejecución sin ninguna permutación. Esta es la más común hoy en día.
 
-```c
-void bubble_sort(int* lst, int size)
-{
-    int pass = 0;
-    int swapped = 1;
-    int j;
-    while (swapped) {
-        swapped = 0;
-        pass ++;      
-        for (j=0;j<size-pass;j++) {
-		if (lst[j]>lst[j+1]){
-		    swapped = 1;
-		    swap(&lst[j],&lst[j+1]);
-		}
-        }
-    }
-}
+<div data-pym-src="https://www.jdoodle.com/embed/v0/4b7J?stdin=0&arg=0&rw=1"  ></div>
+
 ```
 Todavía podemos mejorarlo un poco porque, si en una iteración el último intercambio se hizo en la posición <em>N</em>, entonces todos los elementos situados después de esta posición <em>N</em> están en el orden correcto. Así, para las siguientes iteraciones, es inútil volver a explorarlos. Tendríamos entonces algo así:
 ```c
