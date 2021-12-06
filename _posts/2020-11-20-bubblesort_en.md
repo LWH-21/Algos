@@ -219,8 +219,8 @@ However, this version has the disadvantage that it always performs the same numb
 
 <div data-pym-src="https://www.jdoodle.com/embed/v0/4b7J?stdin=0&arg=0&rw=1"  ></div>
 
-```
 We can still improve it a little because, if in an iteration the last exchange was done at position N, then all the elements located after this position N are in the right order. So, for the following iterations, it is useless to explore them again. We would then have something like this:
+
 ```c
 void bubble_sort1(int* lst, int size)
 {
