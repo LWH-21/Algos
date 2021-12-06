@@ -218,8 +218,8 @@ Sin embargo, este código tiene la desventaja de que siempre realiza el mismo n�
 
 <div data-pym-src="https://www.jdoodle.com/embed/v0/4b7J?stdin=0&arg=0&rw=1"  ></div>
 
-```
 Todavía podemos mejorarlo un poco porque, si en una iteración el último intercambio se hizo en la posición <em>N</em>, entonces todos los elementos situados después de esta posición <em>N</em> están en el orden correcto. Así, para las siguientes iteraciones, es inútil volver a explorarlos. Tendríamos entonces algo así:
+
 ```c
 void bubble_sort1(int* lst, int size)
 {
