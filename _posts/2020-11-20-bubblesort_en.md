@@ -20,6 +20,7 @@ custom_js:
   -  assets/js/three/OrbitControls.js
   -  assets/js/sort/SortDemo.js
   -  assets/js/sort/BubbleSort.js
+  -  https://www.jdoodle.com/assets/jdoodle-pym.min.js
 ---
 
 **Bubble sort** (aka sinking sort) is a sorting algorithm that works by repeatedly stepping through the list that need to be sorted, comparing each adjacent pair of items and swapping them if necessary.
@@ -216,23 +217,8 @@ void bubble_sort(int* lst, int size) {
 
 However, this version has the disadvantage that it always performs the same number of operations, regardless of the input array. The next implementation stops as soon as it has done a run without any permutation. This is the most common one today.
 
-```c
-void bubble_sort(int* lst, int size)
-{
-    int pass = 0;
-    int swapped = 1;
-    int j;
-    while (swapped) {
-        swapped = 0;
-        pass ++;      
-        for (j=0;j<size-pass;j++) {
-		if (lst[j]>lst[j+1]){
-		    swapped = 1;
-		    swap(&lst[j],&lst[j+1]);
-		}
-        }
-    }
-}
+<div data-pym-src="https://www.jdoodle.com/embed/v0/4b7J?stdin=0&arg=0&rw=1"  ></div>
+
 ```
 We can still improve it a little because, if in an iteration the last exchange was done at position N, then all the elements located after this position N are in the right order. So, for the following iterations, it is useless to explore them again. We would then have something like this:
 ```c
