@@ -246,7 +246,7 @@ From an educational point of view, this algorithm is very interesting. It is eas
 
 But, in the real world, it must be said that it is not very efficient. It is often decried, even considered as "naive" and "to be avoided absolutely". However, it has the merit of being sufficiently efficient on small lists or lists that are already partially sorted. 
 
-In the worst case, with data sorted in reverse, the successive runs of the table require  <b>(<em>n</em><sup>2</sup> - <em>n</em>)</b> comparisons and <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 2</b> exchanges. For example, for a list of <b><em>n</em></b> items,  it will take, in the worst case, 90 comparisons [ 10<sup>2</sup> - 10 ] and 45 exchanges  [ (10<sup>2</sup> - 10) / 2 ]. The time complexity is therefore quadratic, of the order of <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
+In the worst case, with data sorted in reverse, the successive runs of the table require  <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 2</b> exchanges. For example, for a list of <b><em>n</em></b> items,  it will take, in the worst case, 45 comparisons and 45 exchanges  [ (10<sup>2</sup> - 10) / 2 ]. The time complexity is therefore quadratic, of the order of <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
 
 When the initial order of the items to be sorted is random, it is considered that <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 4</b>  exchanges will be needed. The complexity will therefore also be <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
 
