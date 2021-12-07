@@ -1,5 +1,5 @@
 
-function BubbleSort(r) {
+function CocktailSort(r) {
 	this.count = 0;
 	this.renderer = r;
 	this.data=[];
@@ -7,7 +7,7 @@ function BubbleSort(r) {
 	this.logdata=false;
 }
 
-BubbleSort.prototype.init = function(m,t) {
+CocktailSort.prototype.init = function(m,t) {
 	this.max = m;
 	this.data=[];
 	if (t) {
@@ -18,10 +18,10 @@ BubbleSort.prototype.init = function(m,t) {
 	this.sort();
 }
 
-BubbleSort.prototype.render = function() {
+CocktailSort.prototype.render = function() {
 }
 
-BubbleSort.prototype.setup = function(n,style) {
+CocktailSort.prototype.setup = function(n,style) {
 	this.data=[];
 	
 	switch (style) {
@@ -35,33 +35,7 @@ BubbleSort.prototype.setup = function(n,style) {
 	}
 }
 
-BubbleSort.prototype.sort = function() {
-	var nb_comp=0;
-	var nb_ex=0;
-	var swapped = true;
-	var phase=0;
-	var l = this.data.length - 1;
-	while (swapped) 
-	{
-		swapped=false;
-		for (let i = 0; i<l - phase;i++){
-			nb_comp++;
-			this.log('C',i,i+1);
-			if (this.data[i]>this.data[i+1]) {
-				swapped=true;
-				nb_ex++;
-				let tmp = this.data[i];
-				this.data[i]=this.data[i+1];
-				this.data[i+1]=tmp;
-				this.log('S',i,i+1);
-			} else {this.log('P',i,i+1);}
-		}
-		phase++;
-	}
-	return[nb_comp,nb_ex];
-}
-
-BubbleSort.prototype.log = function (a,s,d) {
+CocktailSort.prototype.log = function (a,s,d) {
 	if (this.logdata) {
 		let statut = {action : '_',s : 0,d :0};
 		statut.action=a;
@@ -71,15 +45,57 @@ BubbleSort.prototype.log = function (a,s,d) {
 	}
 }
 
-BubbleSort.prototype.stop = function() {
+CocktailSort.prototype.sort = function() {
+	
+	var nb_comp=0,nb_ex=0;
+	var upper = this.data.length - 1;
+	var lower = 0;
+	let swapped = true;
+	while (swapped){
+		swapped=false;
+		for (let i = lower; i< upper;i++){
+			nb_comp++;
+			this.log('C',i,i+1);
+			if (this.data[i] > this.data[i + 1]){
+				let temp = this.data[i];
+				this.data[i] = this.data[i + 1];
+				this.data[i+1] = temp;
+				swapped = true;
+				nb_ex++;
+				this.log('S',i,i+1);
+				} else {this.log('P',i,i+1);}
+			} 
+		
+		if (!swapped) break;
+		swapped=false;
+		upper --;
+		
+		for (let j = upper; j > lower; j--){
+			nb_comp++;
+			this.log('C',j-1,j);
+            if (this.data[j-1] > this.data[j]) {
+                let temp = this.data[j];
+                this.data[j] = this.data[j - 1];
+                this.data[j - 1] = temp;
+                swapped = true;
+				nb_ex++;
+				this.log('S',j-1,j);
+			} else { this.log('P',j-1,j);}
+		}
+		lower ++;
+	}	
+	return[nb_comp,nb_ex];
+}
+
+CocktailSort.prototype.stop = function() {
 	this.states=[];
 	if (this.renderer) { this.renderer.stop();}
 }
 
-BubbleSort.prototype.next = function() {
+CocktailSort.prototype.next = function() {
 	if (this.renderer) {
 		if (this.states.length>0) {
-			var statut = this.states.shift();
+			var statut = this.states.shift();			
 			if (statut.action=='C') {this.renderer.compare(statut.s,statut.d);}
 			if (statut.action=='S') { this.renderer.echange(statut.s,statut.d);}
 			if (statut.action=='P') { this.renderer.pose(statut.s,statut.d);}
@@ -139,7 +155,7 @@ function calc_sort_speed(locale) {
 		speed = speed.replace(/ /g, "");
 		speed=speed.split(" ").join("");
 		speed=speed.split(" ").join("");
-		speed=speed.replace(/[^\deE-]/g, ''); 
+		speed=speed.replace(/[^\d.eE-]/g, ''); 
 		if (isNaN(speed)) { speed = 100;}
 		if (speed < 100) { speed = 100;}
 		if (speed> 1E15) {
@@ -160,20 +176,20 @@ function calc_sort_speed(locale) {
 }
 
 const sortdem = new SortDemo(this,'sort_canvas');
-const algo = new BubbleSort(sortdem);
+const algo = new CocktailSort(sortdem);
 sortdem.init(algo);
 sortdem.renderer.render(sortdem.scene,sortdem.camera);
 
 
 
 const sortgame = new SortGame('sortgame',5);
-const gamealgo = new BubbleSort(sortgame);
+const gamealgo = new CocktailSort(sortgame);
 sortgame.init(gamealgo);
 
 
 
 const sortcplx = new SortCplx('sortcplx','Tcomplex');
-const compalgo = new BubbleSort();
+const compalgo = new CocktailSort();
 sortcplx.init(compalgo);
 
 

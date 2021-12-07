@@ -328,8 +328,10 @@ SortDemo.prototype.setSpeed = function(s) {
 
 SortDemo.prototype.start = function() {
 	if (this.algo) {
+		var t=[];		
+		for (let i=0;i<20;i++) {t.push(this.elts[i].value);}
 		this.running=true;
-		this.algo.init(20);
+		this.algo.init(20,t);
 		this.swap = [];
 		this.comp = [];
 		this.algo.next();
@@ -361,8 +363,8 @@ SortDemo.prototype.echange = function(a,b) {
 	var ob = this.elts[b];
 	ob.posdest.push([oa.obj.position.x,1,oa.obj.position.z-3]);
 	oa.posdest.push([ob.obj.position.x,1,ob.obj.position.z+3]);
-	ob.posdest.push([oa.obj.position.x,oa.obj.position.y,oa.obj.position.z]);
-	oa.posdest.push([ob.obj.position.x,ob.obj.position.y,ob.obj.position.z]);
+	ob.posdest.push([oa.obj.position.x,-4.9,oa.obj.position.z]);
+	oa.posdest.push([ob.obj.position.x,-4.9,ob.obj.position.z]);
 	this.elts[a]=ob;
 	this.elts[b]=oa;
 	this.elts[a].state='E';
@@ -373,8 +375,8 @@ SortDemo.prototype.echange = function(a,b) {
 SortDemo.prototype.pose = function(a,b) {
 	var oa = this.elts[a];
 	var ob = this.elts[b];
-	ob.posdest.push([ob.obj.position.x,ob.obj.position.y,ob.obj.position.z]);
-	oa.posdest.push([oa.obj.position.x,oa.obj.position.y,oa.obj.position.z]);
+	ob.posdest.push([ob.obj.position.x,-4.9,ob.obj.position.z]);
+	oa.posdest.push([oa.obj.position.x,-4.9,oa.obj.position.z]);
 	this.elts[a].state='_';
 	this.elts[b].state='_';
 }
@@ -728,8 +730,12 @@ SortGame.prototype.echange = function(a,b) {
 }
 
 SortGame.prototype.init = function(al) {
+    var t = [];
 	this.algo = al;
-	this.algo.init(this.nb);
+    for (let i=0; i<10; i++) {
+		t.push(this.data[i].valeur);
+    }
+	this.algo.init(this.nb,t);
 }
 
 SortGame.prototype.stop = function() {
@@ -746,6 +752,7 @@ SortGame.prototype.shownumbers = function() {
 SortGame.prototype.shuffle = function(self) {
 	var colors = ['#60A917','#00ABA9','#A20025','#76608A','#87794E','#63362F','#F472D0','#003E00','#16499A','#FFC194','#7AD61D','#45FFFD','#78AA1C','#AA00FF','#A4C400'];
 	var l = colors.length;
+	var t = [];
 	for (let i=0;i<20;i++) {
 		let a=Math.floor((Math.random() * l));
 		let b=Math.floor((Math.random() * l));
@@ -769,12 +776,13 @@ SortGame.prototype.shuffle = function(self) {
 			this.data[i].y=this.data[i].y-50-Math.floor((Math.random() * 100));
 		}
 		this.data[i].valeur = Math.floor((Math.random() * 90) + 1);
+		t.push(this.data[i].valeur);
 		this.data[i].color = colors[i];
 		this.data[i].position=i+1;
 		if (i>=this.nb) {this.data[i].visible = false;}
 	}
 	
-	if (this.algo) { this.algo.init(this.nb); }
+	if (this.algo) { this.algo.init(this.nb,t); }
 }
 
 SortGame.prototype.solve = function(a) {
