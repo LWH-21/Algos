@@ -244,7 +244,7 @@ D’un point de vue pédagogique, cet algorithme est très intéressant. Il est 
 
 Mais, dans le monde réel, il faut bien dire qu’il n’est pas très performant. Il est souvent décrié, voire considéré comme “naïf” et à “à proscrire absolument”. Toutefois, il a quand même le mérite d’être suffisamment performant sur de petites listes ou des listes déjà partiellement triées. 
 
-Dans le pire des cas, avec des données triées à l’envers, les parcours successifs du tableau imposent d’effectuer <b>(<em>n</em><sup>2</sup> - <em>n</em>)</b> comparaisons et <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 2</b> échanges. Par exemple, pour une liste de <b><em>n</em></b> éléments, il faudra, dans le pire des cas, faire 90 comparaisons [ 10<sup>2</sup> - 10 ] et 45 échanges [ (10<sup>2</sup> - 10) / 2 ]. La complexité en temps est donc quadratique, de l’ordre de <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
+Dans le pire des cas, avec des données triées à l’envers, les parcours successifs du tableau imposent d’effectuer <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 2</b> échanges. Par exemple, pour une liste de <b><em>n</em></b> éléments, il faudra, dans le pire des cas, faire 45 comparaisons et 45 échanges [ (10<sup>2</sup> - 10) / 2 ]. La complexité en temps est donc quadratique, de l’ordre de <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
 
 En moyenne, lorsque l'ordre initial des éléments à trier est aléatoire, on considère qu’il faudra faire <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 4</b> échanges. La complexité sera donc aussi de <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
 
