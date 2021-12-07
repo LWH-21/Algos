@@ -23,6 +23,7 @@ custom_js:
   -  assets/js/three/OrbitControls.js
   -  assets/js/sort/SortDemo.js
   -  assets/js/sort/CocktailSort.js
+  -  https://www.jdoodle.com/assets/jdoodle-pym.min.js
 ---
 
 Le tri "Shaker", également appelé tri "Cocktail", tri "Shuttle", tri "boustrophédon" ou tri à bulles bidirectionnel est une variante du tri à bulles.
