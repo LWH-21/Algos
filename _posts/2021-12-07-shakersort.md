@@ -13,7 +13,7 @@ keywords:
  - tri boustrophedon
 date: 2021-12-11
 last_modified_at: 2021-12-11
-category: 
+categories: 
  - Algorithmes de tri 
 lang : fr
 locale : fr-FR
