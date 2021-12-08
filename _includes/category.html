@@ -6,20 +6,17 @@
 	
 	{%- assign colors = "#A4C400, #60A917, #008A00, #00ABA9, #00AFF0, #1BA1E2, #0050EF, #6A00FF, #AA00FF, #DC4FAD, #D80073, #A20025, #CE352C, #FA6800, #F0A30A, #E3C800, #825A2C, #6D8764, #647687, #76608A, #87794E, #63362F, #640024, #81003C, #4B0096, #1B6EAE, #00356A, #004050, #003E00, #128023, #BF5A15, #9A1616, #9A165A, #57169A, #16499A, #4390DF, #00CCFF, #59CDE2, #45FFFD, #7AD61D, #78AA1C, #FFC194, #F472D0, #DA5A53" | split: ", " -%}
 	
-	<p> categorie </p>
-	<p>{{ page.category }}</p>
-	
 	<div class="w3-row">				
 		{%- assign num_color = 0 -%}		
 		{% for p in site.categories[page.category] %}
 			{%- if p.lang == page.lang -%}
 			{%- assign num_color = num_color | plus: 1 -%}	
 			<div class="w3-col l3 m3 s3 w3-center">
-				<div class="w3-card-2" style = "height: 300px;">
+				<div class="w3-card-2" style = "height: 350px;">
 					<div class="w3-container w3-center w3-margin">
 						<h3>{{ p.title }}</h3>
 						<a href="{{ p.url| relative_url }}">
-						<img src="{{ p.image | relative_url }}" alt="{{ p.description }}" style="width:95%">
+						<img src="{{ p.image | relative_url }}" alt="{{ p.description }}" style="width:90%">
 						</a>
 						<div class="w3-container w3-hide-small">
 							<p>{{ p.description }}</p>
