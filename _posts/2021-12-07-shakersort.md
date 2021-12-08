@@ -28,9 +28,9 @@ custom_js:
 
 Le tri "Shaker", également appelé tri "Cocktail", tri "Shuttle", tri "boustrophédon" ou tri à bulles bidirectionnel est une variante du tri à bulles.
 
-Un des problèmes avec le tri à bulle classique, c'est celui des "lièvres" et des "tortues". On remarque en effet que dans le tri à bulle classique on a des "lièvres" (ce sont les éléments qui migrent rapidement à leur place définitive) et des "tortues" qui sont les éléments qui se déplacent lentement vers leur place définitive.
+Avec le tri à bulle classique on a des "lièvres" et des "tortues". Les "lièvres", sont les éléments de fin de liste qui migrent rapidement à leur place définitive) et les "tortues" ceux de début de liste qui se déplacent lentement.
 
-L'idée du tri shaker est donc de changer de direction à chaque passe. Et à chaque changement de direction, les "lièvres" deviennent "tortues" et inversement. Il permet non seulement aux plus grands éléments de migrer vers la fin de la série mais également aux plus petits éléments de migrer vers le début. 
+L'idée du tri shaker est *d'accélérer* les tortues en changeant de direction à chaque itération. Donc, à chaque changement de direction, les "lièvres" deviennent "tortues" et inversement. Il permet non seulement aux plus grands éléments de migrer vers la fin de la série mais également aux plus petits éléments de migrer vers le début. 
 
 L'animation ci-dessous détaille le fonctionnement du tri shaker :
 
@@ -45,7 +45,7 @@ L'animation ci-dessous détaille le fonctionnement du tri shaker :
 		  <a href="#" class="w3-bar-item w3-button" title="Pascal" onclick="opentab('pascal');return false;">Pascal</a>
 		  <a href="#" class="w3-bar-item w3-button" title="Python" onclick="opentab('python');return false;">Python</a>
 		  <a href="#" class="w3-bar-item w3-button" title="C" onclick="opentab('C');return false;">C</a>
-		  <a href="#" class="w3-bar-item w3-button" title="Basic" onclick="opentab('caml');return false;">Caml</a>				  
+		  <a href="#" class="w3-bar-item w3-button" title="Basic" onclick="opentab('basic');return false;">Basic</a>				  
 		  <a href="#" class="w3-bar-item w3-button" title="nsd" onclick="opentab('nsd');return false;">Structogramme</a>
 		  <a href="#" class="w3-bar-item w3-button" title="Flowchart" onclick="opentab('flowchart');return false;">Organigramme</a>
 		</div>
@@ -76,11 +76,80 @@ L'animation ci-dessous détaille le fonctionnement du tri shaker :
 	
 <div id="pascal" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">
 	<pre>
+procedure shakersort(var vect:  array of integer);
+
+var startvect : integer;
+    endvect : integer;
+    current : integer;
+    swapped : boolean;
+    tmp : integer;
+    
+begin
+    startvect:=0;
+    endvect:=High(vect) - 1;
+    swapped:=true;
+    while (swapped) do
+    begin
+        swapped:=false;
+        For current := startvect To endvect do
+        begin
+            if vect[current]>vect[current+1] Then
+            begin
+                tmp:=vect[current];
+                vect[current]:=vect[current+1];
+                vect[current+1]:=tmp;
+                swapped:=true;
+            end;
+        end;
+        if swapped Then
+        begin
+            endvect := endvect -1;
+            swapped := false;                
+            For current := endvect DownTo startvect Do
+            begin
+                if vect[current]>vect[current+1] Then
+                begin
+                    tmp:=vect[current];
+                    vect[current]:=vect[current+1];
+                    vect[current+1]:=tmp;
+                    swapped:=true;
+                end;            
+            end;
+            startvect := startvect +1;
+        end;
+    end;
+end;	
 	</pre>
 </div>
 	
 <div id="basic" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">	
 	<pre>
+Sub shakersort(vect() As Long)
+    Dim As Long startvect = 0
+    Dim As Long endvect   = UBound(vect) -1
+    Dim As Long current
+    Dim AS Boolean swapped
+    Do
+        swapped = false
+        For current = startvect To endvect
+            If vect(current) > vect(current +1) Then
+                Swap vect(current), vect(current +1)
+                swapped = true
+            End If
+        Next
+        endvect = endvect -1
+        If swapped = 0 Then 
+            swapped = false                  
+            For current = endvect To startvect Step -1
+                If vect(current) > vect(current +1) Then
+                    Swap vect(current), vect(current +1)
+                    swapped = true
+                End If
+            Next
+            startvect = startvect +1
+        End If
+    Loop Until not swapped          
+End Sub	
 	</pre>
 </div>
 	
@@ -119,7 +188,7 @@ L'animation ci-dessous détaille le fonctionnement du tri shaker :
 
 ## Travaux pratiques
 
-Le mini-jeu ci-dessous vous permet d'essayer de trier, par ordre de poids croissant, une suite de 5 tonneaux, avec juste une balance pour les comparer. Vous pouvez essayer de le résoudre avec la méthode du tri bulle.
+Le mini-jeu ci-dessous vous permet d'essayer de trier, par ordre de poids croissant, une suite de 5 tonneaux, avec juste une balance pour les comparer. Vous pouvez essayer de le résoudre avec cette méthode de tri.
 
 <div class="w3-metro-darken w3-bar">
 <button class="w3-bar-item w3-button" onclick="sortgame.shuffle(sortgame);return false;">Mélanger</button>
@@ -171,7 +240,7 @@ Le tri shaker n'apporte pas grand chose au tri bulle.
 
 Dans le pire des cas, avec des données triées à l’envers, les parcours successifs du tableau imposent d’effectuer <b>(<em>n</em><sup>2</sup> - <em>n</em>)</b> comparaisons et <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 2</b> échanges. Par exemple, pour une liste de <b><em>n</em></b> éléments, il faudra, dans le pire des cas, faire 45 comparaisons et 45 échanges [ (10<sup>2</sup> - 10) / 2 ]. La complexité en temps est donc quadratique, de l’ordre de <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
 
-En moyenne, lorsque l'ordre initial des éléments à trier est aléatoire, on considère qu’il faudra faire <b>(<em>n</em><sup>2</sup> - <em>6*n</em>) / 4</b> échanges. C'est un peu mieux que le tri bulle classique mais la complexité reste de l'ordre de <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
+En moyenne, lorsque l'ordre initial des éléments à trier est aléatoire, on considère qu’il faudra faire <b>(<em>n</em><sup>2</sup> - <em>2*n</em>) / 4</b> échanges. C'est un peu mieux que le tri bulle classique mais la complexité reste de l'ordre de <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
 
 Dans le meilleur des cas, quand la liste est déjà triée, il faudra <b>(<em>n</em> - 1)</b> comparaisons et aucune permutation. La complexité en temps est linéaire, en <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
 
@@ -207,7 +276,7 @@ L’animation ci-dessous permet de vérifier, de manière empirique, cette évol
 	</div>
 </div>
 	
-Pour vous faire une idée plus concrète des performances de cet algorithme, supposez que vous deviez trier par ordre alphabétique le répertoire des habitants de plusieurs grandes villes. Et que la machine dont vous disposez peut effectuer disons dix millions d’instructions par seconde (ce qui n’est pas si mal si on tient compte des problèmes d’accès à la mémoire, aux disques etc…). Voici le temps qui serait nécessaire avec cette méthode :
+Pour vous faire une idée plus concrète des performances de cet algorithme, supposez que vous deviez trier par ordre alphabétique le répertoire des habitants de plusieurs grandes villes. Et que la machine dont vous disposez peut effectuer disons dix millions d’instructions par seconde. Voici le temps qui serait nécessaire avec cette méthode :
 
 <div class="w3-responsive">
 <div class="w3-metro-darken w3-bar">
