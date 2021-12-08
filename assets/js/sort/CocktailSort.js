@@ -113,7 +113,7 @@ function opentab(tname) {
 }
 
 function timetosort(nb, v, locale) {
-		nb = nb * ( nb -1) / 4;
+		nb = nb * ( 2* nb) / 4;
 		var ti = nb / v;
 		var oti = ti;
 		var y,d,h,m,s;
@@ -147,7 +147,9 @@ function timetosort(nb, v, locale) {
 }
 		
 function calc_sort_speed(locale) {
-		
+		if (! locale) {
+			locale=document.getElementsByTagName("html")[0].getAttribute("lang");
+		}
 		locale = locale.trim();
 		locale = locale.toLowerCase();
 		locale = locale.substring(0,2);
