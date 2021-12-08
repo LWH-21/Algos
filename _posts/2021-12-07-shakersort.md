@@ -66,6 +66,7 @@ L'animation ci-dessous détaille le fonctionnement du tri shaker :
 <div id="C" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">
 	<!-- https://quickhighlighter.com/ -->
 <pre>
+<code class="language-c">
 void shakersort(int vect[], int size) {
     int swapped;
     int current=0, direction=1;
@@ -85,6 +86,7 @@ void shakersort(int vect[], int size) {
         direction = -direction;
     } while (swapped);
 }	
+</code>
 </pre>
 </div>
 
