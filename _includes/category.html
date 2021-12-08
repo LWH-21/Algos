@@ -10,7 +10,7 @@
 		
 		<!-- Posts -->
 		{%- assign num_color = 0 -%}
-		{%- assign posts=site.posts | where:"category", page.ref | sort: 'date' | reverse -%}
+		{%- assign posts=site.posts | where:"category", page.category | sort: 'date' | reverse -%}
 		{%- for p in posts -%}
 			{%- if p.lang == page.lang -%}
 			{%- assign num_color = num_color | plus: 1 -%}			
