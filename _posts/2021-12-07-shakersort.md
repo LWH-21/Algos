@@ -26,11 +26,11 @@ custom_js:
   -  https://www.jdoodle.com/assets/jdoodle-pym.min.js
 ---
 
-Le tri "Shaker", également appelé tri "Cocktail", tri "Shuttle", tri "boustrophédon" ou tri à bulles bidirectionnel est une variante du tri à bulles.
+Le tri "Shaker", également appelé tri "Cocktail", tri "Shuttle", tri "boustrophédon" ou "tri à bulles bidirectionnel" est une variante du tri à bulles.
 
-Avec le tri à bulle classique on a des "lièvres" et des "tortues". Les "lièvres", sont les éléments de fin de liste qui migrent rapidement à leur place définitive) et les "tortues" ceux de début de liste qui se déplacent lentement.
+Avec le tri à bulle classique on a des "lièvres" et des "tortues". Les "lièvres", sont les éléments de fin de liste qui migrent rapidement à leur place définitive et les "tortues" ceux de début de liste qui se déplacent lentement.
 
-L'idée du tri shaker est *d'accélérer* les tortues en changeant de direction à chaque itération. Donc, à chaque changement de direction, les "lièvres" deviennent "tortues" et inversement. Il permet non seulement aux plus grands éléments de migrer vers la fin de la série mais également aux plus petits éléments de migrer vers le début. 
+L'idée du tri shaker est *d'accélérer* les tortues en changeant de direction à chaque itération. Donc, à chaque changement de direction, les "lièvres" deviennent "tortues" et inversement. Il permet non seulement aux plus grands éléments de migrer rapidement vers la fin de la série mais également aux plus petits éléments de migrer plus vite vers le début. 
 
 L'animation ci-dessous détaille le fonctionnement du tri shaker :
 
@@ -282,7 +282,7 @@ Pour vous faire une idée plus concrète des performances de cet algorithme, sup
 <div class="w3-metro-darken w3-bar">
 <label class="w3-bar-item" >Nombre d'opérations par secondes :</label>
 <input class="w3-input w3-bar-item" type="text" id="computerspeed" value="10 000 000">
-<button class="w3-bar-item w3-button" onclick="calc_sort_speed('fr');return false;">Calculer</button>
+<button class="w3-bar-item w3-button" onclick="calc_sort_speed();return false;">Calculer</button>
 </div>
 <br>
 <table id = "exectimes"  class="w3-table-all w3-hoverable ">
