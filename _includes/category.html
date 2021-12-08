@@ -10,10 +10,8 @@
 	<p>{{ page.category }}</p>
 	
 	<div class="w3-row">				
-		{%- assign num_color = 0 -%}
-		{% for cat in page.categories %}
-			<p>{{ cat }} <p>
-			{% for p in site.categories[cat] %}
+		{%- assign num_color = 0 -%}		
+		{% for p in site.categories[page.category] %}
 			{%- if p.lang == page.lang -%}
 			{%- assign num_color = num_color | plus: 1 -%}	
 			<div class="w3-col l3 m3 s3 w3-center">
@@ -30,8 +28,7 @@
 				</div> 	
 			</div>
 			{%- endif -%}				
-			{%- endfor -%}
-		{%- endfor -%}			
+		{%- endfor -%}		
 	</div>
 	
 </article>
