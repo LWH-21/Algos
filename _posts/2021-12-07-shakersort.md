@@ -92,6 +92,7 @@ void shakersort(int vect[], int size) {
 
 <div id="python" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">
 <pre>
+<code class="language-python">
 def shakersort(vect):
     swapped,direction,current = True,1,0
     startvect,endvect = 0,len(vect)-2
@@ -113,11 +114,13 @@ def shakersort(vect):
             startvect = startvect + 1
         direction = -direction
     return vect  	
+</code>
 </pre>
 </div>		
 	
 <div id="pascal" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">
-	<pre>
+<pre>
+<code class="language-pascal">	
 procedure shakersort(var vect:  array of integer);
 
 var startvect : integer;
@@ -161,11 +164,13 @@ begin
         end;
     end;
 end;	
-	</pre>
+</code>
+</pre>
 </div>
 	
 <div id="basic" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">	
-	<pre>
+<pre>
+<code class="language-basic">
 Sub shakersort(vect() As Long)
     Dim As Long startvect = 0
     Dim As Long endvect   = UBound(vect) -1
@@ -192,7 +197,8 @@ Sub shakersort(vect() As Long)
         End If
     Loop Until not swapped          
 End Sub	
-	</pre>
+</code>
+</pre>
 </div>
 	
 <div id="flowchart" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">		
