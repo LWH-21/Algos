@@ -119,7 +119,7 @@ def shakersort(vect):
 	
 <div id="pascal" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">
 <pre>
-<code class="language-pas">	
+<code>	
 procedure shakersort(var vect:  array of integer);
 
 var startvect : integer;
@@ -169,7 +169,7 @@ end;
 	
 <div id="basic" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">	
 <pre>
-<code class="language-basic">
+<code>
 Sub shakersort(vect() As Long)
     Dim As Long startvect = 0
     Dim As Long endvect   = UBound(vect) -1
