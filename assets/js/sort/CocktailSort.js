@@ -113,7 +113,7 @@ function opentab(tname) {
 }
 
 function timetosort(nb, v, locale) {
-		nb = nb * ( 2* nb) / 4;
+		nb = ((nb * nb) - ( 2* nb)) / 4;
 		var ti = nb / v;
 		var oti = ti;
 		var y,d,h,m,s;
