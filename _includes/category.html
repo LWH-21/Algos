@@ -9,6 +9,7 @@
 	<div class="w3-row">				
 		{%- assign num_color = 0 -%}
 		{% for cat in page.categories %}
+			<p>{{ cat }} <p>
 			{% for p in site.categories[cat] %}
 			{%- if p.lang == page.lang -%}
 			{%- assign num_color = num_color | plus: 1 -%}	
