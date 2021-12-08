@@ -65,13 +65,53 @@ L'animation ci-dessous détaille le fonctionnement du tri shaker :
 	</div>	
 <div id="C" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">
 	<!-- https://quickhighlighter.com/ -->
-	<pre>
-	</pre>
+<pre>
+void shakersort(int vect[], int size) {
+    int swapped;
+    int current=0, direction=1;
+    int startvect=1, endvect=size - 1;
+    do {
+        swapped=0;
+        while (((direction==1) && (current<endvect)) || ((direction==-1) && (current>startvect))) {
+            current += direction;            
+            if (vect[current]<vect[current-1]) {
+                int temp = vect[en_cours];
+                vect[current]=vect[current-1];
+                vect[current-1]=temp;
+                swapped=1;
+            }
+        }
+        if (direction==1) endvect--; else startvect++;
+        direction = -direction;
+    } while (swapped);
+}	
+</pre>
 </div>
 
 <div id="python" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">
-	<pre>
-	</pre>
+<pre>
+def shakersort(vect):
+    swapped,direction,current = True,1,0
+    startvect,endvect = 0,len(vect)-2
+    while swapped == True:
+        swapped = False
+        while (current<endvect and direction==1) or \
+        (current>startvect and direction==-1) :
+            # Test si echange
+            if vect[current] > vect[current + 1]:
+                swapped = True
+                # On echange les deux elements
+                vect[current], vect[current + 1] = \
+                vect[current + 1],vect[current]
+            current = current + direction
+        # On change le sens du parcours
+        if direction==1:
+            endvect = endvect - 1
+        else:
+            startvect = startvect + 1
+        direction = -direction
+    return vect  	
+</pre>
 </div>		
 	
 <div id="pascal" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">
