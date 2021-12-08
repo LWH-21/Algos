@@ -8,8 +8,7 @@ keywords:
   - Algorithmes de tri
 date: 2021-12-08
 last_modified_at: 2021-12-08
-category: 
- - Algorithmes de tri 
+category: Algorithmes de tri 
 lang : fr
 locale : fr-FR
 ref : sortalgorithms
