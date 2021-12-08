@@ -22,6 +22,8 @@
 {%- if jekyll.environment == 'production' and site.google_analytics -%}
 	{%- include google-analytics.html -%}
 {%- endif -%}
+	
+<script src="{{ /assets/js/hightlight/highlight.min.js | relative_url }}"></script>
 
 <script>
 function w3_open() {
@@ -31,6 +33,9 @@ function w3_open() {
 function w3_close() {
 	document.getElementById("lwSidebar").style.display = "none";
 }
+	
+hljs.highlightAll();	
+	
 </script>
 
 </html>
