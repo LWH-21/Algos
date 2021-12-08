@@ -63,8 +63,7 @@ L'animation ci-dessous détaille le fonctionnement du tri shaker :
 	<div id="schem" class="w3-container tab" style="display:none">
 	<canvas id = "sort_canvas_schem" width = "640" height = "295" class="animation" style="position:relative;top:0;left:0;border:1px solid #000000; margin-bottom:0;z-index: 0;"> </canvas>
 	</div>	
-<div id="C" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">
-	<!-- https://quickhighlighter.com/ -->
+<div id="C" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">	
 <pre>
 <code class="language-c">
 void shakersort(int vect[], int size) {
@@ -120,7 +119,7 @@ def shakersort(vect):
 	
 <div id="pascal" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">
 <pre>
-<code class="language-pascal">	
+<code class="language-pas">	
 procedure shakersort(var vect:  array of integer);
 
 var startvect : integer;
