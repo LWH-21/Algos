@@ -10,7 +10,7 @@ keywords:
  - Visualisation du tri bulle
 date: 2021-11-20
 last_modified_at: 2021-12-01
-category: 
+categories: 
  - Algorithmes de tri 
 lang : fr
 locale : fr-FR
