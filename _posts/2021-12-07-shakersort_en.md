@@ -337,7 +337,7 @@ To get a more concrete idea of the performance of this algorithm, suppose that y
 	</thead>
 	<tbody>
 		<tr>
-			<td>Paimpol</td>
+			<td>Paimpol (Brittany, France)</td>
 			<td class="w3-right-align">7 172</td>
 			<td class="w3-right-align"></td>
 		</tr>	
