@@ -45,8 +45,8 @@ The animation below shows how the shuttle sort works :
 		  <a href="#" class="w3-bar-item w3-button" title="Python" onclick="opentab('python');return false;">Python</a>
 		  <a href="#" class="w3-bar-item w3-button" title="C" onclick="opentab('C');return false;">C</a>
 		  <a href="#" class="w3-bar-item w3-button" title="Basic" onclick="opentab('basic');return false;">Basic</a>				  
-		  <a href="#" class="w3-bar-item w3-button" title="nsd" onclick="opentab('nsd');return false;">Structogramme</a>
-		  <a href="#" class="w3-bar-item w3-button" title="Flowchart" onclick="opentab('flowchart');return false;">Organigramme</a>
+		  <a href="#" class="w3-bar-item w3-button" title="nsd" onclick="opentab('nsd');return false;">Nassi-Schneiderman Diagram</a>
+		  <a href="#" class="w3-bar-item w3-button" title="Flowchart" onclick="opentab('flowchart');return false;">Flowchart</a>
 		</div>
 	</div>
 </div>
@@ -97,15 +97,13 @@ def shakersort(vect):
     while swapped == True:
         swapped = False
         while (current<endvect and direction==1) or \
-        (current>startvect and direction==-1) :
-            # Test si echange
+        (current>startvect and direction==-1) :            
             if vect[current] > vect[current + 1]:
                 swapped = True
                 # On echange les deux elements
                 vect[current], vect[current + 1] = \
                 vect[current + 1],vect[current]
-            current = current + direction
-        # On change le sens du parcours
+            current = current + direction        
         if direction==1:
             endvect = endvect - 1
         else:
