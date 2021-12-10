@@ -3,7 +3,7 @@ layout: category
 title: Algoritmos de ordenación
 description: "Los algoritmos de ordenación especifican la forma de organizar los datos en un orden determinado"
 author: LWH
-image: 
+image: assets/img/sort/sortalgorithm.webp
 keywords: 
   - ordenación
   - algoritmos de ordenación
