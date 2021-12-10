@@ -86,11 +86,9 @@
 			{%- if p.lang == page.lang -%}
 				<div data-role="tile" data-size="wide" data-cover="{{ p.image | relative_url }}" style="background-color: {{ colors[num_color] }};">
 				<a href="{{ p.url| relative_url }}">
-					<div>						
-						<b>{{ p.title }}</b>				
-					</div>
-					<span class="branding-bar">{{ p.description }}</span>
+					<div><b>{{ p.title }}</b></div>
 				</a>
+				<span class="branding-bar">{{ p.description }}</span>				
 			</div>				
 			{%- endif -%}
 		{%- endfor -%}
