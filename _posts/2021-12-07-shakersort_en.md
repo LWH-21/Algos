@@ -281,7 +281,7 @@ But I prefer a version with a single loop and a change of direction. And, as for
 
 The shaker sort does not add much to the bubble sort. 
 
-In the worst case, with data sorted in reverse, the successive runs of the table require  <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 2</b> exchanges. For example, for a list of <b><em>n</em></b> items,  it will take, in the worst case, 45 comparisons and 45 exchanges  [ (10<sup>2</sup> - 10) / 2 ]. The time complexity is therefore quadratic, of the order of <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
+In the worst case, with data sorted in reverse, the successive runs of the table require  <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 2</b> exchanges. For example, for a list of <b><em>10</em></b> items,  it will take 45 comparisons and 45 exchanges  [ (10<sup>2</sup> - 10) / 2 ]. The time complexity is therefore quadratic, of the order of <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
 
 When the initial order of the items to be sorted is random, it is considered that <b>(<em>n</em><sup>2</sup> - <em>2*n</em>) / 4</b>  exchanges will be needed. The complexity will therefore also be <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
 
