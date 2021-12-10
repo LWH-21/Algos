@@ -3,7 +3,7 @@ layout: category
 title: Sorting algorithms
 description: "Sorting algorithm specifies the way to arrange data in a particular order"
 author: LWH
-image: 
+image: assets/img/sort/sortalgorithm.webp
 keywords: 
   - sorting
   - sorting algorithms
