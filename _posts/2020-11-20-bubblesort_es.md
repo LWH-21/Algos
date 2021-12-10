@@ -159,18 +159,18 @@ La siguiente animación muestra cómo funciona la ordenación por burbujas:
 	<div class="w3-dropdown-hover">
 		<button class="w3-button">Velocidad</button>
 		<div class="w3-dropdown-content w3-bar-block w3-card-4">
-		  <a href="#" class="w3-bar-item w3-button" title="Normal" href="PleaseEnableJavascript.html" onclick="sortdem.setSpeed(0.5);return false;">Normal</a>
-		  <a href="#" class="w3-bar-item w3-button" title="rápida" href="PleaseEnableJavascript.html" onclick="sortdem.setSpeed(1);return false;">Rápida</a>
-		  <a href="#" class="w3-bar-item w3-button" title="Slow" href="PleaseEnableJavascript.html" onclick="sortdem.setSpeed(0.2);return false;">Lenta</a>
+		  <a href="#" class="w3-bar-item w3-button" title="Normal"  onclick="sortdem.setSpeed(0.5);return false;">Normal</a>
+		  <a href="#" class="w3-bar-item w3-button" title="rápida"  onclick="sortdem.setSpeed(1);return false;">Rápida</a>
+		  <a href="#" class="w3-bar-item w3-button" title="Slow"  onclick="sortdem.setSpeed(0.2);return false;">Lenta</a>
 		  <a href="#" class="w3-bar-item w3-button" title="Very slow" href="PleaseEnableJavascript.html" onclick="sortdem.setSpeed(0.1);return false;">Muy lenta</a>
 		</div>
 	</div>
 	<div class="w3-dropdown-hover">
 		<button class="w3-button">Mezcla</button>
 		<div class="w3-dropdown-content w3-bar-block w3-card-4">
-		  <a href="#" class="w3-bar-item w3-button" title="Random" href="PleaseEnableJavascript.html" onclick="sortdem.shuffle('A');return false;">Aleatoria</a>
-		  <a href="#" class="w3-bar-item w3-button" title="Worst" href="PleaseEnableJavascript.html" onclick="sortdem.shuffle('W');return false;">Peor</a>
-		  <a href="#" class="w3-bar-item w3-button" title="Best" href="PleaseEnableJavascript.html" onclick="sortdem.shuffle('B');return false;">Mejor</a>
+		  <a href="#" class="w3-bar-item w3-button" title="Random"  onclick="sortdem.shuffle('A');return false;">Aleatoria</a>
+		  <a href="#" class="w3-bar-item w3-button" title="Worst"  onclick="sortdem.shuffle('W');return false;">Peor</a>
+		  <a href="#" class="w3-bar-item w3-button" title="Best"  onclick="sortdem.shuffle('B');return false;">Mejor</a>
 		</div>
 	</div>
 
