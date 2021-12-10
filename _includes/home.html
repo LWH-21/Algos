@@ -79,12 +79,32 @@
 			{%- endif -%}
 		{%- endfor -%}
 			
+		<!-- Categories -->
+		
+		{%- assign pages=site.pages | where:"categories", "index" | sort: 'lang' -%}
+		{% for p in pages %}
+			{%- if p.lang == page.lang -%}
+				<div data-role="tile" data-size="wide" data-cover="{{ p.image | relative_url }}" style="background-color: {{ colors[num_color] }};">
+				<a href="{{ p.url| relative_url }}">
+					<div>						
+						<b>{{ p.title }}</b>				
+					</div>
+					<span class="branding-bar">{{ p.description }}</span>
+				</a>
+			</div>				
+			{%- endif -%}
+		{%- endfor -%}
+		
 		<!-- Posts tiles -->
 		{%- assign num_color = 0 -%}
 		{%- assign posts=site.posts | where:"lang", page.lang | sort: 'date' | reverse -%}
 		{%- for p in posts  limit:10 -%}
 			{%- assign num_color = num_color | plus: 1 -%}
-			<div data-role="tile" data-size="large" data-cover="{{ p.image | relative_url }}" style="background-color: {{ colors[num_color] }};">
+			{%- if num_color == 1 -%}
+				<div data-role="tile" data-size="large" data-cover="{{ p.image | relative_url }}" style="background-color: {{ colors[num_color] }};">
+			{%- else -%}
+				<div data-role="tile" data-size="medium" data-cover="{{ p.image | relative_url }}" style="background-color: {{ colors[num_color] }};">
+			{%- endif -%}
 				<a href="{{ p.url| relative_url }}">
 					<div>						
 						<b>{{ p.title }}</b>
