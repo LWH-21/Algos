@@ -245,7 +245,7 @@ Desde el punto de vista educativo, este algoritmo es muy interesante. Es fácil 
 
 Pero, en el mundo real, hay que decir que no es muy eficiente. A menudo se critica, incluso se considera "ingenua" y "debe evitarse absolutamente". Sin embargo, tiene el mérito de ser suficientemente eficiente en listas pequeñas o en listas que ya están parcialmente ordenadas. 
 
-En el peor de los casos, con los datos ordenados en sentido inverso, las ejecuciones sucesivas de la tabla requieren <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 2</b> intercambios. Por ejemplo, para una lista de <b><em>n</em></b> elementos, se necesitarán, en el peor de los casos, 45 comparaciones y 45 intercambios [ (10<sup>2</sup> - 10) / 2 ]. La complejidad  es por tanto cuadrática, del orden <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
+En el peor de los casos, con los datos ordenados en sentido inverso, las ejecuciones sucesivas de la tabla requieren <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 2</b> intercambios. Por ejemplo, para una lista de <b><em>10</em></b> elementos, se necesitarán, en el peor de los casos, 45 comparaciones y 45 intercambios [ (10<sup>2</sup> - 10) / 2 ]. La complejidad  es por tanto cuadrática, del orden <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
 
 Cuando el orden inicial de los elementos a clasificar es aleatorio, se considera que serán necesarios <b>(<em>n</em><sup>2</sup> - <em>n</em>) / 4</b> intercambios. Por lo tanto, la complejidad será también <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
 
