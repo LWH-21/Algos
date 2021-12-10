@@ -9,7 +9,7 @@ keywords:
  - cocktail sort
  - ordenamiento de burbuja bidireccional
  - algoritmo de ordenamiento
- date: 2021-12-11
+date: 2021-12-11
 last_modified_at: 2021-12-11
 categories: 
  - Algoritmos de ordenación
@@ -23,6 +23,7 @@ custom_js:
   -  assets/js/sort/CocktailSort.js
   -  https://www.jdoodle.com/assets/jdoodle-pym.min.js
 ---
+
 El ordenamiento de burbuja bidireccional es una mejora de la ordenación en burbujas. Se utiliza principalmente como herramienta educativa. 
 
 Intenta mitigar un defecto de la clasificación por burbujas: el problema de los conejos y las tortugas. Se trata de una situación en la que se coloca una burbuja pesada al final de la matriz. Mientras las burbujas ligeras (conejos) ascienden rápidamente, la burbuja pesada (tortuga) desciende sólo una posición por cada iteración.
