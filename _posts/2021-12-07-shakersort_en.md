@@ -100,7 +100,6 @@ def shakersort(vect):
         (current>startvect and direction==-1) :            
             if vect[current] > vect[current + 1]:
                 swapped = True
-                # On echange les deux elements
                 vect[current], vect[current + 1] = \
                 vect[current + 1],vect[current]
             current = current + direction        
