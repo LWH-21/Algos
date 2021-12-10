@@ -3,7 +3,7 @@ layout: category
 title: Algorithmes de tri
 description: "Descriptions d'algorithmes de tri"
 author: LWH
-image: 
+image: assets/img/sort/sortalgorithm.webp
 keywords: 
   - Algorithmes de tri
 date: 2021-12-08
