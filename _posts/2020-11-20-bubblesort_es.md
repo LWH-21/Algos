@@ -33,8 +33,8 @@ La siguiente animación muestra cómo funciona la ordenación por burbujas:
 
 <div class="w3-bar w3-black">
 	<button class="w3-bar-item w3-button" onclick="opentab('anim')">Animación</button>
-	<button class="w3-bar-item w3-button" onclick="opentab('graph')">Gráfico</button>
-	<button class="w3-bar-item w3-button" onclick="opentab('schem')">Diagrama</button>
+	<button class="w3-bar-item w3-button" onclick="opentab('graph')">Diagrama</button>
+	<button class="w3-bar-item w3-button" onclick="opentab('schem')">Red de ordenamiento</button>
 	<div class="w3-dropdown-hover">
 		<button class="w3-button">Código</button>
 		<div class="w3-dropdown-content w3-bar-block w3-card-4">
