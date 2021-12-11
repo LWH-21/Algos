@@ -34,8 +34,8 @@ The animation below shows how the bubble sort works :
 	
 <div class="w3-bar w3-black">
 	<button class="w3-bar-item w3-button" onclick="opentab('anim')">Animation</button>
-	<button class="w3-bar-item w3-button" onclick="opentab('graph')">Graphics</button>
-	<button class="w3-bar-item w3-button" onclick="opentab('schem')">Diagram</button>
+	<button class="w3-bar-item w3-button" onclick="opentab('graph')">Diagram</button>
+	<button class="w3-bar-item w3-button" onclick="opentab('schem')">Sorting network</button>
 	<div class="w3-dropdown-hover">
 		<button class="w3-button">Code</button>
 		<div class="w3-dropdown-content w3-bar-block w3-card-4">
