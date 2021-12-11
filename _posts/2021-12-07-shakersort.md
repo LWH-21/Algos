@@ -37,8 +37,8 @@ L'animation ci-dessous détaille le fonctionnement du tri shaker :
 
 <div class="w3-bar w3-black">
 	<button class="w3-bar-item w3-button" onclick="opentab('anim')">Animation</button>
-	<button class="w3-bar-item w3-button" onclick="opentab('graph')">Graphique</button>
-	<button class="w3-bar-item w3-button" onclick="opentab('schem')">Schéma</button>
+	<button class="w3-bar-item w3-button" onclick="opentab('graph')">Schéma</button>
+	<button class="w3-bar-item w3-button" onclick="opentab('schem')">Réseau de tri</button>
 	<div class="w3-dropdown-hover">
 		<button class="w3-button">Code</button>
 		<div class="w3-dropdown-content w3-bar-block w3-card-4">
