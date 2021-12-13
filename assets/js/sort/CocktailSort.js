@@ -110,6 +110,7 @@ function opentab(tname) {
     x[i].style.display = "none";  
   }
   document.getElementById(tname).style.display = "block";  
+  if (sortdem) {sortdem.settab(tname); }
 }
 
 function timetosort(nb, v, locale) {
