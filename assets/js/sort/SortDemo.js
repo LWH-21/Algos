@@ -95,6 +95,7 @@ function SortDemo(parent,name) {
 	this.speed = 0.5;
 	this.swap = [];
 	this.comp = [];
+	this.activetab='';
 }
 
 SortDemo.prototype.render_schema = function() {
@@ -151,12 +152,19 @@ SortDemo.prototype.render_schema = function() {
 	for (let i=0;i<nb;i++) {
 		[a,b] =this.comp[i];
 		ctx.beginPath();
-		ctx.strokeStyle="red";
 		ctx.lineCap = "round";
-		ctx.lineWidth = 2;
+		ctx.lineWidth = 1;
+		if (tab[a].value>tab[b].value) {ctx.strokeStyle = "red";} else {ctx.strokeStyle = "black";}
+		ctx.arc(x+size*(i+1),15+a*h, 2, 0, 2 * Math.PI);
 		ctx.moveTo(x+size*(i+1),15+a*h);
 		ctx.lineTo(x+size*(i+1),15+b*h);
+		ctx.arc(x+size*(i+1),15+b*h, 2, 0, 2 * Math.PI);
 		ctx.stroke();
+		if (tab[a].value>tab[b].value) {
+			let temp=tab[a];
+			tab[a]=tab[b];
+			tab[b]=temp;
+		}
 	}
 }
 
@@ -256,11 +264,6 @@ SortDemo.prototype.render_layer = function() {
 
 		ctx.fillStyle = "black";
 		ctx.fillText(this.elts[i].value, x+7, y+20);
-		/*y=25+i*30;
-		ctx.fillRect(y,20, 30, 30);
-		ctx.strokeRect(y,20, 30, 30);
-		ctx.fillStyle = "black";
-		ctx.fillText(this.elts[i].value, y+10, 40);*/
 	}
 }
 
@@ -318,12 +321,21 @@ SortDemo.prototype.render = function() {
 	this.controls.update();
 	this.render_layer();
 
-	this.render_graph();
-	this.render_schema();
+	if ((this.activetab='graph') || (this.activetab='')) { this.render_graph();}
+	if ((this.activetab='schem') || (this.activetab='')) {this.render_schema();}
 }
 
 SortDemo.prototype.setSpeed = function(s) {
 	this.speed=s;
+}
+
+SortDemo.prototype.setTab = function(t) {
+	if ((t=='anim') || (t=='graph') || (t=='shem')) {
+		this.activetab=t;
+	} else {
+		this.activetab='';
+	}
+	this.render();
 }
 
 SortDemo.prototype.start = function() {
