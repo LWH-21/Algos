@@ -93,7 +93,8 @@ function opentab(tname) {
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";  
   }
-  document.getElementById(tname).style.display = "block";  
+  document.getElementById(tname).style.display = "block"; 
+  if (sortdem) {sortdem.settab(tname); }
 }
 
 function timetosort(nb, v, locale) {
