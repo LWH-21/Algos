@@ -242,7 +242,7 @@ void bubble_sort1(int* lst, int size)
 	
 ## Complexity	
 
-From an educational point of view, this algorithm is very interesting. It is easy to understand and therefore also easy to explain. It is easy to code in most computer languages and gives the opportunity to manipulate vectors or lists. It can be used as a basis for many optimization exercises. And it has a catchy name.
+From an educational point of view, this algorithm is very interesting. It is easy to understand and therefore also easy to explain. It is easy to write and debug in most computer languages and gives the opportunity to manipulate vectors or lists. It can be used as a basis for many optimization exercises. And it has a catchy name.
 
 But, in the real world, it must be said that it is not very efficient. It is often decried, even considered as "naive" and "to be avoided absolutely". However, it has the merit of being sufficiently efficient on small lists or lists that are already partially sorted. 
 
