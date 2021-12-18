@@ -177,8 +177,11 @@ L’animation ci-dessous illustre le fonctionnement de ce tri.
 </div>
 
 Vous trouverez [ici](https://youtu.be/hQ9skJvM-RE) une petite vidéo qui montre cet algorithme.
-
-[![Tri bulle]({{ assets/img/sort/bubble_sort_video.webp | relative_url }})]((https://youtu.be/hQ9skJvM-RE) "Tri bulle")
+<div style="align:center;">
+<a href="(https://youtu.be/hQ9skJvM-RE)" title="Tri bulle">
+<img src="{{ 'assets/img/sort/bubble_sort_video.webp' | relative_url }}" alt="Ordinogramme du tri bulle " style="max-width: 100%;height: auto;"/> 
+</a>
+</div>
 
 ## Travaux pratiques
 
