@@ -176,11 +176,7 @@ L’animation ci-dessous illustre le fonctionnement de ce tri.
 
 </div>
 
-Voici une petite vidéo qui montre cet algorithme :
-
-<iframe width="420" height="315"
-https://youtu.be/hQ9skJvM-RE
-</iframe> 
+Vous trouverez ici(https://youtu.be/hQ9skJvM-RE) une petite vidéo qui montre cet algorithme.
 
 ## Travaux pratiques
 
