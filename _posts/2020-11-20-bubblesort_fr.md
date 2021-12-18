@@ -178,6 +178,8 @@ L’animation ci-dessous illustre le fonctionnement de ce tri.
 
 Vous trouverez [ici](https://youtu.be/hQ9skJvM-RE) une petite vidéo qui montre cet algorithme.
 
+[![Tri bulle]({{ assets/img/sort/bubble_sort_video.webp | relative_url }})]((https://youtu.be/hQ9skJvM-RE) "Tri bulle")
+
 ## Travaux pratiques
 
 Le mini-jeu ci-dessous vous permet d'essayer de trier, par ordre de poids croissant, une suite de 5 tonneaux, avec juste une balance pour les comparer. Vous pouvez essayer de le résoudre avec la méthode du tri bulle.
