@@ -177,6 +177,13 @@ The animation below shows how the bubble sort works :
 
 </div>
 
+you will find [here](https://youtu.be/WxxFN1yUtpE) here a short video illustrating this algorithm.
+<div style="align:center;">
+<a href="https://youtu.be/WxxFN1yUtpE" title="Bubble Sort">
+<img src="{{ 'assets/img/sort/bubble_sort_video.webp' | relative_url }}" alt="Bubble sort " style="max-width: 100%;height: auto;"/> 
+</a>
+</div>
+
 ## Practical work
 
 The mini-game below allows you to try to sort, in order of increasing weight,  5 barrels, with a Roberval scale to compare them. You can try to solve it with the bubble sort method.
