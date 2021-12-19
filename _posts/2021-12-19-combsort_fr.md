@@ -28,7 +28,7 @@ Le tri à peigne (Comb Sort en anglais) est un algorithme de tri par comparaison
 
 Il apporte une solution au problème des "lièvres" et des "tortues". Les "lièvres", sont les éléments de fin de liste qui migrent rapidement à leur place définitive et les "tortues" ceux de début de liste qui se déplacent lentement. 
 
-Plutôt que de toujours comparer des éléments adjacents, le tri à peigne va comparer des éléments séparés d'une distance plus grande. Au départ, on compare des éléments éloignés, puis on réduit progressivement l'intervalle à chaque itération jusqu'à ce qui ne soit plus que de 1 en fin de traitement. Le tri à bulles est donc un cas particulier du tri à peigne dans lequel l'intervalle est toujours de 1. 
+Plutôt que de toujours comparer des éléments adjacents, le tri à peigne va comparer des éléments séparés d'une distance plus grande. Au départ, on compare des éléments éloignés, puis on réduit progressivement l'intervalle à chaque itération jusqu'à ce qu'il ne soit plus que de 1 en fin de traitement. Le tri à bulles est donc un cas particulier du tri à peigne dans lequel l'intervalle est toujours de 1. 
 
 Cet algorithme est beaucoup plus performant que le tri bulle classique parce qu'il effectue davantage de comparaisons et d'échanges "à longue portée" ; la permutation de deux éléments qui sont éloignés l'un de l'autre 
 permettra de les rapprocher beaucoup plus rapidement de leur position définitives que la permutation de deux éléments proches.
