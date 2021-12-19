@@ -227,11 +227,6 @@ sortdem.renderer.render(sortdem.scene,sortdem.camera);
 
 
 
-const sortgame = new SortGame('sortgame',5);
-const gamealgo = new Combsort(sortgame);
-sortgame.init(gamealgo);
-
-
 
 const sortcplx = new SortCplx('sortcplx','Tcomplex');
 const compalgo = new Combsort();
