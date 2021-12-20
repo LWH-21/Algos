@@ -212,7 +212,7 @@ end;
 
 ## Complexité	
 
-La complexité du tri peigne est difficile à évaluer. Mais bon, je vais essayer. D'abord le meilleur des cas, avec une liste déjà triée ou pratiquement triée. Beaucoup d'articles sur le sujet disent que, dans le meilleur des cas, la complexité du tri peigne est meilleur que celle du tri bulle. C'est évidemment faux. Avec une liste déjà triée de disons 100 éléments, le tri bulle classique fera 99 comparaisons avant de s'arrêter. Le tri peigne fera une itération avec un gap de 76, puis une itération avec un gap de 58, puis avec un gap de 44... Et terminera avec un gap de 1. En tout, il fera 1003 comparaisons. Le graphique ci-dessous montre le nombre de comparaisons effectuées par un tri bulle classique (en bleu) et le tri peigne (en rouge) :
+La complexité du tri peigne est difficile à évaluer. Mais bon, je vais essayer. D'abord le meilleur des cas, avec une liste déjà triée ou pratiquement triée. Beaucoup d'articles sur le sujet disent que, dans le meilleur des cas, le tri peigne est plus performant que le tri bulle. C'est évidemment faux. Avec une liste déjà triée de disons 100 éléments, le tri bulle classique fera 99 comparaisons avant de s'arrêter. Le tri peigne fera une itération avec un gap de 76, puis une itération avec un gap de 58, puis avec un gap de 44... Et terminera avec un gap de 1. En tout, il fera 1003 comparaisons. Le graphique ci-dessous montre le nombre de comparaisons effectuées par un tri bulle classique (en bleu) et le tri peigne (en rouge) :
 	
 <div style="align:center;">
 <img src="{{ 'assets/img/sort/BestCaseCombsort.png' | relative_url }}" alt="Comparaisons dans le meilleur des cas" style="max-width: 100%;height: auto;"/> 
