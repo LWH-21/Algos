@@ -212,9 +212,14 @@ end;
 
 ## Complexité	
 
-La complexité du tri peigne est difficile à évaluer. D'abord le pire des cas n'est pas la liste triée en ordre inverse. Par exemple, le tri de la liste [5,4,3,2,1] nécessitera 13 comparaisons et 4 échanges tandis que celui de la liste [5,2,3,4,1] demandera 13 comparaisons et 7 échanges. 
-
-J'ai lu un papier d'un certain Paul VITANYI (https://homepages.cwi.nl/~paulv/papers/sorting.pdf) qui étudiait la complexité des différents tris basés sur la complexité de Kolmogorov mais j'avoue ne pas avoir tout bien compris. Et surtout, expérimentalement, je ne trouve pas du tout les mêmes résultats. M. Vitanyi annonce une compléxité de omega (n^2/2^p) avec p, le nombre d'incréments. On peut dire que p est égal à ln(N)/ln(1.3) (avec N le nombre d'éléments à trier et un facteur de réduction de 1.3). Donc, avec N=10 on aurait 8 incréments (le nombre est un peu sur-évalué parce qu'en pratique, on arrondi à l'entier inférieur, mais bon) et 0.390625 comparaisons. 
+La complexité du tri peigne est difficile à évaluer. Mais bon, je vais essayer. D'abord le meilleur des cas, avec une liste déjà triée ou pratiquement triée. Beaucoup d'articles sur le sujet disent que, dans le meilleur des cas, la complexité du tri peigne est meilleur que celle du tri bulle. C'est évidemment faux. Avec une liste déjà triée de disons 100 éléments, le tri bulle classique fera 99 comparaisons avant de s'arrêter. Le tri peigne fera une itération avec un gap de 76, puis une itération avec un gap de 58, puis avec un gap de 44... Et terminera avec un gap de 1. En tout, il fera 1003 comparaisons. Le graphique ci-dessous montre le nombre de comparaisons effectuées par un tri bulle classique (en bleu) et le tri peigne (en rouge) :
+	
+<div style="align:center;">
+<img src="{{ 'assets/img/sort/bubble_sort_video.webp' | relative_url }}" alt="Comparaisons dans le meilleur des cas" style="max-width: 100%;height: auto;"/> 
+</div>	
+La forme "en escalier" de la courbe du tri Combsort provient du nombre d'incréments qui évolue en fonction de la taille des données à trier.
+	
+Pour la complexité moyenne, j'ai lu un [papier](https://homepages.cwi.nl/~paulv/papers/sorting.pdf) d'un certain Paul VITANYI  qui étudiait la complexité des différents tris basés sur la complexité de Kolmogorov mais j'avoue ne pas avoir tout bien compris. Et surtout, expérimentalement, je ne trouve pas du tout les mêmes résultats. M. Vitanyi annonce une compléxité de omega (n^2/2^p) avec p, le nombre d'incréments. On peut dire que p est égal à ln(N)/ln(1.3) (avec N le nombre d'éléments à trier et un facteur de réduction de 1.3). Donc, avec N=10 on aurait 8 incréments (le nombre est un peu sur-évalué parce qu'en pratique, on arrondi à l'entier inférieur, mais bon) et 0.390625 comparaisons. 
 Ok, c'est une borne inférieure, et il faudrait la multiplier par une constante. Le plus embêtant, c'est que, plus la taille des données augmente, plus le calcul n^2/2^p diminue :
 
 | Nombre d'éléments | Nombre d'incréments | Nombre d'opérations |
@@ -232,7 +237,8 @@ Est-ce que cela signifie que le nombre d'opération évolue de manière inverve 
 J'ai donc lancé l'algorithme avec quelques 100 000 jeux de données aléatoires (d'une taille entre 10 et 500 000 éléments) et j'ai ensuite analysé les résultats avec R. En moyenne, la complexité serait plutôt de 3*log2(N)*N (avec N, la taille du vecteur à trier). 
 Enfin, j'ai créé un tableau avec 42 796 714	 (le nombre d'habitants de Tokyo) entiers aléatoires que j'ai trié avec cette méthode. Là encore, les résultats sont très proches de l'estimation 3*log2(N)*N  et surtout étonnement rapides pour un algorithme aussi simple.
 
-
+Enfin, la complexité dans le pire des cas me pose un autre problème. Pour ce tri, le pire des cas n'est pas la liste triée en ordre inverse. Par exemple, le tri de la liste [5,4,3,2,1] nécessitera 13 comparaisons et 4 échanges tandis que celui de la liste [5,2,3,4,1] demandera 13 comparaisons et 7 échanges.
+	
 <div class="w3-metro-darken w3-bar">
 <button class="w3-bar-item w3-button" onclick="sortcplx.calc('A');return false;">Complexité moyenne</button>
 <button class="w3-bar-item w3-button" onclick="sortcplx.calc('W');return false;">Données en ordre inverse</button>
