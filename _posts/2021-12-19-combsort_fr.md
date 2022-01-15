@@ -236,6 +236,10 @@ Est-ce que cela signifie que le nombre d'opération évolue de manière inverve 
 
 J'ai donc lancé l'algorithme avec quelques 100 000 jeux de données aléatoires (d'une taille entre 10 et 500 000 éléments) et j'ai ensuite analysé les résultats avec R. En moyenne, la complexité serait plutôt de 3*log2(N)*N (avec N, la taille du vecteur à trier). 
 Enfin, j'ai créé un tableau avec 42 796 714	 (le nombre d'habitants de Tokyo) entiers aléatoires que j'ai trié avec cette méthode. Là encore, les résultats sont très proches de l'estimation 3*log2(N)*N  et surtout étonnement rapides pour un algorithme aussi simple.
+	
+Le graphique suivant donne le nombre de comparaisons pour des listes aléatoires de tailles comprises entre 10 et 100 000 éléments. En bleu, la courbe d'équation y=log2(x)*x.
+
+<img src="{{ 'assets/img/sort/combsort_comp.png' | relative_url }}" alt="Nombre de comparaisons en moyenne" style="max-width: 100%;height: auto;"/> 
 
 Enfin, la complexité dans le pire des cas me pose un autre problème. Pour ce tri, le pire des cas n'est pas la liste triée en ordre inverse. Par exemple, le tri de la liste [5,4,3,2,1] nécessitera 13 comparaisons et 4 échanges tandis que celui de la liste [5,2,3,4,1] demandera 13 comparaisons et 7 échanges.
 	
