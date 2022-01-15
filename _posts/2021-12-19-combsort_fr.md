@@ -242,6 +242,10 @@ Le graphique suivant donne le nombre de comparaisons pour 21255 listes aléatoir
 <img src="{{ 'assets/img/sort/combsort_comp.png' | relative_url }}" alt="Nombre de comparaisons en moyenne" style="max-width: 100%;height: auto;"/> 
 
 Enfin, la complexité dans le pire des cas me pose un autre problème. Pour ce tri, le pire des cas n'est pas la liste triée en ordre inverse. Par exemple, le tri de la liste [5,4,3,2,1] nécessitera 13 comparaisons et 4 échanges tandis que celui de la liste [5,2,3,4,1] demandera 13 comparaisons et 7 échanges.
+
+La comparaison avec le tri bulle est assez explicite. Le graphique ci-dessous montre le nombre de comparaisons effectuées par un tri bulle (en rouge) et par un tri à peigne (en bleu).
+	
+<img src="{{ 'assets/img/sort/CombVsBubble.png' | relative_url }}" alt="Comparaison Comb sort et Bubble sort" style="max-width: 100%;height: auto;"/> 
 	
 <div class="w3-metro-darken w3-bar">
 <button class="w3-bar-item w3-button" onclick="sortcplx.calc('A');return false;">Complexité moyenne</button>
