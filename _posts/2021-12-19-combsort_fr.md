@@ -237,7 +237,7 @@ Est-ce que cela signifie que le nombre d'opération évolue de manière inverve 
 J'ai donc lancé l'algorithme avec quelques 100 000 jeux de données aléatoires (d'une taille entre 10 et 500 000 éléments) et j'ai ensuite analysé les résultats avec R. En moyenne, la complexité serait plutôt de 3*log2(N)*N (avec N, la taille du vecteur à trier). 
 Enfin, j'ai créé un tableau avec 42 796 714	 (le nombre d'habitants de Tokyo) entiers aléatoires que j'ai trié avec cette méthode. Là encore, les résultats sont très proches de l'estimation 3*log2(N)*N  et surtout étonnement rapides pour un algorithme aussi simple.
 	
-Le graphique suivant donne le nombre de comparaisons pour 21255 listes aléatoires de tailles comprises entre 10 et 100 000 éléments. En bleu, la courbe d'équation y=log2(x)*x. La quasi-totalité des mesures se situe sous la courbe. Il n'y en a que deux qui la dépassent. Même si ça ne prouve rien, il semblerait que 3*log2(N)*N serait une borne supérieure pour la complexité en moyenne.
+Le graphique suivant donne le nombre de comparaisons pour 21255 listes aléatoires de tailles comprises entre 10 et 100 000 éléments. En bleu, la courbe d'équation y=log2(x)*x. La quasi-totalité des mesures se situe sous la courbe. Même si ça ne prouve rien, il semblerait que 3*log2(N)*N serait une borne supérieure pour la complexité en moyenne.
 
 <img src="{{ 'assets/img/sort/combsort_comp.png' | relative_url }}" alt="Nombre de comparaisons en moyenne" style="max-width: 100%;height: auto;"/> 
 
