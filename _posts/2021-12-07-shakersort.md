@@ -233,6 +233,13 @@ End Sub
 
 </div>
 
+Vous trouverez [ici](https://youtu.be/DDVgUIUbEOE) une petite vidéo qui montre cet algorithme.
+<div style="align:center;">
+<a href="https://youtu.be/DDVgUIUbEOE " title="Tri Shaker">
+<img src="{{ 'assets/img/sort/cocktail_sort_video.webp' | relative_url }}" alt="Vidéo du tri Shaker " style="max-width: 100%;height: auto;"/> 
+</a>
+</div>
+
 ## Travaux pratiques
 
 Le mini-jeu ci-dessous vous permet d'essayer de trier, par ordre de poids croissant, une suite de 5 tonneaux, avec juste une balance pour les comparer. Vous pouvez essayer de le résoudre avec cette méthode de tri.
