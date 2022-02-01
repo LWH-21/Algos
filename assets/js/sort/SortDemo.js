@@ -64,6 +64,7 @@ function Elt(n, col, size) {
 	Geometry.translate( 0,size / 2,0 );
 	this.obj = new THREE.Mesh(Geometry,material);
 	this.obj.name = n+'_'+size;
+	this.id = n;
 	this.value = size;
 	this.color = col;
 	this.posdest=[];
@@ -153,7 +154,7 @@ SortDemo.prototype.render_schema = function() {
 		[a,b] =this.comp[i];
 		ctx.beginPath();
 		ctx.lineCap = "round";
-		ctx.lineWidth = 1;
+		ctx.lineWidth = 1;		
 		if (tab[a].value>tab[b].value) {ctx.strokeStyle = "red";} else {ctx.strokeStyle = "black";}
 		ctx.arc(x+size*(i+1),15+a*h, 2, 0, 2 * Math.PI);
 		ctx.moveTo(x+size*(i+1),15+a*h);
@@ -340,10 +341,11 @@ SortDemo.prototype.setTab = function(t) {
 
 SortDemo.prototype.start = function() {
 	if (this.algo) {
-		var t=[];		
-		for (let i=0;i<20;i++) {t.push(this.elts[i].value);}
+		var t=[];
+		var tid=[]; 		
+		for (let i=0;i<20;i++) {t.push(this.elts[i].value);tid.push(this.elts[i].id);}
 		this.running=true;
-		this.algo.init(20,t);
+		this.algo.init(20,t,tid);
 		this.swap = [];
 		this.comp = [];
 		this.algo.next();
@@ -370,6 +372,20 @@ SortDemo.prototype.compare = function(a,b) {
 	return res;
 }
 
+SortDemo.prototype.note_compare = function(id_a,id_b) {
+	var a,b;
+	for (var i=0;i<20;i++) {
+		var e = this.elts[i]; 
+		if (e.id == id_a) {
+			a=i;
+		}
+		if (e.id == id_b) {
+			b=i;
+		}		
+	}	
+	this.comp.push([a,b]);
+}	
+
 SortDemo.prototype.echange = function(a,b) {
 	var oa = this.elts[a];
 	var ob = this.elts[b];
@@ -384,6 +400,24 @@ SortDemo.prototype.echange = function(a,b) {
 	this.swap.push([a,b]);
 }
 
+SortDemo.prototype.note_echange = function(id_a,id_b) {
+	var a,b;
+	for (var i=0;i<20;i++) {
+		var e = this.elts[i];	    
+		if (e.id == id_a) {
+			a=i;
+		}
+		if (e.id == id_b) {
+			b=i;
+		}		
+	}	
+	var oa = this.elts[a];
+	var ob = this.elts[b];
+	this.elts[a]=ob;
+	this.elts[b]=oa;
+	this.swap.push([a,b]);	
+}
+
 SortDemo.prototype.pose = function(a,b) {
 	var oa = this.elts[a];
 	var ob = this.elts[b];
@@ -391,6 +425,40 @@ SortDemo.prototype.pose = function(a,b) {
 	oa.posdest.push([oa.obj.position.x,-4.9,oa.obj.position.z]);
 	this.elts[a].state='_';
 	this.elts[b].state='_';
+}
+
+SortDemo.prototype.reserve = function(a,b) {
+	var oa = this.elts[a];
+	var ob = this.elts[b];
+	oa.posdest.push([oa.obj.position.x,-4.9,10]);
+	this.elts[a].state='_';
+}
+
+SortDemo.prototype.decale = function(a,b) {
+	var oa = this.elts[a];
+	var x = -26.5+(b+1)*2.5;
+	oa.posdest.push([x,oa.obj.position.y,oa.obj.position.z]);
+	this.elts[a].state='_';
+}
+
+SortDemo.prototype.place = function(id, x, y , z) {
+	
+	var oa;
+	for (var i=0;i<20;i++) {
+		var e = this.elts[i];	    
+		if (e.id == id) {
+			oa = this.elts[i];
+		}
+	}	
+	if (oa) {
+		x = -26.5+(x+1)*2.5;
+		let y1=z-4.9;
+		z=y+15;
+		oa.posdest.push([x,y1,z]);
+		oa.state='_';
+	} else {
+		//console.log('Place id= ',id);
+	}
 }
 
 SortDemo.prototype.shuffle = function(k) {
@@ -487,7 +555,7 @@ SortDemo.prototype.init = function(a) {
 	let colors = [0xE3C800,0xF0A30A,0xFA6800,0xF472D0,0x00CCFF,0xD80073,0xDC4FAD,0xAA00FF,0x6A00FF,0x0050EF];
 	var e;
 	for (var i=1;i<21;i++) {
-		e=new Elt('n_'+i,colors[values[i - 1] - 1],values[i - 1]);
+		e=new Elt(i,colors[values[i - 1] - 1],values[i - 1]);
 		this.scene.add(e.obj);
 		e.obj.position.set(-26.5+i*2.5,-4.9,15);
 		this.elts.push(e);
@@ -724,6 +792,8 @@ SortGame.prototype.compare = function(a,b) {
 	return res;
 }
 
+SortGame.prototype.place = function(id, x, y , z) {
+}
 
 
 SortGame.prototype.pose = function(a,b) {
@@ -743,11 +813,13 @@ SortGame.prototype.echange = function(a,b) {
 
 SortGame.prototype.init = function(al) {
     var t = [];
+    var tid = [];	
 	this.algo = al;
     for (let i=0; i<10; i++) {
 		t.push(this.data[i].valeur);
-    }
-	this.algo.init(this.nb,t);
+		tid.push(this.data[i].index);
+    }	
+	this.algo.init(this.nb,t,tid);
 }
 
 SortGame.prototype.stop = function() {
