@@ -35,7 +35,7 @@ L’animation ci-dessous détaille le fonctionnement de ce tri :
 	<div class="w3-dropdown-hover">
 		<button class="w3-button">Code</button>
 		<div class="w3-dropdown-content w3-bar-block w3-card-4">
-		  <a href="#" class="w3-bar-item w3-button" title="Pascal" onclick="opentab('pascal');return false;">Pascal</a>
+		  <a href="#" class="w3-bar-item w3-button" title="JavaScript" onclick="opentab('JavaScript');return false;">Pascal</a>
 		  <a href="#" class="w3-bar-item w3-button" title="Python" onclick="opentab('python');return false;">Python</a>
 		  <a href="#" class="w3-bar-item w3-button" title="C" onclick="opentab('C');return false;">C</a>
 		  <a href="#" class="w3-bar-item w3-button" title="Basic" onclick="opentab('basic');return false;">Basic</a>				  
@@ -72,10 +72,22 @@ L’animation ci-dessous détaille le fonctionnement de ce tri :
 </pre>
 </div>		
 	
-<div id="pascal" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">
+<div id="JavaScript" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">
 <pre>
 <code>
-
+function InsertionSort(lst) {
+	let size = lst.length;
+        for (let i = 1; i < size; i++) {            
+            let current = lst[i];            
+            let j = i-1; 
+            while ((j > -1) && (current < lst[j])) {
+                lst[j+1] = lst[j];
+                j--;
+            }
+            lst[j+1] = current;
+        }
+    return lst;
+}
 </code>
 </pre>
 </div>
