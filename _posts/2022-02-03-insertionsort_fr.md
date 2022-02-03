@@ -35,7 +35,7 @@ L’animation ci-dessous détaille le fonctionnement de ce tri :
 	<div class="w3-dropdown-hover">
 		<button class="w3-button">Code</button>
 		<div class="w3-dropdown-content w3-bar-block w3-card-4">
-		  <a href="#" class="w3-bar-item w3-button" title="JavaScript" onclick="opentab('JavaScript');return false;">Pascal</a>
+		  <a href="#" class="w3-bar-item w3-button" title="JavaScript" onclick="opentab('JavaScript');return false;">JavaScript</a>
 		  <a href="#" class="w3-bar-item w3-button" title="Python" onclick="opentab('python');return false;">Python</a>
 		  <a href="#" class="w3-bar-item w3-button" title="C" onclick="opentab('C');return false;">C</a>
 		  <a href="#" class="w3-bar-item w3-button" title="Basic" onclick="opentab('basic');return false;">Basic</a>				  
