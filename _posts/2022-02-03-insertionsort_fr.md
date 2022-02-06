@@ -79,7 +79,14 @@ void InsertionSort(int vect[], int size)
 <div id="python" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">
 <pre>
 <code class="language-python">
-
+def InsertionSort(vect):
+    for i in range(1, len(vect)):
+        current = array[i]
+        p = i
+        while p > 0 and vect[p - 1] > current:
+            vect[p] = vect[p -1]
+            p = p - 1
+        vect[p] = current
 </code>
 </pre>
 </div>		
