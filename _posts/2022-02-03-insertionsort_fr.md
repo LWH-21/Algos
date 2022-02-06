@@ -59,7 +59,19 @@ L’animation ci-dessous détaille le fonctionnement de ce tri :
 <div id="C" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">	
 <pre>
 <code class="language-c">
-
+void InsertionSort(int vect[], int size)
+{
+    int i, current, j;
+    for (i = 1; i < size; i++) {
+        current = vect[i];
+        j = i - 1;
+        while (j >= 0 && vect[j] > current) {
+            vect[j + 1] = vect[j];
+            j = j - 1;
+        }
+        vect[j + 1] = current;
+    }
+}
 </code>
 </pre>
 </div>
