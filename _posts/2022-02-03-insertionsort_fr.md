@@ -38,7 +38,7 @@ L’animation ci-dessous détaille le fonctionnement de ce tri :
 		  <a href="#" class="w3-bar-item w3-button" title="JavaScript" onclick="opentab('JavaScript');return false;">JavaScript</a>
 		  <a href="#" class="w3-bar-item w3-button" title="Python" onclick="opentab('python');return false;">Python</a>
 		  <a href="#" class="w3-bar-item w3-button" title="C" onclick="opentab('C');return false;">C</a>
-		  <a href="#" class="w3-bar-item w3-button" title="Basic" onclick="opentab('basic');return false;">Basic</a>				  
+		  <a href="#" class="w3-bar-item w3-button" title="Scratch" onclick="opentab('Scratch');return false;">Scratch</a>				  
 		  <a href="#" class="w3-bar-item w3-button" title="nsd" onclick="opentab('nsd');return false;">Structogramme</a>
 		  <a href="#" class="w3-bar-item w3-button" title="Flowchart" onclick="opentab('flowchart');return false;">Organigramme</a>
 		</div>
@@ -111,12 +111,8 @@ function InsertionSort(lst) {
 </pre>
 </div>
 	
-<div id="basic" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">	
-<pre>
-<code>
-
-</code>
-</pre>
+<div id="Scratch" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">	
+<img src="{{ 'assets/img/sort/InsertionSort_scratch.svg' | relative_url }}" alt="Tri par insertion en Scratch " style="max-width: 100%;height: auto;"/> 
 </div>
 	
 <div id="flowchart" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">		
