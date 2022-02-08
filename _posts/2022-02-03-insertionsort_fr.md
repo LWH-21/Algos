@@ -112,7 +112,7 @@ function InsertionSort(lst) {
 </div>
 	
 <div id="Scratch" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">	
-<img src="{{ 'assets/img/sort/InsertionSort_scratch.svg' | relative_url }}" alt="Tri par insertion en Scratch " style="max-width: 100%;height: auto;"/> 
+<img src="{{ 'assets/img/sort/InsertionSort_scratch.webp' | relative_url }}" alt="Tri par insertion en Scratch " style="max-width: 100%;height: auto;"/> 
 </div>
 	
 <div id="flowchart" class="w3-container tab animation" style="display:none ;   width:100%;  height:395px; background-color:white;  overflow:scroll;">		
