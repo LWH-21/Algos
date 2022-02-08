@@ -81,7 +81,7 @@ void InsertionSort(int vect[], int size)
 <code class="language-python">
 def InsertionSort(vect):
     for i in range(1, len(vect)):
-        current = array[i]
+        current = vect[i]
         p = i
         while p > 0 and vect[p - 1] > current:
             vect[p] = vect[p -1]
