@@ -157,11 +157,13 @@ function InsertionSort(lst) {
 
 ## Complexité	
 	
-Dans le meilleur des cas (c'est à dire avec une liste déjà triée), le tri par insertion fera exactement n-1 comparaisons, n étant le nombre d'éléments de la liste. C'est assez intuitif : si la liste à trier ne contient qu'un élément, il ne fera aucune comparaisons, si elle en contient deux, une comparaison suffira, si elle en contient 3 deux comparaisons seront nécessaires...
+Dans le meilleur des cas (c'est à dire avec une liste déjà triée), le tri par insertion fera exactement n-1 comparaisons, n étant le nombre d'éléments de la liste. C'est assez intuitif : si la liste à trier ne contient qu'un élément, il ne fera aucune comparaisons, si elle en contient deux, une comparaison suffira, si elle en contient 3 deux comparaisons seront nécessaires... La complexité en temps est linéaire, en <b><span class='bigo'>O</span>(<em>n</em></b>).
+
 	
 <img src="{{ 'assets/img/sort/Insertion_sort_bestCase.png' | relative_url }}" alt="Nombre de comparaisons du tri par insertion dans le meilleur des cas" style="max-width: 80%;height: auto;"/> 
 
-Dans le pire des cas (c'est à dire avec une liste triée en sens inverse) le tri par insertion fera exactement (n^2+n)/2 - 1 opérations, n étant le nombre d'éléments de la liste (ce qu'on peut aussi écrire "n(n+1)/2 - 1". Le graphique suivant illustre cela :
+Dans le pire des cas (c'est à dire avec une liste triée en sens inverse) le tri par insertion fera exactement (n^2+n)/2 - 1 opérations, n étant le nombre d'éléments de la liste (ce qu'on peut aussi écrire "n(n+1)/2 - 1". La complexité en temps est polynomale, en <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
+ Le graphique suivant illustre cela :
 
 <img src="{{ 'assets/img/sort/Insertion_sort_worstCase.png' | relative_url }}" alt="Nombre de comparaisons du tri par insertion dans le pire des cas" style="max-width: 80%;height: auto;"/>
 	
