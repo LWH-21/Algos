@@ -162,7 +162,7 @@ Dans le meilleur des cas (c'est à dire avec une liste déjà triée), le tri pa
 	
 <img src="{{ 'assets/img/sort/Insertion_sort_bestCase.png' | relative_url }}" alt="Nombre de comparaisons du tri par insertion dans le meilleur des cas" style="max-width: 80%;height: auto;"/> 
 
-Dans le pire des cas (c'est à dire avec une liste triée en sens inverse) le tri par insertion fera exactement (n^2+n)/2 - 1 opérations, n étant le nombre d'éléments de la liste (ce qu'on peut aussi écrire "n(n+1)/2 - 1". La complexité en temps est polynomale, en <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
+Dans le pire des cas (c'est à dire avec une liste triée en sens inverse) le tri par insertion fera exactement (n^2+n)/2 - 1 opérations, n étant le nombre d'éléments de la liste (ce qu'on peut aussi écrire "n(n+1)/2 - 1". La complexité en temps est quadratique, en <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
  Le graphique suivant illustre cela :
 
 <img src="{{ 'assets/img/sort/Insertion_sort_worstCase.png' | relative_url }}" alt="Nombre de comparaisons du tri par insertion dans le pire des cas" style="max-width: 80%;height: auto;"/>
