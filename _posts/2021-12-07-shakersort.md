@@ -296,7 +296,7 @@ Dans le pire des cas, avec des données triées à l’envers, les parcours succ
 
 En moyenne, lorsque l'ordre initial des éléments à trier est aléatoire, on considère qu’il faudra faire <b>(<em>n</em><sup>2</sup> - <em>2*n</em>) / 4</b> échanges. C'est un peu mieux que le tri bulle classique mais la complexité reste de l'ordre de <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
 
-Dans le meilleur des cas, quand la liste est déjà triée, il faudra <b>(<em>n</em> - 1)</b> comparaisons et aucune permutation. La complexité en temps est linéaire, en <b><span class='bigo'>O</span>(<em>n</em><sup>2</sup></b>).
+Dans le meilleur des cas, quand la liste est déjà triée, il faudra <b>(<em>n</em> - 1)</b> comparaisons et aucune permutation. La complexité en temps est linéaire, en <b><span class='bigo'>O</span>(<em>n</em></b>).
 
 En espace utilisé (coût en mémoire de l’algorithme), la complexité du tri bulle est linéaire. Elle croit à la même vitesse que le nombre de données en entrée. Elle est donc de <b><span class='bigo'>O</span>(<em>n</em></b>).
 
