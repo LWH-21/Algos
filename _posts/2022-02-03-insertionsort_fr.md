@@ -161,5 +161,10 @@ Dans le meilleur des cas (c'est à dire avec une liste déjà triée), le tri pa
 	
 <img src="{{ 'assets/img/sort/Insertion_sort_bestCase.png' | relative_url }}" alt="Nombre de comparaisons du tri par insertion dans le meilleur des cas" style="max-width: 100%;height: auto;"/> 
 
+Dans le pire des cas (c'est à dire avec une liste triée en sens inverse) le tri par insertion fera exactement (n^2+n)/2 - 1 opérations, n étant le nombre d'éléments de la liste. Le graphique suivant illustre cela :
+
+<img src="{{ 'assets/img/sort/Insertion_sort_worstCase.png' | relative_url }}" alt="Nombre de comparaisons du tri par insertion dans le pire des cas" style="max-width: 100%;height: auto;"/>
+	
+
 
 <img src="{{ 'assets/img/sort/insertionsort_fr.webp' | relative_url }}" alt=" " style="max-width: 100%;height: auto;"/> 
