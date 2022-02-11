@@ -159,11 +159,11 @@ function InsertionSort(lst) {
 	
 Dans le meilleur des cas (c'est à dire avec une liste déjà triée), le tri par insertion fera exactement n-1 comparaisons, n étant le nombre d'éléments de la liste. C'est assez intuitif : si la liste à trier ne contient qu'un élément, il ne fera aucune comparaisons, si elle en contient deux, une comparaison suffira, si elle en contient 3 deux comparaisons seront nécessaires...
 	
-<img src="{{ 'assets/img/sort/Insertion_sort_bestCase.png' | relative_url }}" alt="Nombre de comparaisons du tri par insertion dans le meilleur des cas" style="max-width: 100%;height: auto;"/> 
+<img src="{{ 'assets/img/sort/Insertion_sort_bestCase.png' | relative_url }}" alt="Nombre de comparaisons du tri par insertion dans le meilleur des cas" style="max-width: 80%;height: auto;"/> 
 
 Dans le pire des cas (c'est à dire avec une liste triée en sens inverse) le tri par insertion fera exactement (n^2+n)/2 - 1 opérations, n étant le nombre d'éléments de la liste. Le graphique suivant illustre cela :
 
-<img src="{{ 'assets/img/sort/Insertion_sort_worstCase.png' | relative_url }}" alt="Nombre de comparaisons du tri par insertion dans le pire des cas" style="max-width: 100%;height: auto;"/>
+<img src="{{ 'assets/img/sort/Insertion_sort_worstCase.png' | relative_url }}" alt="Nombre de comparaisons du tri par insertion dans le pire des cas" style="max-width: 80%;height: auto;"/>
 	
 
 
