@@ -167,6 +167,9 @@ Dans le pire des cas (c'est à dire avec une liste triée en sens inverse) le tr
 
 <img src="{{ 'assets/img/sort/Insertion_sort_worstCase.png' | relative_url }}" alt="Nombre de comparaisons du tri par insertion dans le pire des cas" style="max-width: 80%;height: auto;"/>
 	
+En moyenne, il faudra (n^2-n)/4 opérations pour trier une liste, soit un nombre d'opérations équivalent à celui nécessaires avec le tri bulle. Le graphique suivant a été réalisé en triant 1 217 818 listes (!) générées aléatoirement et en analysant le résultat avec R. La complexité en temps est donc quadratique en moyenne.
 
+<img src="{{ 'assets/img/sort/Insertion_sort_averageCase.png' | relative_url }}" alt="Nombre de comparaisons du tri par insertion en moyenne" style="max-width: 80%;height: auto;"/>
+	
 
 <img src="{{ 'assets/img/sort/insertionsort_fr.webp' | relative_url }}" alt=" " style="max-width: 100%;height: auto;"/> 
